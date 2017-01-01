@@ -5,7 +5,6 @@
   padding: 1.5rem;
 }
 
-// Square emphasized link
 @mixin button-squared($base-color: $white, $active-text-color: $blue){
   display: inline-block;
   color: $base-color;
@@ -27,7 +26,6 @@
   @include button-squared();
 }
 
-// Round emphasized link
 @mixin button-rounded($base-color: $white, $active-text-color: $blue){
   display: inline-block;
   color: $base-color;
