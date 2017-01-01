@@ -2,13 +2,12 @@
   width: 100%;
   max-width: 750px;
   margin: 0 auto;
-  padding: 1.5rem;
 }
 
 @mixin button-squared($base-color: $white, $active-text-color: $blue){
   display: inline-block;
   color: $base-color;
-  border: 2px solid $base-color;
+  border: .15em solid $base-color;
   margin: 0 .5em;
   padding: .5em .75em;
   transition: $out-transition;
@@ -29,7 +28,7 @@
 @mixin button-rounded($base-color: $white, $active-text-color: $blue){
   display: inline-block;
   color: $base-color;
-  border: 2px solid $base-color;
+  border: .15em solid $base-color;
   margin: 0 .5em;
   border-radius: 3em;
   padding: .5em 1.25em;
