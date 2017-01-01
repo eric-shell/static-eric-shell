@@ -5,6 +5,17 @@
   	background: $black;
   	padding: 6rem 1.5rem;
 
+    p{
+      @include container;
+      color: $white;
+    }
+  }
+}
+
+@media #{$medium-up}{
+
+  #about{
+
     &:before{
     	content: '';
     	width: 100%;
@@ -15,10 +26,15 @@
     	transform: skewY(1deg);
     	background: $violet;
     }
+  }
+}
 
-    p{
-      @include container;
-      color: $white;
+@media #{$large-up}{
+
+  #about{
+
+    &:before{
+    	transform: skewY(2deg);
     }
   }
 }
