@@ -6,7 +6,7 @@
 }
 
 // Square emphasized link
-@mixin link-square($base-color: $white, $active-text-color: $blue){
+@mixin button-squared($base-color: $white, $active-text-color: $blue){
   display: inline-block;
   color: $base-color;
   border: 2px solid $base-color;
@@ -21,21 +21,20 @@
     background: $base-color;
     transition: $in-transition;
   }
+}
 
-  &:before,
-  &:after{
-    display: none;
-  }
+.button.squared{
+  @include button-squared();
 }
 
 // Round emphasized link
-@mixin link-round($base-color: $white, $active-text-color: $blue){
+@mixin button-rounded($base-color: $white, $active-text-color: $blue){
   display: inline-block;
   color: $base-color;
   border: 2px solid $base-color;
+  margin: 0 .5em;
   border-radius: 3em;
-  margin: 0;
-  padding: .5em 1.5em;
+  padding: .5em 1.25em;
   transition: $out-transition;
   text-decoration: none;
 
@@ -45,9 +44,8 @@
     background: $base-color;
     transition: $in-transition;
   }
+}
 
-  &:before,
-  &:after{
-    display: none;
-  }
+.button.rounded{
+  @include button-rounded();
 }
