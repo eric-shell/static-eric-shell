@@ -1,6 +1,6 @@
 @media #{$small-up}{
 
-  #hero{
+  #header{
     position: relative;
     overflow: hidden;
     background: $blue;
@@ -68,7 +68,7 @@
 
 @media #{$medium-up}{
 
-  #hero{
+  #header{
     display: flex;
 
     #hero-imagery{
@@ -135,7 +135,7 @@
 
 @media #{$large-up}{
 
-  #hero{
+  #header{
 
     #hero-imagery{
       flex-basis: 60%;

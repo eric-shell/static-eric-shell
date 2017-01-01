@@ -1,4 +1,17 @@
-// Resets
+// Setting base background for browsers with elastic viewports
+html{
+  background: $black;
+}
+
+// Setting the basic content background
+body{
+  position: relative;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+// Box sizing model
 *,
 *:before,
 *:after{
@@ -19,17 +32,4 @@ img{
 *:focus{
   border: 0;
   outline: 0;
-}
-
-// Setting base background for browsers with elastic viewports
-html{
-  background: $black;
-}
-
-// Setting the basic content background
-body{
-  position: relative;
-  background: #fff;
-  height: 100%;
-  width: 100%;
 }

@@ -23,14 +23,6 @@ body{
     }
   }
 
-  .field--name-field-tags{
-    
-    a{
-      font-weight: 700;
-      @include link;
-    }
-  }
-
   h1{
     margin: 0;
     font-size: 2rem;
@@ -74,35 +66,6 @@ body{
       @include link(.125em);
     }
   }
-
-  .field--name-title{
-    display: block;
-    max-width: 45rem;
-    margin: 0 auto;
-    padding: 3rem 1rem 0;
-  }
-
-  .field--name-created{
-    display: block;
-    font-weight: 700;
-    max-width: 45rem;
-    padding: .25em 1rem 0;
-    text-transform: uppercase;
-    margin: 0 auto;
-  }
-
-  .field--name-field-body{
-    padding: 2rem 0;
-
-    p{
-      padding: 0 0 2.5em;
-    }
-
-    ul{
-      margin: 0;
-      list-style: none;
-    }
-  }
 }
 
 @media #{$medium-up}{
@@ -142,13 +105,6 @@ body{
       @include link(4px);
     }   
   }
-
-  .field--name-field-body{
-    
-    ul{
-      font-size: 1.2rem;
-    }
-  }
 }
 
 @media #{$large-up}{
@@ -187,20 +143,5 @@ body{
     a{
       @include link(4px);
     }   
-  }
-
-  .field--name-title{
-    max-width: 60vw;
-  }
-
-  .field--name-created{
-    max-width: 60vw;
-  }
-
-  .field--name-field-body{
-
-    ul{
-      font-size: 1.6vw;
-    }
   }
 }
