@@ -1,67 +1,30 @@
 @media #{$small-up}{
 
   #header{
-    position: relative;
     overflow: hidden;
     background: $blue;
 
-    #hero-imagery{
+    #profile{
+      z-index: 5;
       position: relative;
+
+      #logo{
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        width: 70%;
+        height: 70%;
+      }
     }
 
-    #hero-background{
-      height: 0;
-      width: 135%;
-      padding-top: 105%;
-      background-image: url(../images/hero.jpg);
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    #hero-logo{
-      position: absolute;
-      top: 30%;
-      left: 15%;
-      height: 0;
-      width: 70%;
-      padding-top: 70%;
-      background-image: url(../images/logo.svg);
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    #hero-content{
-      z-index: 1;
+    #intro{
+      padding: 3rem 1.5rem;
+      z-index: 10;
       position: relative;
       background: $white;
-
-      .hero-body{
-        padding: 0;
-        height: 100%;
-        position: relative;
-      }
-
-      .hero-body-container{
-        padding: 10vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        p{
-          padding: 0;
-          font-size: 4.2vw;
-          text-align: justify;
-
-          &:first-child{
-            padding: 0 0 2em;
-          }
-        }
-
-        a{
-          @include link-round($blue, $white);
-        }
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
@@ -71,63 +34,44 @@
   #header{
     display: flex;
 
-    #hero-imagery{
+    #profile{
       flex-basis: 50%;
-      transition: all ease-out .5s;
 
-      &.animate{
-        animation: 1s ease-out fromLeft;
+      #headshot{
+        padding-right: 20%;
+      }
+
+      #logo{
+        top: 25%;
+        left: 12.5%;
+        width: 50%;
+        height: 50%;
       }
     }
 
-    #hero-background{
-      width: 100%;
-      padding-top: 78.85%;
-    }
-
-    #hero-logo{
-      top: 30%;
-      left: 13%;
-      width: 50%;
-      padding-top: 50%;
-    }
-
-    #hero-content{
+    #intro{
+      padding: 0;
       flex-basis: 50%;
-      transition: all ease-out .5s;
 
-      &.animate{
-        animation: 1s ease-out fromRight;
-      }
-
-      .hero-body-container{
-        padding: 0;
-        position: absolute;
+      p{
+        position: relative;
         top: 0;
         left: -10%;
-        width: 100%;
-        height: 100%;
-
-        p{
-          font-size: 1.875vw;
-
-          &:first-child{
-            padding: 2em 1em;
-          }
-        }
+        text-align: justify;
+        font-size: 2vw;
       }
 
       &:after{
         content: '';
-        position: absolute;
         z-index: -1;
+        position: absolute;
         left: -24%;
         top: -40%;
         width: 100%;
         height: 200%;
         transform: rotate(14deg);
-        background: rgba(255,255,255,1);
-        transition: all ease-out .5s;
+        background: $white;
+        transition: all ease-out .15s;
       }
     }
   }
@@ -137,27 +81,22 @@
 
   #header{
 
-    #hero-imagery{
+    #profile{
       flex-basis: 60%;
-      transition: all ease-out .5s;
     }
 
-    #hero-content{
+    #intro{
       flex-basis: 40%;
-      transition: all ease-out .5s;
+
+      p{
+        left: -12%;
+        font-size: 1.6vw;
+      }
 
       &:after{
         left: -33%;
         transform: rotate(29deg);
-        transition: all ease-out .5s;
-      }
-
-      .hero-body-container{
-        left: -10%;
-
-        p{
-          font-size: 1.525vw;
-        }
+        transition: all ease-out .15s;
       }
     }
   }
