@@ -19,7 +19,6 @@ body{
 
     a{
       font-weight: 700;
-      @include link;
     }
   }
 
@@ -31,39 +30,6 @@ body{
     
     a{
       @include link(.25em);
-    }
-  }
-
-  h2{
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-
-    a{
-      @include link(.125em);
-    }
-  }
-
-  h3{
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    
-    a{
-      @include link(.25em);
-    }
-  }
-
-  h4{
-    margin: 0;
-    font-size: 1.15rem;
-    font-weight: 900;
-    text-transform: uppercase;
-
-    a{
-      @include link(.125em);
     }
   }
 }
@@ -81,30 +47,6 @@ body{
       @include link(5px);
     }
   }
-
-  h2{
-    font-size: 4vw; 
-
-    a{
-      @include link(4px);
-    } 
-  }
-
-  h3{
-    font-size: 1.75vw;
-
-    a{
-      @include link(5px);
-    }
-  }
-
-  h4{
-    font-size: 1.5vw; 
-
-    a{
-      @include link(4px);
-    }   
-  }
 }
 
 @media #{$large-up}{
@@ -119,29 +61,5 @@ body{
     a{
       @include link(5px);
     }
-  }
-
-  h2{
-    font-size: 3vw; 
-
-    a{
-      @include link(4px);
-    }   
-  }
-
-  h3{
-    font-size: 2vw; 
-
-    a{
-      @include link(4px);
-    }   
-  }
-
-  h4{
-    font-size: 1.5vw; 
-
-    a{
-      @include link(4px);
-    }   
   }
 }

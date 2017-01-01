@@ -12,8 +12,8 @@ $blue: #3c81fd;
 $violet: #6209f8;
 
 // Transistions
-$in-transition: all .1s ease-in-out;
-$out-transition: all .25s ease-in-out;
+$in-transition: all .05s ease-out;
+$out-transition: all .15s ease-out;
 
 // Screen size breakpoints
 $screen-small: 550px;
