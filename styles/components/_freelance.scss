@@ -1,0 +1,12 @@
+@media #{$small-up}{
+
+  #freelance{
+    background: $cyan;
+
+    p{
+      @include container;
+      text-align: center;
+      color: $white;
+    }
+  }
+}
