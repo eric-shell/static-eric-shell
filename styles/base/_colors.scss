@@ -1,0 +1,35 @@
+// Colors
+$white: #ffffff;
+$black: #1c1f1e;
+
+$red: #ff5959;
+$yellow: #f9ff2c;
+$green: #aeff33;
+$cyan: #27c2ff;
+$blue: #3c81fd;
+$violet: #6209f8;
+
+// Map color values to class names
+$colors: (
+  white: $white,
+  black: $black,
+  red: $red,
+	yellow: $yellow,
+	green: $green,
+	cyan: $cyan,
+	blue: $blue,
+	violet: $violet,
+);
+
+// Configure colors
+@mixin generate-color-properties($prefix, $property) {
+  @each $color-name, $color in $colors {
+    .#{$prefix}-#{$color-name} {
+      #{$property}: $color
+    }
+  }
+}
+
+// Generate colors
+@include generate-color-properties('text', 'color');
+@include generate-color-properties('bg', 'background');
