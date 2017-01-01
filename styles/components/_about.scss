@@ -1,0 +1,11 @@
+@media #{$small-up}{
+
+  #about{
+    background: $black;
+
+    p{
+      @include container;
+      color: $white;
+    }
+  }
+}

@@ -2,10 +2,11 @@
 
 @import "base/variables";
 @import "base/mixins";
+@import "base/animations";
 @import "base/resets";
 @import "base/type";
 
-@import "components/preloader";
 @import "components/header";
 @import "components/freelance";
+@import "components/about";
 @import "components/slider";
