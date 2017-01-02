@@ -19,7 +19,7 @@
     }
 
     #intro{
-      padding: 4.5rem 1.5rem;
+      padding: 6rem 1.5rem;
       z-index: 5;
       position: relative;
       background: $white;
@@ -30,7 +30,7 @@
       &:before{
         content: '';
         width: 100%;
-        height: 75px;
+        height: 85px;
         position: absolute;
         z-index: -1;
         left: 0;

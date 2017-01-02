@@ -7,6 +7,7 @@
 
     p{
       @include container;
+      padding: 0 0 1.5em;
       color: $white;
     }
   }
