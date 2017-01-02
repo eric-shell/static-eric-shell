@@ -116,39 +116,27 @@
     }
 
     #overview{
-      background: $cyan;
+      background: $black;
     }
 
     #skillsets{
-      background: $blue;
+      background: $cyan;
     }
 
     #education{
-      background: $violet;
+      background: $blue;
     }
 
     #job-hathway{
-      .background-video{
-        &:before{
-          background: rgba(175, 193, 36, 0.95);
-        }
-      }
+      background: rgba(175, 193, 36, 1);
     }
 
     #job-accuair{
-      .background-video{
-        &:before{
-          background: rgba(0, 0, 0, 0.85);
-        }
-      }
+      background: rgba(0, 0, 0, 1);
     }
 
     #job-imrc{
-      .background-video{
-        &:before{
-          background: rgba(80, 45, 14, 0.9);
-        }
-      }
+      background: rgba(80, 45, 14, 1);
     }
 
     #job-hathway,
