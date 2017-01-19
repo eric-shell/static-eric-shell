@@ -13,29 +13,19 @@
   }
 }
 
-@media #{$medium-up}{
-
-  #about{
-
-    &:before{
-    	content: '';
-    	width: 100%;
-    	height: 75px;
-    	position: absolute;
-    	left: 0;
-    	top: -50px;
-    	transform: skewY(1deg);
-    	background: $violet;
-    }
-  }
-}
-
 @media #{$large-up}{
 
   #about{
 
     &:before{
-    	transform: skewY(2deg);
+      content: '';
+      width: 100%;
+      height: 75px;
+      position: absolute;
+      left: 0;
+      top: -50px;
+      transform: skewY(2deg);
+      background: $violet;
     }
   }
 }

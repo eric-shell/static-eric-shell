@@ -155,7 +155,7 @@
       }
 
       &:hover .path{
-        fill: $cyan;
+        fill: $white;
         transition: $in-transition;
       }
     }
@@ -181,14 +181,14 @@
         transition: $in-transition;
 
         &:hover{
-          background: $cyan;
-          border: 3px solid $cyan;
+          background: $white;
+          border: 3px solid $white;
           transition: $out-transition;
         }
 
         &.slick-active{
-          background: $cyan;
-          border: 3px solid $cyan;
+          background: $white;
+          border: 3px solid $white;
           transition: $out-transition;
         }
       }

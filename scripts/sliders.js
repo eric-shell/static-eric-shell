@@ -38,7 +38,7 @@
         $(this).parent().parent().next('.panel').addClass('visible');
         $('html,body').animate({
           scrollTop:$(this).parent().parent().next().offset().top
-        }, 500);
+        }, 250);
       }
     });
 

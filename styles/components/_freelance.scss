@@ -3,7 +3,7 @@
   #freelance{
     background: $cyan;
     position: relative;
-    padding: 0 1.5rem;
+    padding: .5em 1.5rem;
     z-index: 15;
 
     &:before,
@@ -14,16 +14,16 @@
     	z-index: -1;
     	position: absolute;
     	left: 0;
-    	transform: skewY(-1deg);
+    	transform: skewY(1deg);
     	background: $cyan;
     }
 
     &:before{
-      top: -40%;
+      top: 2vw;
     }
 
     &:after{
-      bottom: -40%;
+      bottom: 2vw;
     }
 
     p{
@@ -37,7 +37,14 @@
 @media #{$large-up}{
 
   #freelance{
+    padding: 0 1.5rem;
+  }
+}
 
+@media #{$large-up}{
+
+  #freelance{
+    
     &:before,
     &:after{
       transform: skewY(-2deg);
