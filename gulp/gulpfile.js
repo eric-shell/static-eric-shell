@@ -24,7 +24,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('js', function () {
-  gulp.src(['../scripts/vendor/*.js', '../scripts/*.js'])
+  gulp.src(['../scripts/base/*.js', '../scripts/vendor/*.js', '../scripts/*.js'])
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(rename('scripts.min.js'))
