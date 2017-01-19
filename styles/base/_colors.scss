@@ -31,5 +31,5 @@ $colors: (
 }
 
 // Generate colors
-@include generate-color-properties('text', 'color');
+@include generate-color-properties('txt', 'color');
 @include generate-color-properties('bg', 'background');
