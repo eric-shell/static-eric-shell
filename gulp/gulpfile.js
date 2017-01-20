@@ -9,7 +9,7 @@ var gulp = require('gulp')
     prefixer = require('gulp-autoprefixer')
     sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('sass', function () {
+gulp.task('scss', function () {
   gulp.src('../styles/source.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -33,7 +33,7 @@ gulp.task('default', ['js', 'sass'], function() {
   gulp.watch('../styles/**/*.scss', ['sass']);
 });
 
-gulp.task('build', function() {
+gulp.task('build', ['js', 'scss'], function() {
 
   gulp.src('../resume.pdf')
     .pipe(gulp.dest('../dist'))
