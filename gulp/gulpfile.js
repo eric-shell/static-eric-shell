@@ -1,14 +1,11 @@
-// For Livereload on Chrome, download the extention:
-// https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
-// Enable it, allow access to URLs, restart Chrome
-// Click the extension icon to begin using it
-
 var gulp = require('gulp')
+    svgo = require('gulp-svgo')
     sass = require('gulp-sass')
     clean = require('gulp-clean-css')
     rename = require('gulp-rename')
     concat = require('gulp-concat')
     uglify = require('gulp-uglify')
+    injectSvg = require('gulp-inject-svg')
     prefixer = require('gulp-autoprefixer')
     sourcemaps = require('gulp-sourcemaps');
 
@@ -34,4 +31,24 @@ gulp.task('js', function () {
 gulp.task('default', ['js', 'sass'], function() {
   gulp.watch('../scripts/**/*.js', ['js']);
   gulp.watch('../styles/**/*.scss', ['sass']);
+});
+
+gulp.task('build', function() {
+
+  gulp.src('../resume.pdf')
+    .pipe(gulp.dest('../dist'))
+
+  gulp.src('../min/styles.min.css')
+    .pipe(gulp.dest('../dist/min'))
+
+  gulp.src('../min/scripts.min.js')
+    .pipe(gulp.dest('../dist/min'))
+
+  gulp.src('../images/*')
+    .pipe(svgo())
+    .pipe(gulp.dest('../dist/images'));
+
+  return gulp.src('../index.html')
+    .pipe(injectSvg())
+    .pipe(gulp.dest('../dist'));
 });
