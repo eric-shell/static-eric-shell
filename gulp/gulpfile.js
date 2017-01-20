@@ -1,4 +1,5 @@
 var gulp = require('gulp')
+    del = require('del')
     svgo = require('gulp-svgo')
     sass = require('gulp-sass')
     clean = require('gulp-clean-css')
@@ -48,7 +49,13 @@ gulp.task('build', ['js', 'scss'], function() {
     .pipe(svgo())
     .pipe(gulp.dest('../dist/images'));
 
-  return gulp.src('../index.html')
+  gulp.src('../index.html')
     .pipe(injectSvg())
     .pipe(gulp.dest('../dist'));
+});
+
+gulp.task('clean', function () {
+  del(['../dist/images/**.svg'], {force: true}).then(paths => {
+      console.log('Files and folders that will be deleted:\n', paths.join('\n'));
+  });
 });
