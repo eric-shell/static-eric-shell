@@ -1,5 +1,4 @@
 var gulp = require('gulp')
-    del = require('del')
     svgo = require('gulp-svgo')
     sass = require('gulp-sass')
     clean = require('gulp-clean-css')
@@ -31,12 +30,12 @@ gulp.task('js', function () {
     .pipe(gulp.dest('../min'));
 });
 
-gulp.task('distFiles', function() {
+gulp.task('distResources', function() {
 
-  gulp.src('../resume.pdf')
+  gulp.src('../files/*')
     .pipe(gulp.dest('../dist'))
 
-  gulp.src('../images/*')
+  gulp.src('../images/!(*.svg)')
     .pipe(svgo())
     .pipe(gulp.dest('../dist/images'));
 
@@ -54,12 +53,7 @@ gulp.task('distCode', function() {
     .pipe(gulp.dest('../dist/min'))
 });
 
-gulp.task('build', ['js', 'scss', 'distFiles', 'distCode'], function () {
-
-  return del(['../dist/images/*.svg'], {force: true}).then(paths => {
-      console.log('Files and folders that will be deleted:\n', paths.join('\n'));
-  });
-});
+gulp.task('build', ['js', 'scss', 'distResources', 'distCode'], function () {});
 
 gulp.task('default', ['js', 'scss'], function() {
   gulp.watch('../scripts/**/*.js', ['js']);
