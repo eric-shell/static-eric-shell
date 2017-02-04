@@ -11,6 +11,7 @@ var gulp = require('gulp')
     sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('scss', function () {
+
   gulp.src('../styles/source.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -22,6 +23,7 @@ gulp.task('scss', function () {
 });
 
 gulp.task('js', function () {
+
   gulp.src(['../scripts/base/*.js', '../scripts/vendor/*.js', '../scripts/*.js'])
     .pipe(concat('main.js'))
     .pipe(uglify())
@@ -29,21 +31,10 @@ gulp.task('js', function () {
     .pipe(gulp.dest('../min'));
 });
 
-gulp.task('default', ['js', 'sass'], function() {
-  gulp.watch('../scripts/**/*.js', ['js']);
-  gulp.watch('../styles/**/*.scss', ['sass']);
-});
-
-gulp.task('build', ['js', 'scss'], function() {
+gulp.task('distFiles', function() {
 
   gulp.src('../resume.pdf')
     .pipe(gulp.dest('../dist'))
-
-  gulp.src('../min/styles.min.css')
-    .pipe(gulp.dest('../dist/min'))
-
-  gulp.src('../min/scripts.min.js')
-    .pipe(gulp.dest('../dist/min'))
 
   gulp.src('../images/*')
     .pipe(svgo())
@@ -54,8 +45,23 @@ gulp.task('build', ['js', 'scss'], function() {
     .pipe(gulp.dest('../dist'));
 });
 
-gulp.task('clean', function () {
-  del(['../dist/images/**.svg'], {force: true}).then(paths => {
+gulp.task('distCode', function() {
+
+  gulp.src('../min/styles.min.css')
+    .pipe(gulp.dest('../dist/min'))
+
+  gulp.src('../min/scripts.min.js')
+    .pipe(gulp.dest('../dist/min'))
+});
+
+gulp.task('build', ['js', 'scss', 'distFiles', 'distCode'], function () {
+
+  return del(['../dist/images/*.svg'], {force: true}).then(paths => {
       console.log('Files and folders that will be deleted:\n', paths.join('\n'));
   });
+});
+
+gulp.task('default', ['js', 'scss'], function() {
+  gulp.watch('../scripts/**/*.js', ['js']);
+  gulp.watch('../styles/**/*.scss', ['scss']);
 });
