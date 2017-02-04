@@ -1,3 +1,5 @@
 $(function() {
-    $("img.lazyload").lazyload();
+    $("[data-lazy]").lazyload({
+    	data_attribute: "lazy",
+    });
 });
