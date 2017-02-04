@@ -1,6 +1,28 @@
 @media #{$small-up}{
 
   #clients{
-    background: $cyan;
+    background: $black;
+
+    li{
+    	position: relative;
+    }
+
+    .client-logo{
+    	z-index: 10;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	padding: 4vw;
+    }
+
+    .client-bg{
+    	z-index: 5;
+    	position: relative;
+    }
   }
 }
