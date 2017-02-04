@@ -1,6 +1,8 @@
 {
   "name": "eshell",
   "version": "1.0.0",
+  "readme": "https://github.com/eric-shell/eric-shell-html",
+  "repository": "git@github.com:eric-shell/eric-shell-html.git",
   "description": "Collection of gulp plugins to properly port code to their respective development format",
   "main": "gulpfile.js",
   "scripts": {
@@ -9,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "del": "^2.2.2",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-clean-css": "^2.0.13",
     "gulp-concat": "^2.6.1",
@@ -19,8 +21,5 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-svgo": "^1.0.3",
     "gulp-uglify": "^2.0.0"
-  },
-  "dependencies": {
-    "gulp": "^3.9.1"
   }
 }
