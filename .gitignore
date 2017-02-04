@@ -2,7 +2,7 @@
 dist
 
 # Ignore gulp node modules
-gulp/node_modules
+node_modules
 
 # Ignore ssh access file
 eric-shell.pem

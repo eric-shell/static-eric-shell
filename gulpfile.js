@@ -11,51 +11,56 @@ var gulp = require('gulp')
 
 gulp.task('scss', function () {
 
-  gulp.src('../styles/source.scss')
+  gulp.src('styles/source.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefixer())
     .pipe(clean())
     .pipe(rename('styles.min.css'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('../min'))
+    .pipe(gulp.dest('min'));
 });
 
 gulp.task('js', function () {
 
-  gulp.src(['../scripts/base/*.js', '../scripts/vendor/*.js', '../scripts/*.js'])
+  gulp.src(['scripts/base/*.js', 'scripts/vendor/*.js', 'scripts/*.js'])
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(rename('scripts.min.js'))
-    .pipe(gulp.dest('../min'));
+    .pipe(gulp.dest('min'));
 });
 
-gulp.task('distResources', function() {
+gulp.task('min-svg', function () {
+  
+  gulp.src('images/*.svg')
+    .pipe(svgo());
+});
 
-  gulp.src('../files/*')
-    .pipe(gulp.dest('../dist'))
+gulp.task('dist-resources', function() {
 
-  gulp.src('../images/!(*.svg)')
-    .pipe(svgo())
-    .pipe(gulp.dest('../dist/images'));
+  gulp.src('files/*')
+    .pipe(gulp.dest('dist'));
 
-  gulp.src('../index.html')
+  gulp.src('images/!(*.svg)')
+    .pipe(gulp.dest('dist/images'));
+
+  gulp.src('index.html')
     .pipe(injectSvg())
-    .pipe(gulp.dest('../dist'));
+    .pipe(gulp.dest('dist'));
 });
 
-gulp.task('distCode', function() {
+gulp.task('dist-code', function() {
 
-  gulp.src('../min/styles.min.css')
-    .pipe(gulp.dest('../dist/min'))
+  gulp.src('min/styles.min.css')
+    .pipe(gulp.dest('dist/min'));
 
-  gulp.src('../min/scripts.min.js')
-    .pipe(gulp.dest('../dist/min'))
+  gulp.src('min/scripts.min.js')
+    .pipe(gulp.dest('dist/min'));
 });
 
-gulp.task('build', ['js', 'scss', 'distResources', 'distCode'], function () {});
+gulp.task('build', ['js', 'scss', 'dist-resources', 'dist-code'], function () {});
 
 gulp.task('default', ['js', 'scss'], function() {
-  gulp.watch('../scripts/**/*.js', ['js']);
-  gulp.watch('../styles/**/*.scss', ['scss']);
+  gulp.watch('scripts/**/*.js', ['js']);
+  gulp.watch('styles/**/*.scss', ['scss']);
 });
