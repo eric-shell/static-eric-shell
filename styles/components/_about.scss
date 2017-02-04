@@ -1,13 +1,13 @@
 @media #{$small-up}{
 
-  #about{
+  .about{
   	position: relative;
   	background: $black;
   	padding: 6rem 1.5rem;
 
     p{
       @include container;
-      padding: 0 0 1.5em;
+      padding: 1em 0;
       color: $white;
     }
   }
@@ -15,7 +15,7 @@
 
 @media #{$large-up}{
 
-  #about{
+  .about.first{
 
     &:before{
       content: '';
