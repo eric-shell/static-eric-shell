@@ -2,6 +2,33 @@
 
   #footer{
   	background: $violet;
-  	padding: 3rem 1.5rem;
+  	padding: 4.5rem 1.5rem;
+
+  	ul{
+  		@include container;
+  		list-style: none;
+  		display: flex;
+
+  		li{
+  			color: $white;
+
+  			a{
+  				color: $white;
+  				padding: 0 0 0 1em;
+  			}
+
+   			&:first-child{
+
+  				a{
+  					padding: 0;
+  				}
+  			}
+
+  			&:last-child{
+	  			flex-grow: 1;
+	  			text-align: right;
+	  		}
+  		}
+  	}
   }
 }
