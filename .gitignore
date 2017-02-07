@@ -1,6 +1,3 @@
-# Ignore final output file
-dist
-
 # Ignore gulp node modules
 node_modules
 
