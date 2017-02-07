@@ -5,7 +5,8 @@ var gulp = require('gulp')
     rename = require('gulp-rename')
     concat = require('gulp-concat')
     uglify = require('gulp-uglify')
-    injectSvg = require('gulp-inject-svg')
+    imagemin = require('gulp-imagemin')
+    injectsvg = require('gulp-inject-svg')
     prefixer = require('gulp-autoprefixer')
     sourcemaps = require('gulp-sourcemaps');
 
@@ -42,10 +43,11 @@ gulp.task('docs-resources', function() {
     .pipe(gulp.dest('docs'));
 
   gulp.src('images/!(*.svg)')
+    .pipe(imagemin())
     .pipe(gulp.dest('docs/images'));
 
   gulp.src('index.html')
-    .pipe(injectSvg())
+    .pipe(injectsvg())
     .pipe(gulp.dest('docs'));
 });
 
