@@ -36,29 +36,29 @@ gulp.task('min-svg', function () {
     .pipe(svgo());
 });
 
-gulp.task('dist-resources', function() {
+gulp.task('docs-resources', function() {
 
   gulp.src('files/*')
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('docs'));
 
   gulp.src('images/!(*.svg)')
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('docs/images'));
 
   gulp.src('index.html')
     .pipe(injectSvg())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('docs'));
 });
 
-gulp.task('dist-code', function() {
+gulp.task('docs-code', function() {
 
   gulp.src('min/styles.min.css')
-    .pipe(gulp.dest('dist/min'));
+    .pipe(gulp.dest('docs/min'));
 
   gulp.src('min/scripts.min.js')
-    .pipe(gulp.dest('dist/min'));
+    .pipe(gulp.dest('docs/min'));
 });
 
-gulp.task('build', ['js', 'scss', 'dist-resources', 'dist-code'], function () {});
+gulp.task('build', ['js', 'scss', 'docs-resources', 'docs-code'], function () {});
 
 gulp.task('default', ['js', 'scss'], function() {
   gulp.watch('scripts/**/*.js', ['js']);

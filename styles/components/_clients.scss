@@ -5,6 +5,14 @@
 
     li{
     	position: relative;
+
+    	&:hover{
+
+    		.client-logo{
+    			padding: 0 4vw;
+    			transition: padding .1s ease-out;
+    		}
+    	}
     }
 
     .client-logo{
@@ -17,7 +25,8 @@
     	display: flex;
     	justify-content: center;
     	align-items: center;
-    	padding: 4vw;
+    	padding: 0 4.25vw;
+    	transition: padding .25s ease-out;
     }
 
     .client-bg{
