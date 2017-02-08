@@ -12,8 +12,8 @@ var gulp = require('gulp')
     prefixer = require('gulp-autoprefixer')
     sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('scss', function () {
-
+// Minify tasks
+gulp.task('min-scss', function () {
   gulp.src('styles/source.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -24,8 +24,7 @@ gulp.task('scss', function () {
     .pipe(gulp.dest('min'));
 });
 
-gulp.task('js', function () {
-
+gulp.task('min-js', function () {
   gulp.src(['scripts/base/*.js', 'scripts/vendor/*.js', 'scripts/*.js'])
     .pipe(concat('main.js'))
     .pipe(uglify())
@@ -34,68 +33,46 @@ gulp.task('js', function () {
 });
 
 gulp.task('min-svg', function () {
-  
   gulp.src('images/*.svg')
     .pipe(svgo());
-
-  console.log('min-svg has run');
 });
 
-gulp.task('docs-svg', function(done) {
-  
-  gulp.src('index.html')
-    .pipe(injectsvg())
-    .pipe(gulp.dest('docs'));
-
-  done();
-
-  console.log('docs-svg has run');
+// Build tasks
+gulp.task('pre-build', function () {
+  return del(['docs/!(*CNAME)']);
 });
 
-gulp.task('docs-img', function() {
-  
-  gulp.src('images/!(*.svg)')
+gulp.task('build-img', function() {
+  return gulp.src('images/!(*.svg)')
     .pipe(imagemin())
     .pipe(gulp.dest('docs/images'));
-
-  console.log('docs-img has run');
 });
 
-gulp.task('docs-files', function() {
+gulp.task('build-code', function() {
+  return gulp.src(['min/styles.min.css', 'min/scripts.min.js'])
+    .pipe(gulp.dest('docs/min'));
+});
 
-  gulp.src('files/*')
+gulp.task('build-files', function() {
+  return gulp.src('files/*')
     .pipe(gulp.dest('docs'));
-
-  console.log('docs-files has run');
 });
 
-gulp.task('docs-code', function() {
-
-  gulp.src('min/styles.min.css')
-    .pipe(gulp.dest('docs/min'));
-
-  gulp.src('min/scripts.min.js')
-    .pipe(gulp.dest('docs/min'));
-
-  console.log('docs-code has run');
+gulp.task('build-index', function() {
+  return gulp.src('index.html')
+    .pipe(injectsvg())
+    .pipe(gulp.dest('docs'));
 });
 
-gulp.task('pre-build', function () {
-
-  return del.sync(['docs/!(*CNAME)']);
-  console.log('pre-build has run');
-});
-
+// Watch task
 gulp.task('default', ['js', 'scss'], function() {
-
-  gulp.watch('scripts/**/*.js', ['js']);
-  gulp.watch('styles/**/*.scss', ['scss']);
-  gulp.watch('index.html', ['build']);
+  gulp.watch('scripts/**/*.js', ['min-js']);
+  gulp.watch('styles/**/*.scss', ['min-scss']);
 });
 
+// Build task
 gulp.task('build', function(done) {
-  runsequence('pre-build', 'js', 'scss', 'docs-img', 'docs-files', 'docs-code', 'docs-svg', function() {
-    console.log('Everything has run');
+  runsequence('pre-build', ['build-img', 'build-code', 'build-files'], 'build-index', function() {
     done();
   });
 });
