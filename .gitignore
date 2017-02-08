@@ -1,8 +1,5 @@
 # Ignore gulp node modules
 node_modules
 
-# Ignore ssh access file
-eric-shell.pem
-
 # Ignore Mac DS_Store files
 .DS_Store
