@@ -45,23 +45,23 @@ gulp.task('pre-build', function () {
 gulp.task('build-img', function() {
   return gulp.src('images/!(*.svg)')
     .pipe(imagemin())
-    .pipe(gulp.dest('docs/images'));
+    .pipe(gulp.dest('docs/images/'));
 });
 
 gulp.task('build-code', function() {
   return gulp.src(['min/styles.min.css', 'min/scripts.min.js'])
-    .pipe(gulp.dest('docs/min'));
+    .pipe(gulp.dest('docs/min/'));
 });
 
 gulp.task('build-files', function() {
   return gulp.src('files/*')
-    .pipe(gulp.dest('docs'));
+    .pipe(gulp.dest('docs/'));
 });
 
 gulp.task('build-index', function() {
   return gulp.src('index.html')
     .pipe(injectsvg())
-    .pipe(gulp.dest('docs'));
+    .pipe(gulp.dest('docs/'));
 });
 
 // Full build task
