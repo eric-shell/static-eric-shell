@@ -1,5 +1,5 @@
 var gulp = require('gulp')
-    del = require('del');
+    del = require('del')
     svgo = require('gulp-svgo')
     sass = require('gulp-sass')
     clean = require('gulp-clean-css')
@@ -37,7 +37,7 @@ gulp.task('min-svg', function () {
     .pipe(svgo());
 });
 
-// Build tasks
+// Individual build tasks
 gulp.task('pre-build', function () {
   return del(['docs/!(*CNAME)']);
 });
@@ -64,15 +64,15 @@ gulp.task('build-index', function() {
     .pipe(gulp.dest('docs'));
 });
 
-// Watch task
-gulp.task('default', ['js', 'scss'], function() {
-  gulp.watch('scripts/**/*.js', ['min-js']);
-  gulp.watch('styles/**/*.scss', ['min-scss']);
-});
-
-// Build task
+// Full build task
 gulp.task('build', function(done) {
   runsequence('pre-build', ['build-img', 'build-code', 'build-files'], 'build-index', function() {
     done();
   });
+});
+
+// Watch tasks
+gulp.task('default', ['js', 'scss'], function() {
+  gulp.watch('scripts/**/*.js', ['min-js']);
+  gulp.watch('styles/**/*.scss', ['min-scss']);
 });
