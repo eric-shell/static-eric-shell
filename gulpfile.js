@@ -1,4 +1,5 @@
 var gulp = require('gulp')
+    del = require('del');
     svgo = require('gulp-svgo')
     sass = require('gulp-sass')
     clean = require('gulp-clean-css')
@@ -6,6 +7,7 @@ var gulp = require('gulp')
     concat = require('gulp-concat')
     uglify = require('gulp-uglify')
     imagemin = require('gulp-imagemin')
+    runsequence = require('run-sequence')
     injectsvg = require('gulp-inject-svg')
     prefixer = require('gulp-autoprefixer')
     sourcemaps = require('gulp-sourcemaps');
@@ -35,20 +37,36 @@ gulp.task('min-svg', function () {
   
   gulp.src('images/*.svg')
     .pipe(svgo());
+
+  console.log('min-svg has run');
 });
 
-gulp.task('docs-resources', function() {
-
-  gulp.src('files/*')
+gulp.task('docs-svg', function(done) {
+  
+  gulp.src('index.html')
+    .pipe(injectsvg())
     .pipe(gulp.dest('docs'));
 
+  done();
+
+  console.log('docs-svg has run');
+});
+
+gulp.task('docs-img', function() {
+  
   gulp.src('images/!(*.svg)')
     .pipe(imagemin())
     .pipe(gulp.dest('docs/images'));
 
-  gulp.src('index.html')
-    .pipe(injectsvg())
+  console.log('docs-img has run');
+});
+
+gulp.task('docs-files', function() {
+
+  gulp.src('files/*')
     .pipe(gulp.dest('docs'));
+
+  console.log('docs-files has run');
 });
 
 gulp.task('docs-code', function() {
@@ -58,11 +76,26 @@ gulp.task('docs-code', function() {
 
   gulp.src('min/scripts.min.js')
     .pipe(gulp.dest('docs/min'));
+
+  console.log('docs-code has run');
 });
 
-gulp.task('build', ['js', 'scss', 'docs-resources', 'docs-code'], function () {});
+gulp.task('pre-build', function () {
+
+  return del.sync(['docs/!(*CNAME)']);
+  console.log('pre-build has run');
+});
 
 gulp.task('default', ['js', 'scss'], function() {
+
   gulp.watch('scripts/**/*.js', ['js']);
   gulp.watch('styles/**/*.scss', ['scss']);
+  gulp.watch('index.html', ['build']);
+});
+
+gulp.task('build', function(done) {
+  runsequence('pre-build', 'js', 'scss', 'docs-img', 'docs-files', 'docs-code', 'docs-svg', function() {
+    console.log('Everything has run');
+    done();
+  });
 });
