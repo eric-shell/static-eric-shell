@@ -75,4 +75,5 @@ gulp.task('build', function(done) {
 gulp.task('default', ['min-js', 'min-scss'], function() {
   gulp.watch('scripts/**/*.js', ['min-js']);
   gulp.watch('styles/**/*.scss', ['min-scss']);
+  gulp.watch('index.html', ['build']);
 });
