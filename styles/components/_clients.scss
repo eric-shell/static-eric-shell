@@ -2,16 +2,35 @@
 
   #clients{
     background: $black;
+    position: relative;
+
+    &:before{
+      content: '';
+      width: 100%;
+      height: 75px;
+      position: absolute;
+      left: 0;
+      top: -50px;
+      transform: skewY(2deg);
+      background: $black;
+      z-index: 15;
+    }
 
     li{
     	position: relative;
+      overflow: hidden;
 
     	&:hover{
 
     		.client-logo{
     			padding: 0 4vw;
-    			transition: padding .1s ease-out;
+    			transition: padding .25s ease-out;
     		}
+
+        .client-bg{
+          transform: scale(1.05);
+          transition: transform ease-out 1.5s;
+        }
     	}
     }
 
@@ -26,12 +45,13 @@
     	justify-content: center;
     	align-items: center;
     	padding: 0 4.25vw;
-    	transition: padding .25s ease-out;
+    	transition: padding .1s ease-out;
     }
 
     .client-bg{
     	z-index: 5;
     	position: relative;
+      transition: transform ease-out .1s;
     }
   }
 }
