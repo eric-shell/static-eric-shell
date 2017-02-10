@@ -6,6 +6,11 @@ html{
 // Setting the basic content background
 body{
   background: $white;
+  animation: reveal 2s;
+
+  &.loading{
+    opacity: 0;
+  }
 }
 
 // Box sizing model
