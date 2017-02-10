@@ -13,22 +13,22 @@ var gulp = require('gulp')
     sourcemaps = require('gulp-sourcemaps');
 
 // Minify tasks
-gulp.task('min-scss', function () {
-  gulp.src('styles/source.scss')
+gulp.task('min-sass', function () {
+  gulp.src('sass/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefixer())
     .pipe(clean())
-    .pipe(rename('styles.min.css'))
+    .pipe(rename('main.min.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('min'));
 });
 
 gulp.task('min-js', function () {
-  gulp.src(['scripts/base/*.js', 'scripts/vendor/*.js', 'scripts/*.js'])
+  gulp.src(['js/base/*.js', 'js/vendor/*.js', 'js/*.js'])
     .pipe(concat('main.js'))
     .pipe(uglify())
-    .pipe(rename('scripts.min.js'))
+    .pipe(rename('main.min.js'))
     .pipe(gulp.dest('min'));
 });
 
@@ -49,7 +49,7 @@ gulp.task('build-img', function() {
 });
 
 gulp.task('build-code', function() {
-  return gulp.src(['min/styles.min.css', 'min/scripts.min.js'])
+  return gulp.src(['min/main.min.css', 'min/main.min.js'])
     .pipe(gulp.dest('docs/min/'));
 });
 
@@ -72,8 +72,8 @@ gulp.task('build', function(done) {
 });
 
 // Watch tasks
-gulp.task('default', ['min-js', 'min-scss'], function() {
-  gulp.watch('scripts/**/*.js', ['min-js']);
-  gulp.watch('styles/**/*.scss', ['min-scss']);
+gulp.task('default', ['min-js', 'min-sass'], function() {
+  gulp.watch('js/**/*.js', ['min-js']);
+  gulp.watch('sass/**/*.scss', ['min-sass']);
   gulp.watch('index.html', ['build']);
 });

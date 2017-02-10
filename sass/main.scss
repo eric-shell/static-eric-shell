@@ -1,0 +1,19 @@
+// Modules and Variables
+@import "modules/colors";
+@import "modules/variables";
+@import "modules/mixins";
+@import "modules/keyframes";
+@import "modules/reset";
+
+// Third-party
+@import "vendor/slick";
+
+// Partials
+@import "partials/type";
+@import "partials/header";
+@import "partials/freelance";
+@import "partials/about";
+@import "partials/clients";
+@import "partials/resume";
+@import "partials/footer";
+@import "partials/slider";
