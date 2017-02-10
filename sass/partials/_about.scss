@@ -9,6 +9,10 @@
       padding: 7rem 1.5rem 5rem;
     }
 
+    &.bottom{
+      padding: 5rem 1.5rem 8rem;
+    }
+
     p{
       @include container;
       text-align: center;
