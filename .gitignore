@@ -1,4 +1,4 @@
-# Ignore gulp node modules
+# Ignore local dev files
 node_modules
 
 # Ignore Mac DS_Store files
