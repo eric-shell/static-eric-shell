@@ -3,40 +3,13 @@
   .about{
   	position: relative;
   	background: $black;
-  	padding: 6rem 1.5rem;
-
-    &.top{
-      padding: 7rem 1.5rem 5rem;
-    }
-
-    &.bottom{
-      padding: 4rem 1.5rem 10rem;
-    }
+    padding: 10em 1.5em;
 
     p{
-      @include container;
-      padding: 1em 0;
+      width: 100%;
+      max-width: $container-width;
+      margin: 0 auto;
       color: $white;
-    }
-  }
-}
-
-@media #{$large-up}{
-
-  .about{
-
-    &.top{
-
-      &:before{
-        content: '';
-        width: 100%;
-        height: 75px;
-        position: absolute;
-        left: 0;
-        top: -50px;
-        transform: skewY(2deg);
-        background: $violet;
-      }
     }
   }
 }

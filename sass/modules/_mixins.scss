@@ -1,9 +1,3 @@
-@mixin container{
-  width: 100%;
-  max-width: 750px;
-  margin: 0 auto;
-}
-
 @mixin button-squared($base-color: $white, $active-text-color: $blue){
   display: inline-block;
   color: $base-color;

@@ -18,7 +18,9 @@
     }
 
   	ul{
-  		@include container;
+      width: 100%;
+      max-width: $container-width;
+      margin: 0 auto;
   		list-style: none;
   		display: flex;
 

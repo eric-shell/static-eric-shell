@@ -3,7 +3,7 @@
   #header{
     overflow: hidden;
     position: relative;
-    background: $blue;
+    background: $violet;
 
     #profile{
       z-index: 10;
@@ -32,7 +32,7 @@
       justify-content: center;
       align-items: center;
 
-      &:before{
+      &:after{
         content: '';
         width: 100%;
         height: 85px;
@@ -51,10 +51,11 @@
 
   #header{
     display: flex;
+    background: $blue;
 
     #profile{
       z-index: 5;
-      flex-basis: 50%;
+      width: 50%;
 
       #headshot{
         padding-right: 25%;
@@ -73,17 +74,13 @@
     #intro{
       padding: 0;
       z-index: 10;
-      flex-basis: 50%;
+      width: 50%;
       animation: 1s ease-out fromRight;
-
-      &:before{
-        display: none;
-      }
 
       p{
         position: relative;
         top: 0;
-        left: -10%;
+        left: -3vw;
         font-size: 2vw;
       }
 
@@ -97,7 +94,6 @@
         height: 200%;
         transform: rotate(14deg);
         background: $white;
-        transition: all ease-out .15s;
       }
     }
   }
@@ -107,24 +103,12 @@
 
   #header{
 
-    &:after{
-      content: '';
-      width: 100%;
-      height: 75px;
-      position: absolute;
-      z-index: 10;
-      left: 0;
-      bottom: -50px;
-      transform: skewY(2deg);
-      background: $blue;
-    }
-
     #profile{
-      flex-basis: 60%;
+      width: 60%;
     }
 
     #intro{
-      flex-basis: 40%;
+      width: 40%;
 
       p{
         left: -12%;
@@ -134,7 +118,6 @@
       &:after{
         left: -33%;
         transform: rotate(29deg);
-        transition: all ease-out .15s;
       }
     }
   }
