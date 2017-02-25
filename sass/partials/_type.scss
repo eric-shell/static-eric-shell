@@ -23,6 +23,14 @@ body{
     font-weight: 600;
     text-transform: uppercase;
   }
+
+  ul{
+    list-style: none;
+
+    li{
+      color: $white;
+    }
+  }
 }
 
 @media #{$medium-up}{

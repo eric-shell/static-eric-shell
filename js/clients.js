@@ -1,12 +1,13 @@
 (function ($) {
 	$(document).ready(function() {
 
-		$('#clients ul').slick({
+		$('#clients .slider').slick({
       dots: true,
       arrows: false,
       lazyLoad: 'ondemand',
 			slidesToShow: 4,
   		slidesToScroll: 4,
+      accessibility: false,
       responsive: [
         {
           breakpoint: 1000,
