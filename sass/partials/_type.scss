@@ -18,18 +18,22 @@ body{
     }
   }
 
-  h1{
-    font-size: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
   ul{
     list-style: none;
 
     li{
       color: $white;
     }
+  }
+
+  span{
+    color: $white;
+  }
+
+  h1{
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 }
 
