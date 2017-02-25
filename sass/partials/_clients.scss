@@ -47,6 +47,10 @@
     }
 
     .slick-dots{
+      position: absolute;
+      left: 0;
+      bottom: -5em;
+      padding: 1.5em 0;
       
       li{
         transform: skewY(-1deg);
@@ -58,7 +62,7 @@
 @media #{$large-up}{
 
   #clients{
-    margin: -3vw 0;
+    margin: -3.5vw 0;
     transform: skewY(2deg);
 
     .client-logo{

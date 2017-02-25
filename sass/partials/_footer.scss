@@ -3,16 +3,16 @@
   #footer{
     position: relative;
   	background: $violet;
-  	padding: 4.5rem 1.5rem 6.5rem;
+  	padding: 10vw 1.5vw 12.5vw;
 
     &:before{
       content: '';
       width: 100%;
-      height: 75px;
+      height: 6vw;
       position: absolute;
       left: 0;
-      top: -50px;
-      transform: skewY(2deg);
+      top: -3vw;
+      transform: skewY(1deg);
       background: $violet;
       z-index: 15;
     }
@@ -23,29 +23,71 @@
       margin: 0 auto;
   		list-style: none;
   		display: flex;
+      flex-direction: column;
 
   		li{
-        font-size: 1.6vw;
+        margin: .75em 0;
+        font-size: 1.25rem;
   			color: $white;
 
   			a{
           @include link($violet, $white);
   				color: $white;
-  				margin: 0 0 0 1.25em;
   			}
 
-   			&:first-child{
-
-  				a{
-  					margin: 0;
-  				}
-  			}
-
-  			&:last-child{
-	  			flex-grow: 1;
-	  			text-align: right;
-	  		}
+        &:last-child{
+          margin: 5em 0 .75em;
+        }
   		}
   	}
+  }
+}
+
+@media #{$medium-up}{
+
+  #footer{
+
+    ul{
+
+      li{
+        font-size: 2.25vw;
+      }
+    }
+  }
+}
+
+@media #{$large-up}{
+
+  #footer{
+
+    &:before{
+      transform: skewY(2deg);
+    }
+
+    ul{
+      flex-direction: row;
+
+      li{
+        margin: 0;
+        font-size: 1.75vw;
+
+        a{
+          margin: 0 0 0 1.25em;
+        }
+
+        &:first-child{
+
+          a{
+            margin: 0;
+          }
+        }
+
+        &:last-child{
+          margin: 0;
+          flex-grow: 1;
+          text-align: right;
+        }
+      }
+    }
   }
 }
