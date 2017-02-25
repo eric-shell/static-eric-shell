@@ -4,6 +4,12 @@
     z-index: 20;
     position: relative;
     margin: -1.5vw 0;
+    font-size: 1.25rem;
+    line-height: 2;
+
+    a{
+      cursor: pointer;
+    }
 
     .pane{
       display: none;
@@ -69,11 +75,18 @@
     }
   }
 }
+@media #{$large-up}{
+
+  #resume{
+    font-size: 2.25vw;
+  }
+}
 
 @media #{$large-up}{
 
   #resume{
     margin: -3vw 0;
+    font-size: 1.75vw;
 
     .pane{
 
