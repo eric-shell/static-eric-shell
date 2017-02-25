@@ -5,14 +5,14 @@
 
       event.preventDefault(e);
 
-      $(this).parent().parent().next('.pane').addClass('visible').find('.slider').slick({
+      $(this).closest('.pane').next('.pane').addClass('visible').find('.slider').slick({
         dots: true,
         arrows: false,
         accessibility: false
       });
 
       $('html,body').animate({
-        scrollTop:$(this).parent().parent().next().offset().top
+        scrollTop:$(this).closest('.pane').next('.pane').offset().top
       }, 250);
     });
 
