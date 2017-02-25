@@ -10,5 +10,10 @@
       max-width: $container-width;
       margin: 0 auto;
     }
+
+    a{
+      color: $white;
+      @include link($black, $white);
+    }
   }
 }
