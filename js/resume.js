@@ -8,7 +8,8 @@
       $(this).closest('.pane').next('.pane').addClass('visible').find('.slider').slick({
         dots: true,
         arrows: false,
-        accessibility: false
+        accessibility: false,
+        adaptiveHeight: true
       });
 
       $('html,body').animate({

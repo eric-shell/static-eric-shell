@@ -32,6 +32,7 @@
           align-content: center;
           justify-content: center;
           max-width: 100%;
+          min-height: 500px;
         }
       }
 
@@ -60,14 +61,25 @@
     }
 
     .pane-container{
-      height: 100%;
-      min-height: 500px;
+      padding: 5rem 0;
       width: 100%;
       max-width: 55vw;
       margin: 0 auto;
+
+      p,
+      li,
+      span{
+        font-size: 1.5vw;
+        display: block;
+      }
+
+      .pane-title{
+        font-size: 1.8vw;
+      }
     }
 
     .pane-title{
+      font-weight: 900;
       text-transform: uppercase;
 
       a{
@@ -78,6 +90,10 @@
     .pane-actions{
       display: flex;
       justify-content: center;
+    }
+
+    .slick-dots{
+      padding: 1rem 0;
     }
   }
 }
