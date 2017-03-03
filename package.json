@@ -1,6 +1,6 @@
 {
   "name": "eric-shell",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "readme": "https://github.com/eric-shell/eric-shell-html",
   "repository": "git@github.com:eric-shell/eric-shell-html.git",
   "description": "Collection of gulp plugins to properly port code to their respective development format",
