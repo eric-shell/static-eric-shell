@@ -8,21 +8,67 @@
 @media #{$medium-up}{
 
   #freelance{
-    display: block;
+    width: 100%;
+    display: flex;
     position: relative;
-    z-index: 10;
-    background: $cyan;
-    margin: -1.5vw 0;
-    padding: 3vw 1.5vw;
     transform: skewY(-1deg);
+    z-index: 10;
 
-    p{
+    .slogan{
+      position: relative;
+      background: $cyan;
       width: 100%;
-      max-width: $container-width;
-      color: $white;
-      text-align: center;
-      margin: 0 auto;
-      transform: skewY(1deg);
+      height: 100%;
+      margin: -1.5vw 0;
+      padding: 3vw 1.5vw;
+
+      &:before,
+      &:after{
+        content: '';
+        width: 100%;
+        height: 50%;
+        z-index: -1;
+        position: absolute;
+        transform: skewY(1.5deg);
+        transition: $out-transition;
+      }
+
+      &:before{
+        top: 2.5vw;
+        left: 0;
+        background: $blue;
+      }
+
+      &:after{
+        bottom: 2.5vw;
+        right: 0;
+        background: $violet;
+      }
+
+      &.hover{
+
+        &:before,
+        &:after{
+          transition: $in-transition;
+        }
+
+        &:before{
+          top: 0;
+        }
+
+        &:after{
+          bottom: 0;
+        }
+      }
+
+      p{
+        width: 100%;
+        max-width: $container-width;
+        color: $white;
+        text-align: center;
+        margin: 0 auto;
+        transform: skewY(1deg);
+      }
     }
   }
 }
@@ -30,11 +76,19 @@
 @media #{$large-up}{
 
   #freelance{
-    margin: -3vw 0;
     transform: skewY(-2deg);
 
-    p{
-      transform: skewY(2deg);
+    .slogan{
+      margin: -3vw 0;
+
+      &:before,
+      &:after{
+        transform: skewY(3deg);
+      }
+
+      p{
+        transform: skewY(2deg);
+      }
     }
   }
 }
