@@ -29,18 +29,17 @@
         height: 50%;
         z-index: -1;
         position: absolute;
-        transform: skewY(1.5deg);
         transition: $out-transition;
       }
 
       &:before{
-        top: 2.5vw;
+        top: 0;
         left: 0;
         background: $blue;
       }
 
       &:after{
-        bottom: 2.5vw;
+        bottom: 0;
         right: 0;
         background: $violet;
       }
@@ -49,15 +48,8 @@
 
         &:before,
         &:after{
-          transition: $in-transition;
-        }
-
-        &:before{
-          top: 0;
-        }
-
-        &:after{
-          bottom: 0;
+          transition: $out-transition;
+          transform: skewY(2.5deg);
         }
       }
 
@@ -81,9 +73,12 @@
     .slogan{
       margin: -3vw 0;
 
-      &:before,
-      &:after{
-        transform: skewY(3deg);
+      &.hover{
+
+        &:before,
+        &:after{
+          transform: skewY(3deg);
+        }
       }
 
       p{
