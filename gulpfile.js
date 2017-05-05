@@ -26,8 +26,8 @@ gulp.task('min-sass', function () {
 
 gulp.task('min-js', function () {
   gulp.src(['js/base/*.js', 'js/vendor/*.js', 'js/*.js'])
+    .pipe(uglify().on('error', function(e){console.log(e);}))
     .pipe(concat('main.js'))
-    .pipe(uglify())
     .pipe(rename('main.min.js'))
     .pipe(gulp.dest('min'));
 });
