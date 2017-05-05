@@ -13,8 +13,8 @@ var gulp = require('gulp')
     sourcemaps = require('gulp-sourcemaps');
 
 // Minify tasks
-gulp.task('min-sass', function () {
-  gulp.src('sass/main.scss')
+gulp.task('min-scss', function () {
+  gulp.src('scss/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefixer())
@@ -72,8 +72,8 @@ gulp.task('build', function(done) {
 });
 
 // Watch tasks
-gulp.task('default', ['min-js', 'min-sass'], function() {
+gulp.task('default', ['min-js', 'min-scss'], function() {
   gulp.watch('js/**/*.js', ['min-js']);
-  gulp.watch('sass/**/*.scss', ['min-sass']);
+  gulp.watch('sass/**/*.scss', ['min-scss']);
   gulp.watch('index.html', ['build']);
 });
