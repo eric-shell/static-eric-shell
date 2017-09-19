@@ -5,9 +5,6 @@
 @import "modules/mixins";
 @import "modules/reset";
 
-// Third-party
-@import "vendor/slick";
-
 // Partials
 @import "partials/type";
 @import "partials/header";
@@ -16,4 +13,3 @@
 @import "partials/clients";
 @import "partials/resume";
 @import "partials/footer";
-@import "partials/slider";

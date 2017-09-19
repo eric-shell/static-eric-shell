@@ -3,17 +3,37 @@
   .about{
   	position: relative;
   	background: $black;
-    padding: 18vw 1.5vw;
+    padding: 18vw 1.5rem;
 
     p{
       width: 100%;
-      max-width: $container-width;
       margin: 0 auto;
     }
 
     a{
       color: $white;
       @include link($black, $white);
+    }
+  }
+}
+
+@media #{$medium-up}{
+
+  .about {
+    padding: 18vw 1.5vw;
+
+    p{
+      max-width: 80vw;
+    }
+  }
+}
+
+@media #{$large-up}{
+
+  .about {
+
+    p{
+      max-width: 60vw;
     }
   }
 }
