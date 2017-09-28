@@ -10,18 +10,15 @@ var gulp = require('gulp')
     runsequence = require('run-sequence')
     injectsvg = require('gulp-inject-svg')
     prefixer = require('gulp-autoprefixer')
-    sourcemaps = require('gulp-sourcemaps')
     fileinclude = require('gulp-file-include');
 
 // Minify tasks
 gulp.task('min-scss', function () {
   gulp.src('scss/main.scss')
-    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefixer())
     .pipe(clean())
     .pipe(rename('main.min.css'))
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('docs/min'));
 });
 
