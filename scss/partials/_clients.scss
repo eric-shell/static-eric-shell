@@ -3,15 +3,12 @@
   #clients{
     background: $black;
     position: relative;
-    z-index: 20;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    transform: skewY(1deg);
 
-    ul{
-      display: flex;
-      flex-wrap: wrap;
-      transform: skewY(1deg);
-    }
-
-    li{
+    a{
       position: relative;
       overflow: hidden;
       width: 50%;
@@ -56,12 +53,9 @@
 @media #{$medium-up}{
 
   #clients{
+    transform: skewY(2deg);
 
-    ul{
-      transform: skewY(2deg);
-    }
-
-    li{
+    a{
       width: 25%;
     }
 
