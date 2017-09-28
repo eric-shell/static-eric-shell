@@ -39,6 +39,11 @@ gulp.task('pre-build', function () {
   return del(['docs/!(*CNAME)']);
 });
 
+gulp.task('move-imgs', function() {
+  return gulp.src('images/!(*.svg)')
+    .pipe(gulp.dest('docs/images/'));
+});
+
 gulp.task('move-files', function() {
   return gulp.src('files/*')
     .pipe(gulp.dest('docs/'));
@@ -56,7 +61,7 @@ gulp.task('build-index', function() {
 
 // Full build task
 gulp.task('build', function(done) {
-  runsequence('pre-build', ['min-js', 'min-scss', 'move-files'], 'build-index', function() {
+  runsequence('pre-build', ['min-js', 'min-scss'], ['move-imgs', 'move-files'], 'build-index', function() {
     done();
   });
 });
