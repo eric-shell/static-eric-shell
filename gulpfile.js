@@ -10,7 +10,8 @@ var gulp = require('gulp')
     runsequence = require('run-sequence')
     injectsvg = require('gulp-inject-svg')
     prefixer = require('gulp-autoprefixer')
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps = require('gulp-sourcemaps')
+    fileinclude = require('gulp-file-include');
 
 // Minify tasks
 gulp.task('min-scss', function () {
@@ -60,13 +61,17 @@ gulp.task('build-files', function() {
 
 gulp.task('build-index', function() {
   return gulp.src('index.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: 'html'
+    }))
     .pipe(injectsvg())
     .pipe(gulp.dest('docs/'));
 });
 
 // Full build task
 gulp.task('build', function(done) {
-  runsequence('pre-build', ['build-img', 'build-code', 'build-files'], 'build-index', function() {
+  runsequence('pre-build', ['min-js', 'min-scss'], ['build-img', 'build-code', 'build-files'], 'build-index', function() {
     done();
   });
 });
@@ -75,5 +80,6 @@ gulp.task('build', function(done) {
 gulp.task('default', ['min-js', 'min-scss'], function() {
   gulp.watch('js/**/*.js', ['min-js']);
   gulp.watch('scss/**/*.scss', ['min-scss']);
+  gulp.watch('html/**/*.html', ['build']);
   gulp.watch('index.html', ['build']);
 });
