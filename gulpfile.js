@@ -6,7 +6,6 @@ var gulp = require('gulp')
     rename = require('gulp-rename')
     concat = require('gulp-concat')
     uglify = require('gulp-uglify')
-    imagemin = require('gulp-imagemin')
     runsequence = require('run-sequence')
     injectsvg = require('gulp-inject-svg')
     prefixer = require('gulp-autoprefixer')
@@ -40,13 +39,7 @@ gulp.task('pre-build', function () {
   return del(['docs/!(*CNAME)']);
 });
 
-gulp.task('build-img', function() {
-  return gulp.src('images/!(*.svg)')
-    .pipe(imagemin())
-    .pipe(gulp.dest('docs/images/'));
-});
-
-gulp.task('build-files', function() {
+gulp.task('move-files', function() {
   return gulp.src('files/*')
     .pipe(gulp.dest('docs/'));
 });
@@ -63,7 +56,7 @@ gulp.task('build-index', function() {
 
 // Full build task
 gulp.task('build', function(done) {
-  runsequence('pre-build', ['min-js', 'min-scss'], ['build-img', 'build-files'], 'build-index', function() {
+  runsequence('pre-build', ['min-js', 'min-scss', 'move-files'], 'build-index', function() {
     done();
   });
 });
