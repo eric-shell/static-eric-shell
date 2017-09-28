@@ -4,7 +4,6 @@ $(function() {
   $('.lazy').Lazy({
     effect: 'fadeIn',
     effectTime: 250,
-    threshold: 0,
     combined: true,
     delay: 7500
   });
