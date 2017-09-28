@@ -22,7 +22,7 @@ gulp.task('min-scss', function () {
     .pipe(clean())
     .pipe(rename('main.min.css'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('min'));
+    .pipe(gulp.dest('docs/min'));
 });
 
 gulp.task('min-js', function () {
@@ -30,7 +30,7 @@ gulp.task('min-js', function () {
     .pipe(uglify().on('error', function(e){console.log(e);}))
     .pipe(concat('main.js'))
     .pipe(rename('main.min.js'))
-    .pipe(gulp.dest('min'));
+    .pipe(gulp.dest('docs/min'));
 });
 
 gulp.task('min-svg', function () {
@@ -49,21 +49,16 @@ gulp.task('build-img', function() {
     .pipe(gulp.dest('docs/images/'));
 });
 
-gulp.task('build-code', function() {
-  return gulp.src(['min/main.min.css', 'min/main.min.js'])
-    .pipe(gulp.dest('docs/min/'));
-});
-
 gulp.task('build-files', function() {
   return gulp.src('files/*')
     .pipe(gulp.dest('docs/'));
 });
 
 gulp.task('build-index', function() {
-  return gulp.src('index.html')
+  return gulp.src('html/index.html')
     .pipe(fileinclude({
       prefix: '@@',
-      basepath: 'html'
+      basepath: 'html/partials'
     }))
     .pipe(injectsvg())
     .pipe(gulp.dest('docs/'));
@@ -71,7 +66,7 @@ gulp.task('build-index', function() {
 
 // Full build task
 gulp.task('build', function(done) {
-  runsequence('pre-build', ['min-js', 'min-scss'], ['build-img', 'build-code', 'build-files'], 'build-index', function() {
+  runsequence('pre-build', ['min-js', 'min-scss'], ['build-img', 'build-files'], 'build-index', function() {
     done();
   });
 });
