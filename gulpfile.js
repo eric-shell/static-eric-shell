@@ -72,7 +72,7 @@ gulp.task('build', function(done) {
 });
 
 // Watch tasks
-gulp.task('default', ['min-js', 'min-scss'], function() {
+gulp.task('default', ['build'], function() {
   gulp.watch('js/**/*.js', ['min-js']);
   gulp.watch('scss/**/*.scss', ['min-scss']);
   gulp.watch('html/**/*.html', ['build']);
