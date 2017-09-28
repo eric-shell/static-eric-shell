@@ -19,6 +19,7 @@ a.link{
   transition: $out-transition;
   text-decoration: none;
   position: relative;
+  cursor: pointer;
 
   &:focus,
   &:hover{
