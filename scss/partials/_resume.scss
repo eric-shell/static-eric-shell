@@ -6,8 +6,8 @@
     margin: -1.5vw 0;
     line-height: 2;
 
-    a{
-      cursor: pointer;
+    span.btn{
+      @include button;
     }
 
     .pane{
@@ -102,7 +102,11 @@
 
       &:first-child,
       &:last-child{
-        font-size: 2rem;
+
+        a,
+        span {
+          font-size: 2rem;
+        }
       }
     }
   }

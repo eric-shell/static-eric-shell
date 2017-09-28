@@ -3,7 +3,7 @@
   #footer {
     position: relative;
     background: $violet;
-    padding: 10vw 1.5rem 12.5vw;
+    padding: 17.5vw 1.5rem 12.5vw;
 
     &:before {
       content: '';
@@ -60,7 +60,6 @@
 @media #{$large-up}{
 
   #footer {
-    padding: 10vw 1.5vw 12.5vw;
 
     &:before {
       transform: skewY(2deg);
