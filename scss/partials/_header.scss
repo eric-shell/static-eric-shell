@@ -46,6 +46,7 @@
 
       p{
         color: $black;
+        padding: 0 0 1em;
       }
     }
   }
@@ -84,8 +85,10 @@
       p{
         position: relative;
         top: 0;
-        left: -3vw;
-        font-size: 2vw;
+        left: -4.5vw;
+        font-size: 2.25vw;
+        padding: 0 .75em;
+        text-align: justify;
       }
 
       &:after{
@@ -115,8 +118,9 @@
       width: 40%;
 
       p{
-        left: -12%;
-        font-size: 1.6vw;
+        left: -12.5%;
+        font-size: 1.75vw;
+        padding: 0 1em;
       }
 
       &:after{
