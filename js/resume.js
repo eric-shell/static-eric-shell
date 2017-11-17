@@ -5,8 +5,8 @@
     $(this).closest('.pane').next('.pane').addClass('visible');
 
     $('html,body').animate({
-      scrollTop: $(this).closest('.pane').next('.pane').offset().top
-    }, 250);
+      scrollTop: $(this).closest('.pane').next('.pane').offset().top + 100
+    }, 350);
   });
 
 })(jQuery);

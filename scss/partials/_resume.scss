@@ -67,9 +67,10 @@
       margin: 0 auto;
 
       .pane-title{
-        font-size: 2.25vw;
-        font-weight: 600;
+        font-size: 2.75vw;
+        font-weight: 900;
         text-transform: uppercase;
+        letter-spacing: -.025em;
 
         a{
           color: $white;
@@ -79,19 +80,18 @@
       p,
       li,
       span{
-        font-size: 1.4vw;
+        font-size: 1.5vw;
         display: block;
       }
 
       span.btn{
         @include button;
-        font-size: 1rem;
+        font-size: 1.75vw;
       }
     }
 
     .pane-actions{
-      font-size: 1.4vw;
-      padding: 2rem 0 1rem;
+      padding: 2em 0 1em;
       display: flex;
       justify-content: center;
     }
@@ -111,7 +111,7 @@
         a,
         span,
         span.btn{
-          font-size: 2rem;
+          font-size: 2vw;
         }
       }
     }
