@@ -20,7 +20,7 @@
       width: 100%;
       height: 100%;
       margin: -1.5vw 0 -2vw;
-      padding: 3vw 1.5vw;
+      padding: 4vw 1.5vw;
 
       &:before,
       &:after{
@@ -55,7 +55,6 @@
 
       p{
         width: 100%;
-        max-width: $container-width;
         color: $white;
         text-align: center;
         margin: 0 auto;
@@ -82,6 +81,7 @@
       }
 
       p{
+        font-size: 2vw;
         transform: skewY(2deg);
       }
     }
