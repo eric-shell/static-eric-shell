@@ -1,8 +1,8 @@
 (function ($) {
 
-  $('span.next-pane').click(function () {
+  $('#resume button').click(function () {
 
-    $(this).closest('.pane').next('.pane').addClass('visible');
+    $(this).closest('.pane').removeClass('current').next('.pane').addClass('visible').addClass('current');
 
     $('html,body').animate({
       scrollTop: $(this).closest('.pane').next('.pane').offset().top + 100

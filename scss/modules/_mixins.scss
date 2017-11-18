@@ -5,31 +5,46 @@
   box-shadow: inset 0 -.06em 0 0 $background-color, inset 0 -.165em 0 0 $underline-color;
 }
 
-a.link{
+a.lnk{
   @include link();
 }
 
 @mixin button($base-color: $white, $active-text-color: $blue){
   font-weight: 600;
   display: inline-block;
+  padding: .5em .75em;
+  margin: 0;
   color: $base-color;
   border: .15em solid $base-color;
-  margin: 0 .5em;
-  padding: .5em .75em;
   transition: $out-transition;
   text-decoration: none;
   position: relative;
   cursor: pointer;
+  line-height: 2;
+  background: transparent;
+  border-radius: 0;
+  font-size: 1em;
 
-  &:focus,
   &:hover{
     color: $active-text-color;
     background: $base-color;
     transition: $in-transition;
+  }
+
+  &:focus{
+    border: .15em solid $base-color;
   }
 }
 
 a.btn,
 button{
   @include button();
+}
+
+p{
+  > a.btn,
+  > button{
+    @include button();
+    margin: 0 .5em;
+  }
 }

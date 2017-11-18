@@ -3,7 +3,7 @@
   #footer {
     position: relative;
     background: $violet;
-    padding: 17.5vw 1.5rem 12.5vw;
+    padding: 17.5vw 7.5vw 12.5vw;
 
     &:before {
       content: '';
@@ -12,7 +12,7 @@
       position: absolute;
       left: 0;
       top: -3vw;
-      transform: skewY(1deg);
+      transform: skewY(2deg);
       background: $violet;
       z-index: 15;
     }
@@ -26,7 +26,7 @@
 
       li {
         margin: .75em 0;
-        font-size: 1.25rem;
+        font-size: 1.25em;
         color: $white;
 
         a {
@@ -46,12 +46,12 @@
 @media #{$medium-up}{
 
   #footer {
+    padding: 17.5vw 10vw 12.5vw;
 
     ul {
-      max-width: 80vw;
 
       li {
-        font-size: 2.25vw;
+        font-size: 2.5vw;
       }
     }
   }
@@ -60,14 +60,10 @@
 @media #{$large-up}{
 
   #footer {
-
-    &:before {
-      transform: skewY(2deg);
-    }
+    padding: 17.5vw 22.5vw 12.5vw;
 
     ul {
       flex-direction: row;
-      max-width: 60vw;
 
       li {
         margin: 0;
