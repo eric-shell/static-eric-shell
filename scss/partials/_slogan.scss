@@ -11,7 +11,7 @@
     width: 100%;
     display: flex;
     position: relative;
-    transform: skewY(-1deg);
+    transform: skewY(-2deg);
     z-index: 30;
 
     .slogan{
@@ -49,7 +49,7 @@
         &:before,
         &:after{
           transition: $out-transition;
-          transform: skewY(2.5deg);
+          transform: skewY(3deg);
         }
       }
 
@@ -59,7 +59,7 @@
         color: $white;
         text-align: center;
         margin: 0 auto;
-        transform: skewY(1deg);
+        transform: skewY(2deg);
       }
     }
   }
@@ -68,22 +68,12 @@
 @media #{$large-up}{
 
   #freelance{
-    transform: skewY(-2deg);
 
     .slogan{
       margin: -3vw 0 -4vw;
 
-      &.spread{
-
-        &:before,
-        &:after{
-          transform: skewY(3deg);
-        }
-      }
-
       p{
         font-size: 2vw;
-        transform: skewY(2deg);
       }
     }
   }
