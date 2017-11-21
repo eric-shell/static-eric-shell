@@ -1,11 +1,11 @@
 (function ($) {
 
   $('.slogan a').mouseover(function () {
-    $('.slogan').addClass('spread');
+    $('.slogan').addClass('hover');
   });
 
   $('.slogan a').mouseout(function () {
-    $('.slogan').removeClass('spread');
+    $('.slogan').removeClass('hover');
   });
 
 })(jQuery);
