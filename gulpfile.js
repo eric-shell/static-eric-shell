@@ -9,7 +9,7 @@ var gulp = require('gulp')
     runsequence = require('run-sequence')
     injectsvg = require('gulp-inject-svg')
     prefixer = require('gulp-autoprefixer')
-    fileinclude = require('gulp-file-include');
+    fileinclude = require('gulp-file-include')
 
 // Minify tasks
 gulp.task('min-scss', function () {
