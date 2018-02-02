@@ -1,75 +1,101 @@
-var gulp = require('gulp')
-    del = require('del')
-    svgo = require('gulp-svgo')
-    sass = require('gulp-sass')
-    clean = require('gulp-clean-css')
-    rename = require('gulp-rename')
-    concat = require('gulp-concat')
-    uglify = require('gulp-uglify')
-    runsequence = require('run-sequence')
-    injectsvg = require('gulp-inject-svg')
-    prefixer = require('gulp-autoprefixer')
-    fileinclude = require('gulp-file-include')
+var gulp = require('gulp'),
+  del = require('del'),
+  sass = require('gulp-sass'),
+  rename = require('gulp-rename'),
+  concat = require('gulp-concat'),
+  uglify = require('gulp-uglify'),
+  clean = require('gulp-clean-css'),
+  imagemin = require('gulp-imagemin'),
+  htmlclean = require('gulp-htmlclean'),
+  runsequence = require('run-sequence'),
+  prefixer = require('gulp-autoprefixer'),
+  sourcemaps = require('gulp-sourcemaps'),
+  fileinclude = require('gulp-file-include'),
+  browserSync = require('browser-sync').create();
 
-// Minify tasks
-gulp.task('min-scss', function () {
-  gulp.src('scss/main.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(prefixer())
-    .pipe(clean())
-    .pipe(rename('main.min.css'))
-    .pipe(gulp.dest('docs/min'));
-});
-
-gulp.task('min-js', function () {
-  gulp.src(['js/base/*.js', 'js/vendor/*.js', 'js/*.js'])
-    .pipe(uglify().on('error', function(e){console.log(e);}))
-    .pipe(concat('main.js'))
-    .pipe(rename('main.min.js'))
-    .pipe(gulp.dest('docs/min'));
-});
-
-gulp.task('min-svg', function () {
-  gulp.src('images/*.svg')
-    .pipe(svgo());
-});
-
-// Individual build tasks
 gulp.task('pre-build', function () {
   return del(['docs/!(*CNAME)']);
 });
 
-gulp.task('move-imgs', function() {
-  return gulp.src('images/!(*.svg)')
-    .pipe(gulp.dest('docs/images/'));
+gulp.task('min-scss', function () {
+  gulp.src('scss/main.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(prefixer())
+    .pipe(clean())
+    .pipe(rename('main.min.css'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('docs/min/css'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('min-js', function () {
+  gulp.src(['js/vendor/*.js', 'js/*.js'])
+    .pipe(uglify().on('error', function(e){console.log(e);}))
+    .pipe(concat('main.js'))
+    .pipe(rename('main.min.js'))
+    .pipe(gulp.dest('docs/min/js'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('min-html', function() {
+  return gulp.src('html/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: 'html'
+    }))
+    .pipe(htmlclean())
+    .pipe(gulp.dest('docs'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('move-files', function() {
-  return gulp.src('files/*')
-    .pipe(gulp.dest('docs/'));
+  return gulp.src('files/**/*')
+    .pipe(gulp.dest('docs/files'));
 });
 
-gulp.task('build-index', function() {
-  return gulp.src('html/index.html')
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: 'html/partials'
+gulp.task('min-img', function(done) {
+  gulp.src('images/**/*')
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
+        ]
+      })
+    ], {
+      verbose: true
     }))
-    .pipe(injectsvg())
-    .pipe(gulp.dest('docs/'));
+    .pipe(gulp.dest('docs/images'))
+    .on('end', function () { done(); })
+    .pipe(browserSync.stream());
+});
+
+gulp.task('serve', function() {
+  browserSync.init({
+    server: "./docs",
+    port: 1110,
+    ui: {
+      port: 1111
+    }
+  });
 });
 
 // Full build task
 gulp.task('build', function(done) {
-  runsequence('pre-build', ['min-js', 'min-scss'], ['move-imgs', 'move-files'], 'build-index', function() {
+  runsequence('pre-build', ['min-scss', 'min-js', 'min-html', 'move-files'], 'min-img', 'serve', function() {
     done();
   });
 });
 
-// Watch tasks
+// All Watch tasks
 gulp.task('default', ['build'], function() {
   gulp.watch('js/**/*.js', ['min-js']);
   gulp.watch('scss/**/*.scss', ['min-scss']);
-  gulp.watch('html/**/*.html', ['build']);
-  gulp.watch('index.html', ['build']);
+  gulp.watch('html/**/*.html', ['min-html']);
+  gulp.watch('images/**/*', ['min-img']);
+  gulp.watch('files/**/*', ['move-files']);
 });
