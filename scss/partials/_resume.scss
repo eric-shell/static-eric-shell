@@ -1,103 +1,100 @@
-@media #{$small-up}{
+.resume{
+  z-index: 20;
+  position: relative;
+  line-height: 2;
 
-  #resume{
-    z-index: 20;
-    position: relative;
-    line-height: 2;
+   ul{
 
-     ul{
-
-       & + ul{
-         margin: 1em 0 0;
-       }
-
-       & + button {
-         margin: 2em 0 0;
-       }
+     & + ul{
+       margin: 1em 0 0;
      }
 
-    .title{
-      font-weight: 900;
-      text-transform: uppercase;
-      font-size: 1.5em;
-      letter-spacing: -.015em;
+     & + button {
+       margin: 2em 0 0;
+     }
+   }
+
+  .title{
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: -.015em;
+  }
+
+  .pane{
+    display: none;
+    padding: 17.5vw 5vw;
+    margin: -3.5vw 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
     }
 
-    .pane{
-      display: none;
-      padding: 17.5vw 5vw;
-      margin: -3.5vw 0;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
+    &:first-child{
+      padding: 25vw 5vw 17.5vw;
 
-      > div {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
+      &:not(.current){
+        padding: 25vw 5vw 20vw;
+      }
+    }
+
+    &:last-child{
+      padding: 20vw 5vw;
+    }
+
+    &:first-child,
+    &:last-child{
+      font-size: 5vw;
+
+      p{
+        opacity: .75;
+        padding: .5em .75em;
       }
 
-      &:first-child{
-        padding: 25vw 5vw 17.5vw;
-
-        &:not(.current){
-          padding: 25vw 5vw 20vw;
-        }
+      > div{
+        align-items: center;
       }
+    }
 
-      &:last-child{
-        padding: 20vw 5vw;
-      }
+    &:nth-child(even){
+      background: $cyan;
+      transform: skewY(-2deg);
 
-      &:first-child,
-      &:last-child{
-        font-size: 5vw;
-
-        p{
-          opacity: .75;
-          padding: .5em;
-        }
-
-        > div{
-          align-items: center;
-        }
-      }
-
-      &:nth-child(even){
-        background: $cyan;
-        transform: skewY(-2deg);
-
-        > div{
-          transform: skewY(2deg);
-        }
-      }
-
-      &:nth-child(odd){
-        background: $blue;
+      > div{
         transform: skewY(2deg);
-
-        > div{
-          transform: skewY(-2deg);
-        }
       }
+    }
 
-      &.visible{
-        display: block;
-        transition: .25s all ease-out;
-      }
+    &:nth-child(odd){
+      background: $blue;
+      transform: skewY(2deg);
 
-      &:not(.current):not(:first-child){
-        padding: 17.5vw 5vw 22.5vw;
+      > div{
+        transform: skewY(-2deg);
       }
+    }
+
+    &.visible{
+      display: block;
+      transition: .25s all ease-out;
+    }
+
+    &:not(.current):not(:first-child){
+      padding: 17.5vw 5vw 22.5vw;
     }
   }
 }
 
-@media #{$medium-up}{
+@include for-tablet-portrait-up{
 
-  #resume {
+  .resume {
 
     .title{
       font-size: 4.5vw;
@@ -119,9 +116,9 @@
   }
 }
 
-@media #{$large-up}{
+@include for-tablet-landscape-up{
 
-  #resume{
+  .resume{
 
     .title{
       font-size: 2.5vw;

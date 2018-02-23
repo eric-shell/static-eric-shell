@@ -1,3 +1,14 @@
+@mixin container{
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container {
+  @include container;
+}
+
 @mixin link($background-color: $black, $underline-color: $white){
   font-weight: 600;
   text-decoration: none;
@@ -5,8 +16,8 @@
   box-shadow: inset 0 -.06em 0 0 $background-color, inset 0 -.165em 0 0 $underline-color;
 }
 
-a.lnk{
-  @include link();
+.link{
+  @include link;
 }
 
 @mixin button($base-color: $white, $active-text-color: $blue){
@@ -25,26 +36,14 @@ a.lnk{
   border-radius: 0;
   font-size: 1em;
 
-  &:hover{
+  &:hover {
     color: $active-text-color;
     background: $base-color;
     transition: $in-transition;
   }
-
-  &:focus{
-    border: .15em solid $base-color;
-  }
 }
 
-a.btn,
-button{
-  @include button();
-}
-
-p{
-  > a.btn,
-  > button{
-    @include button();
-    margin: 0 .5em;
-  }
+button,
+a.button {
+  @include button;
 }

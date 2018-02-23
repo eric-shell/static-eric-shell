@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" itemscope itemtype="http://schema.org/WebPage">
-<head>
-  @@include('layout/meta.html')
-  <title>Eric Shell | Digital Media Specialist</title>
-</head>
-<body>
+@@include('layout/page-top.html', {
+  "image": "images/meta-thumbnail.jpg",
+  "title": "Eric Shell | Digital Media Specialist",
+  "description": "Eric Shell is a Digital Media Specialist determined to develop comprehensive solutions for enterprise level applications that utilize the latest supported technologies and creative UI/UX practices.",
+  "keywords": "eric shell, acquia certified developer, software engineer, front end developer, drupal developer, ux designer, ui designer, photographer"
+})
 
 <main id="main">
-  @@include('layout/header.html')
-  @@include('partials/slogan.html')
-  @@include('partials/resume.html')
-  @@include('layout/footer.html')
+
+  @@include('partials/hero/hero.html')
+  @@include('partials/freelance/freelance.html')
+  @@include('partials/resume/resume.html')
+
 </main>
 
-<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-<script>
-  WebFont.load({
-    google: {
-      families: ['Source Sans Pro:400,600,900']
-    }
-  });
-</script>
-<link rel="stylesheet" href="min/css/main.min.css" media="all"/>
-<script async src="min/js/main.min.js"></script>
-</body>
-</html>
+@@include('layout/footer.html')
+@@include('layout/page-bottom.html')

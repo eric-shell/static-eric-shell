@@ -1,30 +1,32 @@
-@keyframes reveal{
-  0%{
+@keyframes reveal {
+  0% {
     opacity: 0;
+    transform: scale(0);
   }
-  100%{
+  100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
-@keyframes fromLeft{
-  0%{
+@keyframes fromLeft {
+  0% {
     opacity: 0;
-    transform: translate(-25%,0);
+    left: -25%;
   }
-  100%{
+  100% {
     opacity: 1;
-    transform: translate(0,0);
+    left: 0;
   }
 }
 
-@keyframes fromRight{
-  0%{
+@keyframes fromRight {
+  0% {
     opacity: 0;
-    transform: translate(25%,0);
+    right: -25%;
   }
-  100%{
+  100% {
     opacity: 1;
-    transform: translate(0,0);
+    right: 0;
   }
 }

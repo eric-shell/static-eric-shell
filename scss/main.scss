@@ -1,11 +1,13 @@
 @import "modules/colors";
 @import "modules/variables";
+@import "modules/breakpoints";
 @import "modules/keyframes";
 @import "modules/mixins";
 @import "modules/reset";
 @import "modules/type";
 
-@import "partials/header";
-@import "partials/slogan";
+@import "layout/footer";
+
+@import "partials/hero";
+@import "partials/freelance";
 @import "partials/resume";
-@import "partials/footer";

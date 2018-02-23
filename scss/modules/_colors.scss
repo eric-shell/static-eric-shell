@@ -1,10 +1,6 @@
 // Colors
 $white: #ffffff;
 $black: #0c0f0e;
-
-$red: #ff5959;
-$yellow: #f9ff2c;
-$green: #aeff33;
 $cyan: #27c2ff;
 $blue: #3c81fd;
 $violet: #6209f8;
@@ -13,15 +9,12 @@ $violet: #6209f8;
 $colors: (
   white: $white,
   black: $black,
-  red: $red,
-	yellow: $yellow,
-	green: $green,
-	cyan: $cyan,
-	blue: $blue,
-	violet: $violet,
+  cyan: $cyan,
+  blue: $blue,
+  violet: $violet,
 );
 
-// Configure colors
+// Configure color class function
 @mixin generate-color-properties($prefix, $property) {
   @each $color-name, $color in $colors {
     .#{$prefix}-#{$color-name} {
@@ -30,6 +23,6 @@ $colors: (
   }
 }
 
-// Generate colors
+// Generate colors for use in html
 @include generate-color-properties('txt', 'color');
 @include generate-color-properties('bg', 'background');

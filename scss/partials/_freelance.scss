@@ -1,20 +1,17 @@
-@media #{$small-up}{
-
-  #freelance{
-    display: none;
-  }
+.freelance{
+  display: none;
 }
 
-@media #{$medium-up}{
+@include for-tablet-portrait-up{
 
-  #freelance{
+  .freelance{
     width: 100%;
     display: flex;
     position: relative;
     transform: skewY(-2deg);
     z-index: 30;
 
-    .slogan{
+    .content{
       position: relative;
       background: $cyan;
       width: 100%;
@@ -60,16 +57,20 @@
         text-align: center;
         margin: 0 auto;
         transform: skewY(2deg);
+
+        a.button{
+          margin: 0 .5em;
+        }
       }
     }
   }
 }
 
-@media #{$large-up}{
+@include for-tablet-landscape-up{
 
-  #freelance{
+  .freelance{
 
-    .slogan{
+    .content{
       margin: -3vw 0 -4vw;
 
       p{

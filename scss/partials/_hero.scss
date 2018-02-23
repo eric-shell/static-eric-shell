@@ -1,73 +1,70 @@
-@media #{$small-up}{
+.hero{
+  overflow: hidden;
+  position: relative;
+  background: $violet;
 
-  #header{
-    overflow: hidden;
+  .profile{
+    z-index: 10;
     position: relative;
-    background: $violet;
 
-    #profile{
-      z-index: 10;
-      position: relative;
+    .logo{
+      display: flex;
+      position: absolute;
+      top: 15%;
+      left: 15%;
+      width: 70%;
+      height: 70%;
 
-      #logo{
-        display: flex;
-        position: absolute;
-        top: 15%;
-        left: 15%;
-        width: 70%;
-        height: 70%;
-
-        svg{
-          width: 100%;
-        }
+      svg{
+        width: 100%;
       }
     }
+  }
 
-    #intro{
-      padding: 30vw 7.5vw 20vw;
-      z-index: 5;
-      position: relative;
-      background: $white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  .slogan{
+    padding: 30vw 7.5vw 20vw;
+    z-index: 5;
+    position: relative;
+    background: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      &:after{
-        content: '';
-        width: 100%;
-        height: 85px;
-        position: absolute;
-        z-index: -1;
-        left: 0;
-        top: -50px;
-        transform: skewY(-5deg);
-        background: $violet;
-      }
+    &:after{
+      content: '';
+      width: 100%;
+      height: 85px;
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: -50px;
+      transform: skewY(-5deg);
+      background: $violet;
+    }
 
-      p{
-        color: $black;
-        text-align: justify;
-      }
+    p{
+      color: $black;
+      text-align: justify;
     }
   }
 }
 
-@media #{$medium-up}{
+@include for-tablet-portrait-up{
 
-  #header{
+  .hero{
     display: flex;
     background: $blue;
 
-    #profile{
+    .profile{
       z-index: 5;
       width: 50%;
 
-      #headshot{
+      .headshot{
         padding-right: 25%;
         animation: 1s ease-out fromLeft;
       }
 
-      #logo{
+      .logo{
         top: 25%;
         left: 12.5%;
         width: 50%;
@@ -76,7 +73,7 @@
       }
     }
 
-    #intro{
+    .slogan{
       padding: 0;
       z-index: 10;
       width: 50%;
@@ -87,7 +84,7 @@
         top: 0;
         left: -4.5vw;
         font-size: 2.25vw;
-        padding: 0 .75em;
+        padding: 0 .5em;
       }
 
       &:after{
@@ -105,15 +102,15 @@
   }
 }
 
-@media #{$large-up}{
+@include for-tablet-landscape-up{
 
-  #header{
+  .hero{
 
-    #profile{
+    .profile{
       width: 60%;
     }
 
-    #intro{
+    .slogan{
       width: 40%;
 
       p{
