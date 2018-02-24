@@ -1,4 +1,4 @@
-@mixin container{
+@mixin container {
   width: 100%;
   max-width: 1200px;
   padding: 0 15px;
@@ -9,36 +9,48 @@
   @include container;
 }
 
-@mixin link($background-color: $black, $underline-color: $white){
+@mixin link($background-color: $violet, $underline-color: $white, $underline-color-active: $cyan) {
   font-weight: 600;
   text-decoration: none;
   text-shadow: -0.08em -0.04em 0 $background-color, 0.08em -0.04em 0 $background-color, 0.08em 0.04em 0 $background-color, -0.08em 0.04em 0 $background-color;
   box-shadow: inset 0 -.06em 0 0 $background-color, inset 0 -.165em 0 0 $underline-color;
+  transition: $out-transition;
+
+  &:hover,
+  &:focus{
+    box-shadow: inset 0 -.03em 0 0 $background-color, inset 0 -.195em 0 0 $underline-color-active;
+    transition: $in-transition;
+  }
 }
 
-.link{
+.link {
   @include link;
 }
 
-@mixin button($base-color: $white, $active-text-color: $blue){
-  font-weight: 600;
-  display: inline-block;
-  padding: .5em .75em;
-  margin: 0;
-  color: $base-color;
-  border: .15em solid $base-color;
-  transition: $out-transition;
-  text-decoration: none;
+@mixin button($base-color: $white, $active-text-color: $blue) {
   position: relative;
+  display: inline-block;
   cursor: pointer;
-  line-height: 2;
-  background: transparent;
+  margin: 0;
+  padding: .5em .75em;
+  color: $base-color;
   border-radius: 0;
+  border: .15em solid $base-color;
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
   font-size: 1em;
+  line-height: 2;
+  transition: $out-transition;
 
-  &:hover {
+  &:hover{
     color: $active-text-color;
     background: $base-color;
+    transition: $in-transition;
+  }
+
+  &:focus{
+    border: .15em solid $base-color;
     transition: $in-transition;
   }
 }

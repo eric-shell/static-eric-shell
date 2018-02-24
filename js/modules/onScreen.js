@@ -1,4 +1,3 @@
-
 // onScreen jQuery plugin v0.2.1
 // (c) 2011-2013 Ben Pickles
 //
@@ -13,8 +12,8 @@
     var viewport_height = $window.height()
     var viewport_bottom = viewport_top + viewport_height
     var $elem = $(elem)
-    var top = $elem.offset().top
-    var height = $elem.height() + 200
+    var top = $elem.offset().top + 50
+    var height = $elem.height()
     var bottom = top + height
 
     return (top >= viewport_top && top < viewport_bottom) ||
@@ -24,7 +23,7 @@
 
   $(function() {
     setInterval(function() {
-      $('.hero, .freelance, .resume, .footer').filter(":onScreen").addClass("visible")
+      $('.on-screen').filter(":onScreen").addClass("visible")
     }, 200)
   })
 

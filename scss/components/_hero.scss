@@ -1,13 +1,14 @@
-.hero{
+.hero {
   overflow: hidden;
   position: relative;
   background: $violet;
+  z-index: 20;
 
-  .profile{
+  .profile {
     z-index: 10;
     position: relative;
 
-    .logo{
+    .logo {
       display: flex;
       position: absolute;
       top: 15%;
@@ -15,13 +16,13 @@
       width: 70%;
       height: 70%;
 
-      svg{
+      svg {
         width: 100%;
       }
     }
   }
 
-  .slogan{
+  .slogan {
     padding: 30vw 7.5vw 20vw;
     z-index: 5;
     position: relative;
@@ -30,7 +31,7 @@
     justify-content: center;
     align-items: center;
 
-    &:after{
+    &:after {
       content: '';
       width: 100%;
       height: 85px;
@@ -40,31 +41,32 @@
       top: -50px;
       transform: skewY(-5deg);
       background: $violet;
+      box-shadow: -5px 0 15px 0 rgba($violet, .1);
     }
 
-    p{
+    p {
       color: $black;
       text-align: justify;
     }
   }
 }
 
-@include for-tablet-portrait-up{
+@include for-tablet-portrait-up {
 
-  .hero{
+  .hero {
     display: flex;
     background: $blue;
 
-    .profile{
+    .profile {
       z-index: 5;
       width: 50%;
 
-      .headshot{
+      .headshot {
         padding-right: 25%;
         animation: 1s ease-out fromLeft both;
       }
 
-      .logo{
+      .logo {
         top: 25%;
         left: 12.5%;
         width: 50%;
@@ -74,13 +76,13 @@
       }
     }
 
-    .slogan{
+    .slogan {
       padding: 0;
       z-index: 10;
       width: 50%;
       animation: 1s ease-out fromRight both;
 
-      p{
+      p {
         position: relative;
         top: 0;
         left: -4.5vw;
@@ -90,7 +92,7 @@
         animation-delay: .5s;
       }
 
-      &:after{
+      &:after {
         content: '';
         z-index: -1;
         position: absolute;
@@ -105,24 +107,24 @@
   }
 }
 
-@include for-tablet-landscape-up{
+@include for-tablet-landscape-up {
 
-  .hero{
+  .hero {
 
-    .profile{
+    .profile {
       width: 60%;
     }
 
-    .slogan{
+    .slogan {
       width: 40%;
 
-      p{
+      p {
         left: -12.5%;
         font-size: 1.75vw;
         padding: 0 1em;
       }
 
-      &:after{
+      &:after {
         left: -33%;
         transform: rotate(29deg);
       }

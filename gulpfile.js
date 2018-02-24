@@ -30,7 +30,7 @@ gulp.task('min-scss', function () {
 });
 
 gulp.task('min-js', function () {
-  gulp.src(['js/vendor/*.js', 'js/modules/*.js', 'js/*.js'])
+  gulp.src(['js/vendor/*.js', 'js/modules/*.js', 'js/components/*.js'])
     .pipe(uglify().on('error', function(e){console.log(e);}))
     .pipe(concat('main.js'))
     .pipe(rename('main.min.js'))
