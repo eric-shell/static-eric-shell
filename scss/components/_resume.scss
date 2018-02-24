@@ -24,8 +24,9 @@
     .title {
       font-weight: 900;
       font-size: 1.5em;
-      letter-spacing: -.015em;
+      margin: 0 0 .5em;
       text-transform: uppercase;
+      line-height: 1.25;
     }
 
     ul {
@@ -82,6 +83,11 @@
         background: $cyan;
         transform: skewY(2deg);
       }
+
+      a.title{
+        @include link($cyan, $white, $blue);
+        font-weight: 900;
+      }
     }
 
     &:nth-child(odd) {
@@ -89,6 +95,11 @@
       &:before {
         background: $blue;
         transform: skewY(-2deg);
+      }
+
+      a.title{
+        @include link($blue, $white, $violet);
+        font-weight: 900;
       }
     }
   }
