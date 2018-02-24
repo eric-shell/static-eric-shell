@@ -1,18 +1,16 @@
 .footer {
   position: relative;
-  background: $violet;
-  padding: 12.5vw 7.5vw;
+  z-index: 60;
+  margin: -2vw 0;
   opacity: 0; // for visible animation
-
-  &.visible{
-    animation: ease-out fromTop .5s both;
-    animation-delay: .25s;
-  }
 
   ul {
     width: 100%;
     margin: 0 auto;
     list-style: none;
+    position: relative;
+    z-index: 80;
+    padding: 17.5vw 7.5vw 12.5vw;
     display: flex;
     flex-direction: column;
 
@@ -32,14 +30,32 @@
       }
     }
   }
+
+  &.visible{
+    animation: ease-out fromTop .5s both;
+    animation-delay: .25s;
+  }
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $violet;
+    z-index: 70;
+    box-shadow: 0 5px 15px 0 rgba($violet, 0.1);
+    transform: skewY(2deg);
+  }
 }
 
 @include for-tablet-portrait-up {
 
   .footer {
-    padding: 12.5vw 10vw;
 
     ul {
+      padding: 17.5vw 10vw 12.5vw;
 
       li {
         font-size: 2.5vw;
@@ -51,9 +67,9 @@
 @include for-tablet-landscape-up {
 
   .footer {
-    padding: 12.5vw 22.5vw;
 
     ul {
+      padding: 17.5vw 22.5vw 12.5vw;
       flex-direction: row;
 
       li {

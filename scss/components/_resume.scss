@@ -4,53 +4,67 @@
   line-height: 2;
   opacity: 0; // for visible animation
 
-  &.visible{
-    opacity: 1;
-    animation: ease-out fromTop .5s both;
-    animation-delay: .5s;
-  }
-
-  ul {
-
-    & + ul {
-      margin: 1em 0 0;
-    }
-
-    & + button {
-      margin: 2em 0 0;
-    }
-  }
-
-  .title {
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    letter-spacing: -.015em;
-  }
-
   .pane {
     display: none;
-    padding: 17.5vw 5vw;
+    position: relative;
     width: 100%;
     height: 100%;
-    position: relative;
-    overflow: hidden;
+    margin: -4vw 0;
+    padding: 17.5vw 5vw 22.5vw;
 
     .content {
+      position: relative;
+      z-index: 50;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
     }
 
+    .title {
+      font-weight: 900;
+      font-size: 1.5em;
+      letter-spacing: -.015em;
+      text-transform: uppercase;
+    }
+
+    ul {
+
+      & + ul {
+        margin: 1em 0 0;
+      }
+
+      & + button {
+        margin: 2em 0 0;
+      }
+    }
+
+    &.visible {
+      display: block;
+      animation: ease-out fromTop .5s both;
+    }
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 40;
+    }
+
+    &:first-child{
+      padding: 20vw 5vw;
+    }
+
+    &:last-child{
+      padding: 17.5vw 5vw 22.5vw;
+    }
+
     &:first-child,
     &:last-child {
       font-size: 5vw;
-      padding: 20vw 5vw;
-
-      &:not(.current) {
-        padding: 25vw 5vw;
-      }
 
       p {
         opacity: .75;
@@ -63,21 +77,26 @@
     }
 
     &:nth-child(even) {
-      background: $cyan;
+
+      &:before {
+        background: $cyan;
+        transform: skewY(2deg);
+      }
     }
 
     &:nth-child(odd) {
-      background: $blue;
-    }
 
-    &.visible {
-      display: block;
-      animation: ease-out fromTop .5s both;
+      &:before {
+        background: $blue;
+        transform: skewY(-2deg);
+      }
     }
+  }
 
-    &:not(.current):not(:first-child) {
-      padding: 17.5vw 5vw;
-    }
+  &.visible{
+    opacity: 1;
+    animation: ease-out fromTop .5s both;
+    animation-delay: .5s;
   }
 }
 
@@ -85,20 +104,16 @@
 
   .resume {
 
-    .title {
-      font-size: 4.5vw;
-    }
-
     .pane {
-      padding: 12.5vw 10vw;
+      padding: 12.5vw 10vw 17.5vw;
+
+      .title {
+        font-size: 4.5vw;
+      }
 
       &:first-child,
       &:last-child {
         font-size: 3.5vw;
-      }
-
-      &:not(.current):not(:first-child) {
-        padding: 12.5vw 10vw;
       }
     }
   }
@@ -108,12 +123,12 @@
 
   .resume {
 
-    .title {
-      font-size: 2.5vw;
-    }
-
     .pane {
-      padding: 7.5vw 22.5vw;
+      padding: 7.5vw 22.5vw 12.5vw;
+
+      .title {
+        font-size: 2.5vw;
+      }
 
       &:first-child,
       &:last-child {
@@ -122,10 +137,6 @@
         .content {
           flex-direction: row;
         }
-      }
-
-      &:not(.current):not(:first-child) {
-        padding: 7.5vw 22.5vw;
       }
     }
   }
