@@ -44,9 +44,12 @@
       box-shadow: -5px 0 15px 0 rgba($violet, .1);
     }
 
-    p {
+    h1 {
       color: $black;
+      font-size: 18px;
+      font-weight: 400;
       text-align: justify;
+      line-height: 2;
     }
   }
 }
@@ -82,7 +85,7 @@
       width: 50%;
       animation: 1s ease-out fromRight both;
 
-      p {
+      h1 {
         position: relative;
         top: 0;
         left: -4.5vw;
@@ -118,7 +121,7 @@
     .content {
       width: 40%;
 
-      p {
+      h1 {
         left: -12.5%;
         font-size: 1.75vw;
         padding: 0 1em;
