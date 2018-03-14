@@ -10,12 +10,12 @@
     list-style: none;
     position: relative;
     z-index: 80;
-    padding: 15vw 7.5vw 12.5vw;
+    padding: 15vw 7.5vw 10vw;
     display: flex;
     flex-direction: column;
 
     li {
-      margin: .75em 0;
+      margin: .25em 0;
       font-size: 1.25em;
       color: $white;
 
@@ -26,7 +26,7 @@
 
       &:last-child {
         font-weight: 600;
-        margin: 5em 0 .75em;
+        margin: 2.5em 0 .75em;
       }
     }
   }

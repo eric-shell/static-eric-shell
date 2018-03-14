@@ -21,22 +21,56 @@
       justify-content: center;
     }
 
-    .title {
+    h2 {
+      color: $white;
       font-weight: 900;
-      font-size: 1.5em;
-      margin: 0 0 .5em;
+      font-size: 1.75em;
       text-transform: uppercase;
+      letter-spacing: -.01em;
       line-height: 1.25;
+
+      a{
+        display: inline-block;
+        text-decoration: none;
+        line-height: 1.25;
+      }
+    }
+
+    h3{
+      color: $white;
+      font-weight: 600;
+      font-size: 1.1em;
+      line-height: 1.1;
     }
 
     ul {
-
-      & + ul {
-        margin: 1em 0 0;
-      }
+      margin: 1.5em 0 0;
 
       & + button {
         margin: 2em 0 0;
+      }
+
+      &.employment{
+        font-weight: 600;
+        list-style: none;
+        margin: .25em 0 0;
+
+        li{
+          margin: 0;
+        }
+      }
+
+      &.contributions{
+        list-style: none;
+        margin: 1.5em 0 0;
+
+        li:first-child{
+          font-weight: 600;
+        }
+
+        li{
+          margin: 0;
+        }
       }
     }
 
@@ -83,11 +117,6 @@
         background: $cyan;
         transform: skewY(2deg);
       }
-
-      a.title{
-        @include link($cyan, $white, $blue);
-        font-weight: 900;
-      }
     }
 
     &:nth-child(odd) {
@@ -95,11 +124,6 @@
       &:before {
         background: $blue;
         transform: skewY(-2deg);
-      }
-
-      a.title{
-        @include link($blue, $white, $violet);
-        font-weight: 900;
       }
     }
   }
@@ -118,8 +142,12 @@
     .pane {
       padding: 12.5vw 10vw 17.5vw;
 
-      .title {
+      h2 {
         font-size: 4.5vw;
+      }
+
+      h3{
+        font-size: 2.5vw;
       }
 
       &:first-child,
@@ -137,8 +165,12 @@
     .pane {
       padding: 7.5vw 22.5vw 12.5vw;
 
-      .title {
+      h2 {
         font-size: 2.5vw;
+      }
+
+      h3{
+        font-size: 1.75vw;
       }
 
       &:first-child,

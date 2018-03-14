@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
   del = require('del'),
   sass = require('gulp-sass'),
-  cache = require('gulp-cached'),
   rename = require('gulp-rename'),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
@@ -21,7 +20,6 @@ gulp.task('pre-build', function () {
 
 gulp.task('min-scss', function () {
   gulp.src('scss/main.scss')
-    .pipe(cache('css'))
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefixer())
@@ -34,7 +32,6 @@ gulp.task('min-scss', function () {
 
 gulp.task('min-js', function () {
   gulp.src(['js/vendor/*.js', 'js/modules/*.js', 'js/components/*.js'])
-    .pipe(cache('js'))
     .pipe(uglify().on('error', function(e){console.log(e);}))
     .pipe(concat('main.js'))
     .pipe(rename('main.min.js'))
@@ -44,7 +41,6 @@ gulp.task('min-js', function () {
 
 gulp.task('min-html', function() {
   return gulp.src('html/*.html')
-    .pipe(cache('html'))
     .pipe(plumber())
     .pipe(fileinclude({
       prefix: '@@',
@@ -57,13 +53,11 @@ gulp.task('min-html', function() {
 
 gulp.task('move-files', function() {
   return gulp.src('files/**/*')
-    .pipe(cache('files'))
     .pipe(gulp.dest('docs/files'));
 });
 
 gulp.task('min-img', function(done) {
   gulp.src('images/**/*')
-    .pipe(cache('images'))
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
