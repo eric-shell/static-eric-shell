@@ -4,6 +4,64 @@
   line-height: 2;
   opacity: 0; // for visible animation
 
+  &.visible{
+    opacity: 1;
+    animation: ease-out fromTop .5s both;
+    animation-delay: .5s;
+  }
+
+  p{
+    line-height: 1.25;
+    padding: .25em 0 0;
+  }
+
+  h2 {
+    color: $white;
+    font-weight: 900;
+    font-size: 1.75em;
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+    line-height: 1.25;
+
+    a{
+      display: inline-block;
+      text-decoration: none;
+      line-height: 1.25;
+    }
+  }
+
+  h3{
+    color: $white;
+    font-weight: 600;
+    font-size: 1.1em;
+    line-height: 1.25;
+  }
+
+  h4{
+    color: $white;
+    font-weight: 600;
+    font-size: 1.05em;
+    line-height: 1.25;
+    padding: 0 0 .25em
+  }
+
+  button {
+    margin: 2em 0 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .employment{
+    padding: 0 0 2em;
+  }
+
   .pane {
     display: none;
     position: relative;
@@ -11,68 +69,6 @@
     height: 100%;
     margin: -4vw 0;
     padding: 17.5vw 5vw 22.5vw;
-
-    .content {
-      position: relative;
-      z-index: 50;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
-    h2 {
-      color: $white;
-      font-weight: 900;
-      font-size: 1.75em;
-      text-transform: uppercase;
-      letter-spacing: -.01em;
-      line-height: 1.25;
-
-      a{
-        display: inline-block;
-        text-decoration: none;
-        line-height: 1.25;
-      }
-    }
-
-    h3{
-      color: $white;
-      font-weight: 600;
-      font-size: 1.1em;
-      line-height: 1.1;
-    }
-
-    ul {
-      margin: 1.5em 0 0;
-
-      & + button {
-        margin: 2em 0 0;
-      }
-
-      &.employment{
-        font-weight: 600;
-        list-style: none;
-        margin: .25em 0 0;
-
-        li{
-          margin: 0;
-        }
-      }
-
-      &.contributions{
-        list-style: none;
-        margin: 1.5em 0 0;
-
-        li:first-child{
-          font-weight: 600;
-        }
-
-        li{
-          margin: 0;
-        }
-      }
-    }
 
     &.visible {
       display: block;
@@ -106,6 +102,10 @@
         padding: .5em .75em;
       }
 
+      button{
+        margin: 0;
+      }
+
       .content {
         align-items: center;
       }
@@ -127,28 +127,30 @@
       }
     }
   }
-
-  &.visible{
-    opacity: 1;
-    animation: ease-out fromTop .5s both;
-    animation-delay: .5s;
-  }
 }
 
 @include for-tablet-portrait-up {
 
   .resume {
 
+    p{
+      font-size: 2vw;
+    }
+
+    h2 {
+      font-size: 4.5vw;
+    }
+
+    h3{
+      font-size: 2.5vw;
+    }
+
+    h4{
+      font-size: 2.5vw;
+    }
+
     .pane {
       padding: 12.5vw 10vw 17.5vw;
-
-      h2 {
-        font-size: 4.5vw;
-      }
-
-      h3{
-        font-size: 2.5vw;
-      }
 
       &:first-child,
       &:last-child {
@@ -162,16 +164,24 @@
 
   .resume {
 
+    p{
+      font-size: 1.25vw;
+    }
+
+    h2 {
+      font-size: 2.5vw;
+    }
+
+    h3{
+      font-size: 1.75vw;
+    }
+
+    h4{
+      font-size: 1.5vw;
+    }
+
     .pane {
       padding: 7.5vw 22.5vw 12.5vw;
-
-      h2 {
-        font-size: 2.5vw;
-      }
-
-      h3{
-        font-size: 1.75vw;
-      }
 
       &:first-child,
       &:last-child {

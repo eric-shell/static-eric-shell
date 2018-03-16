@@ -65,7 +65,7 @@ gulp.task('min-img', function(done) {
       imagemin.svgo({
         plugins: [
           {removeViewBox: true},
-          {cleanupIDs: false}
+          {cleanupIDs: true}
         ]
       })
     ], {
