@@ -4,6 +4,11 @@
   margin: -2vw 0;
   opacity: 0; // for visible animation
 
+  &.visible {
+    animation: ease-out fromTop .5s both;
+    animation-delay: .25s;
+  }
+
   ul {
     width: 100%;
     margin: 0 auto;
@@ -31,12 +36,7 @@
     }
   }
 
-  &.visible{
-    animation: ease-out fromTop .5s both;
-    animation-delay: .25s;
-  }
-
-  &:before{
+  &:before {
     content: '';
     position: absolute;
     top: 0;

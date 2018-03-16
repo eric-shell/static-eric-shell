@@ -12,32 +12,11 @@
     margin: -2vw 0;
     opacity: 0; // for visible animation
 
-    .content {
-      position: relative;
-      z-index: 50;
-      width: 100%;
-      height: 100%;
-      padding: 4vw 1.5vw;
-
-      h2 {
-        font-size: 2.5vw;
-        font-weight: 400;
-        width: 100%;
-        color: $white;
-        text-align: center;
-        margin: 0 auto;
-
-        a.button {
-          margin: 0 .5em;
-        }
-      }
-    }
-
-    &.visible{
+    &.visible {
       animation: ease-out fromTop .5s both;
     }
 
-    &:before{
+    &:before {
       content: '';
       position: absolute;
       top: 0;
@@ -49,6 +28,27 @@
       box-shadow: 0 5px 15px 0 rgba($violet, 0.1);
       transform: skewY(-2deg);
     }
+
+    h2 {
+      font-size: 2.5vw;
+      font-weight: 400;
+      width: 100%;
+      color: $white;
+      text-align: center;
+      margin: 0 auto;
+
+      a.button {
+        margin: 0 .5em;
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 50;
+      width: 100%;
+      height: 100%;
+      padding: 4vw 1.5vw;
+    }
   }
 }
 
@@ -56,11 +56,8 @@
 
   .freelance {
 
-    .content {
-
-      h2 {
-        font-size: 2vw;
-      }
+    h2 {
+      font-size: 2vw;
     }
   }
 }

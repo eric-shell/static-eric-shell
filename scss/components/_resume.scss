@@ -4,13 +4,13 @@
   line-height: 2;
   opacity: 0; // for visible animation
 
-  &.visible{
+  &.visible {
     opacity: 1;
     animation: ease-out fromTop .5s both;
     animation-delay: .5s;
   }
 
-  p{
+  p {
     line-height: 1.25;
     padding: .25em 0 0;
   }
@@ -23,21 +23,21 @@
     letter-spacing: -.01em;
     line-height: 1.25;
 
-    a{
+    a {
       display: inline-block;
       text-decoration: none;
       line-height: 1.25;
     }
   }
 
-  h3{
+  h3 {
     color: $white;
     font-weight: 600;
     font-size: 1.1em;
     line-height: 1.25;
   }
 
-  h4{
+  h4 {
     color: $white;
     font-weight: 600;
     font-size: 1.05em;
@@ -58,7 +58,7 @@
     justify-content: center;
   }
 
-  .employment{
+  .employment {
     padding: 0 0 2em;
   }
 
@@ -72,10 +72,10 @@
 
     &.visible {
       display: block;
-      animation: ease-out fromTop .25s both;
+      animation: ease-out fromTop .5s both;
     }
 
-    &:before{
+    &:before {
       content: '';
       position: absolute;
       top: 0;
@@ -85,11 +85,11 @@
       z-index: 40;
     }
 
-    &:first-child{
+    &:first-child {
       padding: 20vw 5vw;
     }
 
-    &:last-child{
+    &:last-child {
       padding: 17.5vw 5vw 22.5vw;
     }
 
@@ -102,7 +102,7 @@
         padding: .5em .75em;
       }
 
-      button{
+      button {
         margin: 0;
       }
 
@@ -133,7 +133,7 @@
 
   .resume {
 
-    p{
+    p {
       font-size: 2vw;
     }
 
@@ -141,11 +141,11 @@
       font-size: 4.5vw;
     }
 
-    h3{
+    h3 {
       font-size: 2.5vw;
     }
 
-    h4{
+    h4 {
       font-size: 2.5vw;
     }
 
@@ -164,7 +164,7 @@
 
   .resume {
 
-    p{
+    p {
       font-size: 1.25vw;
     }
 
@@ -172,11 +172,11 @@
       font-size: 2.5vw;
     }
 
-    h3{
+    h3 {
       font-size: 1.75vw;
     }
 
-    h4{
+    h4 {
       font-size: 1.5vw;
     }
 

@@ -4,6 +4,14 @@
   background: $violet;
   z-index: 20;
 
+  h1 {
+    color: $black;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 2;
+  }
+
   .imagery {
     z-index: 10;
     position: relative;
@@ -43,14 +51,6 @@
       background: $violet;
       box-shadow: -5px 0 15px 0 rgba($violet, .1);
     }
-
-    h1 {
-      color: $black;
-      font-size: 18px;
-      font-weight: 400;
-      text-align: justify;
-      line-height: 2;
-    }
   }
 }
 
@@ -59,6 +59,16 @@
   .hero {
     display: flex;
     background: $blue;
+
+    h1 {
+      position: relative;
+      top: 0;
+      left: -4.5vw;
+      font-size: 2.25vw;
+      padding: 0 .5em;
+      animation: 1s ease-out fromRight both;
+      animation-delay: .5s;
+    }
 
     .imagery {
       z-index: 5;
@@ -85,16 +95,6 @@
       width: 50%;
       animation: 1s ease-out fromRight both;
 
-      h1 {
-        position: relative;
-        top: 0;
-        left: -4.5vw;
-        font-size: 2.25vw;
-        padding: 0 .5em;
-        animation: 1s ease-out fromRight both;
-        animation-delay: .5s;
-      }
-
       &:after {
         content: '';
         z-index: -1;
@@ -114,18 +114,18 @@
 
   .hero {
 
+    h1 {
+      left: -12.5%;
+      font-size: 1.75vw;
+      padding: 0 1em;
+    }
+
     .imagery {
       width: 60%;
     }
 
     .content {
       width: 40%;
-
-      h1 {
-        left: -12.5%;
-        font-size: 1.75vw;
-        padding: 0 1em;
-      }
 
       &:after {
         left: -33%;
