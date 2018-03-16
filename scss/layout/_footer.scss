@@ -18,21 +18,21 @@
     padding: 15vw 7.5vw 10vw;
     display: flex;
     flex-direction: column;
+  }
 
-    li {
-      margin: .25em 0;
-      font-size: 1.25em;
+  li {
+    margin: .25em 0;
+    font-size: 1.25em;
+    color: $white;
+
+    a {
+      @include link;
       color: $white;
+    }
 
-      a {
-        @include link;
-        color: $white;
-      }
-
-      &:last-child {
-        font-weight: 600;
-        margin: 2.5em 0 .75em;
-      }
+    &:last-child {
+      font-weight: 600;
+      margin: 2.5em 0 .75em;
     }
   }
 
@@ -56,10 +56,10 @@
 
     ul {
       padding: 12.5vw 10vw 10vw;
+    }
 
-      li {
-        font-size: 2.5vw;
-      }
+    li {
+      font-size: 2.5vw;
     }
   }
 }
@@ -71,27 +71,27 @@
     ul {
       padding: 10vw 22.5vw 7.5vw;
       flex-direction: row;
+    }
 
-      li {
-        margin: 0;
-        font-size: 1.75vw;
+    li {
+      margin: 0;
+      font-size: 1.75vw;
+
+      a {
+        margin: 0 0 0 1.25em;
+      }
+
+      &:first-child {
 
         a {
-          margin: 0 0 0 1.25em;
-        }
-
-        &:first-child {
-
-          a {
-            margin: 0;
-          }
-        }
-
-        &:last-child {
           margin: 0;
-          flex-grow: 1;
-          text-align: right;
         }
+      }
+
+      &:last-child {
+        margin: 0;
+        flex-grow: 1;
+        text-align: right;
       }
     }
   }
