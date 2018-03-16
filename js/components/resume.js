@@ -6,7 +6,7 @@
 
     $('html,body').animate({
       scrollTop: $(this).closest('.pane').next('.pane').offset().top + 100
-    }, 250);
+    }, 500);
   });
 
 })(jQuery);

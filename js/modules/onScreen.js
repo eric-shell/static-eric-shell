@@ -24,7 +24,7 @@
   $(function() {
     setInterval(function() {
       $('.on-screen').filter(":onScreen").addClass("visible")
-    }, 200)
+    }, 150)
   })
 
 }(jQuery));
