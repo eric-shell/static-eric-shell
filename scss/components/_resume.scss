@@ -126,6 +126,13 @@
         transform: skewY(-2deg);
       }
     }
+
+    &.credentials{
+
+      ul + ul{
+        margin: 1em 0 0;
+      }
+    }
   }
 }
 
