@@ -9,7 +9,7 @@
   @include container;
 }
 
-@mixin link($background-color: $violet, $underline-color: $white, $underline-color-active: $cyan) {
+@mixin link($background-color: $violet, $underline-color: $white, $underline-color-active: $blue) {
   font-weight: 600;
   text-decoration: none;
   text-shadow: -0.08em -0.04em 0 $background-color, 0.08em -0.04em 0 $background-color, 0.08em 0.04em 0 $background-color, -0.08em 0.04em 0 $background-color;
