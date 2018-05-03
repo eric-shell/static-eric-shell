@@ -40,7 +40,7 @@ gulp.task('min-js', function () {
 });
 
 gulp.task('min-html', function() {
-  return gulp.src('html/*.html')
+  return gulp.src('html/**/*.html')
     .pipe(plumber())
     .pipe(fileinclude({
       prefix: '@@',
@@ -78,7 +78,12 @@ gulp.task('min-img', function(done) {
 
 gulp.task('serve', function() {
   browserSync.init({
-    server: "./docs",
+    server: {
+      baseDir: './docs',
+      serveStaticOptions: {
+        extensions: ['html']
+      }
+    },
     port: 1110,
     ui: {
       port: 1111
