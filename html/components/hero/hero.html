@@ -1,7 +1,12 @@
 <div class="hero">
 
   <div class="imagery">
-    <img class="profile" src="./images/eric-shell.jpg" width="1503" height="1400" alt="Eric Shell"/>
+    <!--https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images-->
+    <picture>
+      <source media="(max-width: 899px)" srcset="./images/profile--small.jpg">
+      <source media="(min-width: 900px)" srcset="./images/profile--large.jpg">
+      <img class="profile" src="./images/eric-shell.jpg" width="1503" height="1400" alt="Eric Shell"/>
+    </picture>
     <div class="logo">
       <img src="./images/logo.svg" alt="Eric Shell logo"/>
     </div>
