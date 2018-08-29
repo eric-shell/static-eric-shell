@@ -40,7 +40,7 @@ gulp.task('min-js', function () {
 });
 
 gulp.task('min-html', function() {
-  return gulp.src('html/**/*.html')
+  return gulp.src('html/*.html')
     .pipe(plumber())
     .pipe(fileinclude({
       prefix: '@@',
