@@ -1,98 +1,58 @@
 .footer {
+  background: $violet;
+  padding: 20vw 5vw;
+
+  @include for-tablet-portrait-up {
+    padding: 10vw;
+  }
+
+  @include for-tablet-landscape-up {
+    padding: 10vw 20vw;
+  }
+}
+
+.footer__menu {
+  list-style: none;
+  width: 100%;
   position: relative;
-  z-index: 60;
-  margin: -2vw 0;
-  opacity: 0; // for visible animation
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 
-  &.visible {
-    animation: ease-out fromTop .5s both;
-    animation-delay: .25s;
-  }
-
-  ul {
-    width: 100%;
-    margin: 0 auto;
-    list-style: none;
-    position: relative;
-    z-index: 80;
-    padding: 15vw 7.5vw 10vw;
-    display: flex;
-    flex-direction: column;
-  }
-
-  li {
-    margin: .25em 0;
-    font-size: 1.25em;
-    color: $white;
-
-    a {
-      @include link;
-      color: $white;
-    }
-
-    &:last-child {
-      font-weight: 600;
-      margin: 2.5em 0 .75em;
-    }
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: $violet;
-    z-index: 70;
-    box-shadow: 0 5px 15px 0 rgba($violet, 0.1);
-    transform: skewY(2deg);
+  @include for-tablet-landscape-up {
+    flex-direction: row;
   }
 }
 
-@include for-tablet-portrait-up {
+.footer__item {
+  margin: .25em 0;
+  font-size: 1.25em;
+  color: $white;
 
-  .footer {
+  @include for-tablet-portrait-up {
+    font-size: 2.5vw;
+  }
 
-    ul {
-      padding: 12.5vw 10vw 10vw;
-    }
+  @include for-tablet-landscape-up {
+    font-size: 1.75vw;
+    margin: 0 1.25em 0 0;
+  }
 
-    li {
-      font-size: 2.5vw;
+  &:last-child{
+    padding-top: 3em;
+
+    @include for-tablet-landscape-up {
+      padding-top: 0;
+      flex-grow: 1;
+      text-align: right;
     }
   }
 }
 
-@include for-tablet-landscape-up {
+.footer__link {
+  @include link;
+}
 
-  .footer {
-
-    ul {
-      padding: 10vw 22.5vw 7.5vw;
-      flex-direction: row;
-    }
-
-    li {
-      margin: 0;
-      font-size: 1.75vw;
-
-      a {
-        margin: 0 0 0 1.25em;
-      }
-
-      &:first-child {
-
-        a {
-          margin: 0;
-        }
-      }
-
-      &:last-child {
-        margin: 0;
-        flex-grow: 1;
-        text-align: right;
-      }
-    }
-  }
+.footer__info {
+  font-weight: 600;
 }

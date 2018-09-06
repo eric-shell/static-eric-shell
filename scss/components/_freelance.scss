@@ -1,63 +1,20 @@
 .freelance {
   display: none;
-}
+  justify-content: center;
+  align-items: center;
+  background: $cyan;
+  padding: 5vw;
 
-@include for-tablet-portrait-up {
-
-  .freelance {
-    width: 100%;
-    display: flex;
-    position: relative;
-    z-index: 30;
-    margin: -2vw 0;
-    opacity: 0; // for visible animation
-
-    &.visible {
-      animation: ease-out fromTop .5s both;
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: $cyan;
-      z-index: 40;
-      box-shadow: 0 5px 15px 0 rgba($violet, 0.1);
-      transform: skewY(-2deg);
-    }
-
-    h2 {
-      font-size: 2.5vw;
-      font-weight: 400;
-      width: 100%;
-      color: $white;
-      text-align: center;
-      margin: 0 auto;
-
-      a.button {
-        margin: 0 .5em;
-      }
-    }
-
-    .content {
-      position: relative;
-      z-index: 50;
-      width: 100%;
-      height: 100%;
-      padding: 4vw 1.5vw;
-    }
+  &--button {
+    margin: 0 .25em;
   }
-}
 
-@include for-tablet-landscape-up {
+  @include for-tablet-portrait-up {
+    display: flex;
+    padding: 5vw 10vw;
+  }
 
-  .freelance {
-
-    h2 {
-      font-size: 2vw;
-    }
+  @include for-tablet-landscape-up {
+    padding: 5vw 20vw;
   }
 }

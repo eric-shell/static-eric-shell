@@ -1,0 +1,7 @@
+.on-screen {
+  opacity: 0;
+
+  &.visible {
+    animation: ease-out fromTop .5s both;
+  }
+}

@@ -1,136 +1,41 @@
 .hero {
-  overflow: hidden;
-  position: relative;
+  display: flex;
   background: $violet;
   z-index: 20;
 
-  h1 {
-    color: $black;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 2;
-  }
-
-  .imagery {
-    z-index: 10;
+  &__branding {
     position: relative;
-
-    .logo {
-      display: flex;
-      position: absolute;
-      top: 15%;
-      left: 15%;
-      width: 70%;
-      height: 70%;
-
-      svg {
-        width: 100%;
-      }
-    }
   }
 
-  .content {
-    padding: 30vw 7.5vw 20vw;
+  &__profile {
+    display: block;
     z-index: 5;
-    position: relative;
-    background: $white;
+  }
+
+  &__logo {
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &:after {
-      content: '';
-      width: 100%;
-      height: 85px;
-      position: absolute;
-      z-index: -1;
-      left: 0;
-      top: -50px;
-      transform: skewY(-5deg);
-      background: $violet;
-      box-shadow: -5px 0 15px 0 rgba($violet, .1);
-    }
+    position: absolute;
+    left: 10%;
+    top: 10vw;
+    z-index: 10;
   }
-}
 
-@include for-tablet-portrait-up {
-
-  .hero {
+  &__tagline {
     display: flex;
-    background: $blue;
+    justify-content: center;
+    align-items: center;
+    background: $white;
+    padding: 5vw;
 
-    h1 {
-      position: relative;
-      top: -1vw;
-      left: -4.5vw;
-      font-size: 2.25vw;
-      padding: 0 .5em;
-      animation: 1s ease-out fromRight both;
-      animation-delay: .5s;
+    @include for-tablet-portrait-up {
+      padding: 10vw;
     }
 
-    .imagery {
-      z-index: 5;
-      width: 50%;
-
-      .profile {
-        padding-right: 25%;
-        animation: 1s ease-out fromLeft both;
-      }
-
-      .logo {
-        top: 25%;
-        left: 12.5%;
-        width: 50%;
-        height: 50%;
-        animation: 1s ease-out fromLeft both;
-        animation-delay: .5s;
-      }
-    }
-
-    .content {
-      padding: 0;
-      z-index: 10;
-      width: 50%;
-      animation: 1s ease-out fromRight both;
-
-      &:after {
-        content: '';
-        z-index: -1;
-        position: absolute;
-        left: -24%;
-        top: -40%;
-        width: 100%;
-        height: 200%;
-        transform: rotate(14deg);
-        background: $white;
-      }
-    }
-  }
-}
-
-@include for-tablet-landscape-up {
-
-  .hero {
-
-    h1 {
-      top: auto;
-      left: -12.5%;
-      font-size: 1.75vw;
-      padding: 0 1em;
-    }
-
-    .imagery {
-      width: 60%;
-    }
-
-    .content {
-      width: 40%;
-
-      &:after {
-        left: -33%;
-        transform: rotate(29deg);
-      }
+    p {
+      color: $black;
     }
   }
 }

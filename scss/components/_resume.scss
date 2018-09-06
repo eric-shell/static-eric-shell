@@ -1,203 +1,118 @@
 .resume {
-  z-index: 10;
   position: relative;
-  line-height: 2;
-  opacity: 0; // for visible animation
-
-  &.visible {
-    opacity: 1;
-    animation: ease-out fromTop .5s both;
-    animation-delay: .5s;
-  }
 
   p {
     line-height: 1.25;
     padding: .25em 0 0;
-  }
 
-  h2 {
-    color: $white;
-    font-weight: 900;
-    font-size: 1.75em;
-    text-transform: uppercase;
-    letter-spacing: -.01em;
-    line-height: 1.25;
-
-    a {
-      display: inline-block;
-      text-decoration: none;
-      line-height: 1.25;
+    @include for-tablet-portrait-up {
+      font-size: 2vw;
     }
-  }
 
-  h3 {
-    color: $white;
-    font-weight: 600;
-    font-size: 1.1em;
-    line-height: 1.25;
-  }
-
-  h4 {
-    color: $white;
-    font-weight: 600;
-    font-size: 1.05em;
-    line-height: 1.25;
-    padding: 0 0 .25em
+    @include for-tablet-landscape-up {
+      font-size: 1.25vw;
+    }
   }
 
   button {
     margin: 2em 0 0;
   }
 
-  .content {
-    position: relative;
-    z-index: 50;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
   .employment {
     padding: 0 0 2em;
   }
 
-  .pane {
-    display: none;
-    position: relative;
+  .credentials {
+
+    ul + ul {
+      margin: 1em 0 0;
+    }
+  }
+}
+
+.pane {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20vw 5vw;
+
+  @include for-tablet-portrait-up {
+    padding: 15vw 10vw;
+  }
+
+  @include for-tablet-landscape-up {
+    padding: 10vw 20vw;
+  }
+
+  &.visible {
+    display: block;
+    animation: ease-out fromTop .5s both;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    margin: -4vw 0;
-    padding: 17.5vw 5vw 22.5vw;
+    z-index: 40;
+  }
 
-    &.visible {
-      display: block;
-      animation: ease-out fromTop .5s both;
+  &--intro,
+  &--outro {
+    font-size: 5vw;
+
+    @include for-tablet-portrait-up {
+      padding: 10vw;
     }
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 40;
+    @include for-tablet-landscape-up {
+      padding: 20vw;
     }
 
-    &:first-child {
-      padding: 20vw 5vw;
+    p {
+      opacity: .75;
+      padding: .5em .75em;
     }
 
-    &:last-child {
-      padding: 17.5vw 5vw 22.5vw;
+    button {
+      margin: 0;
     }
 
-    &:first-child,
-    &:last-child {
-      font-size: 5vw;
-
-      p {
-        opacity: .75;
-        padding: .5em .75em;
-      }
-
-      button {
-        margin: 0;
-      }
-
-      .content {
-        align-items: center;
-      }
+    @include for-tablet-portrait-up {
+      font-size: 3.5vw;
     }
 
-    &:nth-child(even) {
-
-      &:before {
-        background: $cyan;
-        transform: skewY(2deg);
-      }
+    @include for-tablet-landscape-up {
+      font-size: 2.25vw;
     }
+  }
 
-    &:nth-child(odd) {
+  &:nth-child(even) {
+    background: $cyan;
+  }
 
-      &:before {
-        background: $blue;
-        transform: skewY(-2deg);
-      }
-    }
-
-    &.credentials{
-
-      ul + ul{
-        margin: 1em 0 0;
-      }
-    }
+  &:nth-child(odd) {
+    background: $blue;
   }
 }
 
-@include for-tablet-portrait-up {
+.pane__content {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 
-  .resume {
+  &--intro,
+  &--outro {
+    align-items: center;
 
-    p {
-      font-size: 2vw;
-    }
-
-    h2 {
-      font-size: 4.5vw;
-    }
-
-    h3 {
-      font-size: 2.5vw;
-    }
-
-    h4 {
-      font-size: 2.5vw;
-    }
-
-    .pane {
-      padding: 12.5vw 10vw 17.5vw;
-
-      &:first-child,
-      &:last-child {
-        font-size: 3.5vw;
-      }
-    }
-  }
-}
-
-@include for-tablet-landscape-up {
-
-  .resume {
-
-    p {
-      font-size: 1.25vw;
-    }
-
-    h2 {
-      font-size: 2.5vw;
-    }
-
-    h3 {
-      font-size: 1.75vw;
-    }
-
-    h4 {
-      font-size: 1.5vw;
-    }
-
-    .pane {
-      padding: 7.5vw 22.5vw 12.5vw;
-
-      &:first-child,
-      &:last-child {
-        font-size: 2.25vw;
-
-        .content {
-          flex-direction: row;
-        }
-      }
+    @include for-tablet-landscape-up {
+      flex-direction: row;
     }
   }
 }

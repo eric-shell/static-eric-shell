@@ -1,25 +1,15 @@
-@mixin container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-.container {
-  @include container;
-}
-
-@mixin link($background-color: $violet, $underline-color: $white, $underline-color-active: $cyan) {
+@mixin link($text-color: $white, $background-color: $violet, $underline-color: $white, $underline-color-active: $cyan) {
   font-weight: 600;
   text-decoration: none;
+  color: $text-color;
   text-shadow: -0.08em -0.04em 0 $background-color, 0.08em -0.04em 0 $background-color, 0.08em 0.04em 0 $background-color, -0.08em 0.04em 0 $background-color;
   box-shadow: inset 0 -.05em 0 0 $background-color, inset 0 -.175em 0 0 $underline-color;
-  transition: $out-transition;
+  transition: box-shadow $out-transition;
 
   &:hover,
   &:focus {
     box-shadow: inset 0 -.05em 0 0 $background-color, inset 0 -.175em 0 0 $underline-color-active;
-    transition: $in-transition;
+    transition: box-shadow $in-transition;
   }
 }
 
@@ -42,21 +32,20 @@
   font-size: 1em;
   letter-spacing: .01em;
   line-height: 2;
-  transition: $out-transition;
+  transition: color $out-transition, background $out-transition, border $out-transition;
 
   &:hover {
     color: $active-text-color;
     background: $base-color;
-    transition: $in-transition;
+    transition: color $in-transition, background $in-transition;
   }
 
   &:focus {
     border: .15em solid $base-color;
-    transition: $in-transition;
+    transition: border $in-transition;
   }
 }
 
-button,
-a.button {
+.button {
   @include button;
 }
