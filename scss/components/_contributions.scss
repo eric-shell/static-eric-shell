@@ -1,0 +1,20 @@
+.contributions {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: $violet;
+  padding: 5vw;
+
+  button {
+    margin: 0 .25em;
+  }
+
+  @include for-tablet-portrait-up {
+    display: flex;
+    padding: 5vw 10vw;
+  }
+
+  @include for-tablet-landscape-up {
+    padding: 5vw 20vw;
+  }
+}

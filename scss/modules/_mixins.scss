@@ -1,4 +1,4 @@
-@mixin link($text-color: $white, $background-color: $violet, $underline-color: $white, $underline-color-active: $cyan) {
+@mixin link($text-color: $white, $background-color: $black, $underline-color: $white, $underline-color-active: $blue) {
   font-weight: 600;
   text-decoration: none;
   color: $text-color;

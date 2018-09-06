@@ -1,10 +1,10 @@
 .hero {
   display: flex;
   background: $violet;
-  z-index: 20;
 
   &__branding {
     position: relative;
+    width: 45%;
   }
 
   &__profile {
@@ -13,29 +13,27 @@
   }
 
   &__logo {
-    width: 80%;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 10%;
-    top: 10vw;
+    left: 15%;
+    top: 12.5vw;
     z-index: 10;
   }
 
   &__tagline {
+    width: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: $white;
     padding: 5vw;
 
-    @include for-tablet-portrait-up {
-      padding: 10vw;
-    }
-
     p {
       color: $black;
+      max-width: 37.5vw;
     }
   }
 }
