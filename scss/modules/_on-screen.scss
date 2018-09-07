@@ -2,6 +2,6 @@
   opacity: 0;
 
   &.visible {
-    animation: ease-out fromTop .5s both;
+    animation: fromTop .5s ease-out both;
   }
 }

@@ -1,10 +1,18 @@
 .hero {
   display: flex;
+  flex-direction: column;
   background: $violet;
+
+  @include for-tablet-portrait-up {
+    flex-direction: row;
+  }
 
   &__branding {
     position: relative;
-    width: 45%;
+
+    @include for-tablet-portrait-up {
+      width: 45%;
+    }
   }
 
   &__profile {
@@ -19,21 +27,32 @@
     align-items: center;
     position: absolute;
     left: 15%;
-    top: 12.5vw;
+    top: 30vw;
     z-index: 10;
+
+    @include for-tablet-portrait-up {
+      top: 12.5vw;
+    }
   }
 
   &__tagline {
-    width: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: $white;
-    padding: 5vw;
+    padding: 10vw 5vw;
+
+    @include for-tablet-portrait-up {
+      padding: 5vw;
+      width: 55%;
+    }
 
     p {
       color: $black;
-      max-width: 37.5vw;
+
+      @include for-tablet-portrait-up {
+        max-width: 37.5vw;
+      }
     }
   }
 }

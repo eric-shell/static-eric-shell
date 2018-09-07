@@ -1,16 +1,15 @@
 .freelance {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10vw 5vw;
   background: $cyan;
-  padding: 5vw;
 
   .button {
-    margin: 0 .25em;
+    margin: 0 .5em;
   }
 
   @include for-tablet-portrait-up {
-    display: flex;
     padding: 5vw 10vw;
   }
 

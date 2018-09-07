@@ -1,16 +1,15 @@
 .contributions {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10vw 5vw;
   background: $violet;
-  padding: 5vw;
 
-  button {
-    margin: 0 .25em;
+  .button {
+    margin: 0 .5em;
   }
 
   @include for-tablet-portrait-up {
-    display: flex;
     padding: 5vw 10vw;
   }
 

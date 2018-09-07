@@ -1,15 +1,18 @@
 body, input, textarea, select, button {
-  font-size: 100%;
+  font-size: 16px;
   font-family: 'Source Sans Pro', system-ui, Arial, sans-serif;
 }
 
-h1 {
+h1, h2, h3 {
   color: $white;
+  line-height: 1;
+}
+
+h1 {
   font-weight: 900;
   font-size: 2em;
   text-transform: uppercase;
   letter-spacing: -.01em;
-  line-height: 1.25;
 
   &.document__title {
     visibility: hidden;
@@ -22,54 +25,46 @@ h1 {
 }
 
 h2 {
-  color: $white;
   font-weight: 900;
   font-size: 1.75em;
   text-transform: uppercase;
   letter-spacing: -.01em;
-  line-height: 1.25;
 
   a {
     display: inline-block;
-    text-decoration: none;
-    line-height: 1.25;
   }
 }
 
 h3 {
-  color: $white;
   font-weight: 600;
   font-size: 1.1em;
-  line-height: 1.25;
-}
-
-h4 {
-  color: $white;
-  font-weight: 600;
-  font-size: 1.05em;
-  line-height: 1.25;
-  padding: 0 0 .25em
 }
 
 p {
   color: $white;
-  font-size: 16px;
-  line-height: 2;
+  line-height: 1.75;
 }
 
 a {
   color: $white;
-  line-height: 1.5;
+  text-decoration: none;
 }
 
 ul {
-  font-size: 16px;
-  line-height: 1.5;
+  list-style: none;
+}
 
-  li {
-    color: $white;
-    margin-left: 20px;
-  }
+li {
+  margin: 0;
+  color: $white;
+  line-height: 1.75;
+}
+
+small {
+  opacity: .75;
+  color: $white;
+  font-size: .5em;
+  padding: 1em;
 }
 
 @include for-tablet-portrait-up {
@@ -83,15 +78,11 @@ ul {
   }
 
   h3 {
-    font-size: 2.5vw;
-  }
-
-  h4 {
-    font-size: 2.5vw;
+    font-size: 3vw;
   }
 
   p {
-    font-size: 2.25vw;
+    font-size: 2.5vw;
   }
 }
 
@@ -107,10 +98,6 @@ ul {
 
   h3 {
     font-size: 1.75vw;
-  }
-
-  h4 {
-    font-size: 1.5vw;
   }
 
   p {

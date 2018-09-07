@@ -1,13 +1,17 @@
 .work {
   display: none;
 
-  &--list {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
+  &.visible {
+    display: block;
+    animation: ease-out fromTop .5s both;
   }
 
-  &--item {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
     width: 25%;
     margin: 0;
     padding: 2vw;
