@@ -1,12 +1,14 @@
 .work {
-  display: none;
 
-  &.visible {
-    display: block;
-    animation: ease-out fromTop .5s both;
+  &__banner {
+    @include banner($violet);
   }
 
   &__list {
+    display: none;
+  }
+
+  &__items {
     display: flex;
     flex-wrap: wrap;
   }
