@@ -14,14 +14,18 @@
   }
 
   &__item {
-    width: 25%;
+    width: 50%;
     margin: 0;
-    padding: 2vw;
+    padding: 5vw 2.5vw;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    @include for-tablet-landscape-up {
+      width: 25%;
+    }
   }
 }
