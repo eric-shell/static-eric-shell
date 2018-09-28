@@ -2,14 +2,17 @@
 @import "modules/variables";
 @import "modules/breakpoints";
 @import "modules/keyframes";
-@import "modules/mixins";
 @import "modules/reset";
 @import "modules/type";
 @import "modules/on-screen";
 
-@import "components/hero";
-@import "components/freelance";
-@import "components/resume";
-@import "components/work";
+@import "components/link";
+@import "components/button";
+@import "components/banner";
+
+@import "blocks/hero";
+@import "blocks/freelance";
+@import "blocks/resume";
+@import "blocks/work";
 
 @import "layout/footer";
