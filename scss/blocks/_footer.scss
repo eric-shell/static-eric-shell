@@ -49,7 +49,7 @@
 }
 
 .footer__link {
-  @include link;
+  @include link($white, $black, $black, $blue);
 }
 
 .footer__info {

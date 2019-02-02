@@ -4,15 +4,14 @@
 @import "modules/keyframes";
 @import "modules/reset";
 @import "modules/type";
-@import "modules/on-screen";
 
-@import "components/link";
 @import "components/button";
+@import "components/link";
+@import "components/block";
 @import "components/banner";
 
+@import "blocks/footer";
 @import "blocks/hero";
 @import "blocks/freelance";
 @import "blocks/resume";
 @import "blocks/work";
-
-@import "layout/footer";

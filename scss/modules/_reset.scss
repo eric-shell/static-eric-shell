@@ -1,37 +1,186 @@
+// Reset margin, padding, border
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+em,
+small,
+strong,
+sub,
+sup,
+mark,
+del,
+ins,
+strike,
+abbr,
+dfn,
+blockquote,
+q,
+cite,
+code,
+pre,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+hgroup,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+canvas,
+iframe,
+details,
+summary,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+// Typography
+* {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a,
+a:visited {
+  color: inherit;
+}
+
+// Layout
 html {
+  font: 100% 'Source Sans Pro', system-ui, Arial, sans-serif;
   background: $black;
 }
 
 body {
-  width: 100%;
-  filter: hue-rotate(0deg);
-  transition: all 5s ease-out;
-
-  &.grayscale {
-    filter: hue-rotate(-120deg) saturate(0);
-    transition: all 5s ease-out;
-  }
+  line-height: 1;
 }
 
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+* {
   box-sizing: border-box;
 }
 
-img {
-  height: auto;
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// Elements
+article,
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+video {
   max-width: 100%;
   vertical-align: bottom;
 }
 
-iframe {
-  border: 0;
+img {
+  border-style: none;
 }
 
-*:focus {
-  border: 0;
+q,
+blockquote {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: "";
+  content: none;
+}
+
+button {
+  appearance: none;
+  border: inherit;
+  outline: inherit;
+  cursor: pointer;
+}
+
+// Attributes & states
+[hidden],
+.hidden{
+  display: none !important;
+}
+
+[disabled],
+.disabled {
+  cursor: not-allowed;
+}
+
+:focus {
+  outline: 0;
+  box-shadow: 
+    0 0 0 2px darken(skyblue, 10%),
+    inset 0 0 0 2px darken(skyblue, 10%);
+}
+
+:focus:not(:focus-visible) {
   outline: 0;
 }

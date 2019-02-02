@@ -57,7 +57,7 @@ gulp.task('move-files', function() {
 });
 
 gulp.task('min-img', function(done) {
-  gulp.src('images/**/*')
+  gulp.src('images/**/*.{gif,jpg,jpeg,png,svg}')
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),

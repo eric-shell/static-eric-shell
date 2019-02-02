@@ -17,3 +17,7 @@
     padding: 5vw 20vw;
   }
 }
+
+.banner {
+  @include banner;
+}

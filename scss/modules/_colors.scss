@@ -1,17 +1,17 @@
 // Colors
 $white: #ffffff;
-$black: #111521;
 $cyan: #27c2ff;
-$blue: #3c81fd;
-$violet: #6209f8;
+$blue: #3c81fd; //saturate(lighten(adjust-hue($cyan, 19.5deg), 2%), 5%);
+$violet: #6209f8; //saturate(darken(adjust-hue($cyan, 66deg), 8%), 2%);
+$black: #111521; //darken(desaturate(adjust-hue($cyan, 25deg), 70%), 50%);
 
 // Map color values to class names
 $colors: (
   white: $white,
-  black: $black,
   cyan: $cyan,
   blue: $blue,
   violet: $violet,
+  black: $black,
 );
 
 // Configure color class function
@@ -23,6 +23,6 @@ $colors: (
   }
 }
 
-// Generate colors for use in html
+// Generate colors for use in markup
 @include generate-color-properties('txt', 'color');
 @include generate-color-properties('bg', 'background');

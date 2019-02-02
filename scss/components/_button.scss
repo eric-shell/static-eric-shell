@@ -1,28 +1,52 @@
-@mixin button($base-color: $white, $active-text-color: $blue) {
+// @mixin button($base-color: $white, $active-text-color: $blue) {
+//   position: relative;
+//   display: inline-block;
+//   cursor: pointer;
+//   margin: 0;
+//   padding: .5em .75em;
+//   color: $base-color;
+//   border-radius: 0;
+//   border: .15em solid $base-color;
+//   background: transparent;
+//   font-weight: 600;
+//   font-size: 1em;
+//   letter-spacing: .01em;
+//   line-height: 2;
+//   transition: color $out-transition, background $out-transition, border $out-transition;
+
+//   &:focus,
+//   &:hover {
+//     background: $base-color;
+//     color: $active-text-color;
+//     border: .15em solid $base-color;
+//     transition: color $trans-in, background $trans-in;
+//   }
+// }
+
+@mixin button($color--default: $blue, $color--active: $violet) {
+  padding: 10px;
   position: relative;
-  display: inline-block;
-  cursor: pointer;
-  margin: 0;
-  padding: .5em .75em;
-  color: $base-color;
-  border-radius: 0;
-  border: .15em solid $base-color;
-  background: transparent;
-  font-weight: 600;
-  font-size: 1em;
-  letter-spacing: .01em;
-  line-height: 2;
-  transition: color $out-transition, background $out-transition, border $out-transition;
+  text-decoration: none;
+  background: $color--default;
+  transition: all $trans-out;
+
+  @include for-tablet-portrait-up {
+    padding: 15px;
+  }
+  
+  @include for-tablet-landscape-up {
+    padding: 20px;
+  }
 
   &:focus,
-  &:hover {
-    background: $base-color;
-    color: $active-text-color;
-    border: .15em solid $base-color;
-    transition: color $in-transition, background $in-transition;
+  &:hover,
+  &--active {
+    background: $color--active;
+    transition: all $trans-in;
   }
 }
 
 .button {
   @include button;
 }
+
