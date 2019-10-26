@@ -1,9 +1,5 @@
 .work {
 
-  &__banner {
-    @include banner($violet);
-  }
-
   &__list {
     display: none;
   }

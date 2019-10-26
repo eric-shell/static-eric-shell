@@ -24,19 +24,11 @@
 // }
 
 @mixin button($color--default: $blue, $color--active: $violet) {
-  padding: 10px;
+  padding: 1em .75em;
   position: relative;
   text-decoration: none;
   background: $color--default;
   transition: all $trans-out;
-
-  @include for-tablet-portrait-up {
-    padding: 15px;
-  }
-  
-  @include for-tablet-landscape-up {
-    padding: 20px;
-  }
 
   &:focus,
   &:hover,
@@ -49,4 +41,3 @@
 .button {
   @include button;
 }
-

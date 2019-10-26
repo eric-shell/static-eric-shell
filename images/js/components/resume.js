@@ -1,4 +1,4 @@
-$(function() {
+(function ($) {
 
   var currentPane = 1;
 
@@ -11,4 +11,4 @@ $(function() {
     });
   });
 
-});
+})(jQuery);

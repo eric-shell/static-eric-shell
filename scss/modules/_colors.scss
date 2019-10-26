@@ -17,7 +17,7 @@ $colors: (
 // Configure color class function
 @mixin generate-color-properties($prefix, $property) {
   @each $color-name, $color in $colors {
-    .#{$prefix}-#{$color-name} {
+    .#{$prefix}--#{$color-name} {
       #{$property}: $color
     }
   }

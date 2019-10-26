@@ -31,7 +31,7 @@ gulp.task('min-scss', function () {
 });
 
 gulp.task('min-js', function () {
-  gulp.src(['js/vendor/*.js', 'js/modules/*.js', 'js/components/*.js'])
+  gulp.src(['js/vendor/*.js', 'js/components/*.js'])
     .pipe(uglify().on('error', function(e){console.log(e);}))
     .pipe(concat('main.js'))
     .pipe(rename('main.min.js'))
@@ -40,7 +40,7 @@ gulp.task('min-js', function () {
 });
 
 gulp.task('min-html', function() {
-  return gulp.src('html/*.html')
+  return gulp.src(['html/**/*.html', '!html/layout/*.html', '!html/components/*.html'])
     .pipe(plumber())
     .pipe(fileinclude({
       prefix: '@@',
