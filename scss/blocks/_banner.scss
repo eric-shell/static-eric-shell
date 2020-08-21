@@ -3,10 +3,12 @@
   flex-direction: column;
   background: $blue;
   overflow: hidden;
+  animation: fromBottom .75s ease-out forwards;
 
   @include for-tablet-portrait-up {
     flex-direction: row;
     align-items: stretch;
+    animation: fromLeft .75s ease-out forwards;
   }
 
   &__section {
@@ -17,6 +19,7 @@
 
     @include for-tablet-portrait-up {
       width: 45%;
+      animation: fromLeft .75s ease-out forwards;
     }
   }
 
@@ -29,11 +32,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 0 7.5vw;
-    animation: fromTop .75s ease-out forwards;
+    padding: 0 15vw;
+    animation: fromBottom 1.25s ease-out forwards;
 
     @include for-tablet-portrait-up {
-      animation: fromLeft .75s ease-out forwards;
+      padding: 0 7.5vw;
+      animation: fromLeft 1.25s ease-out forwards;
     }
   }
 
@@ -74,11 +78,11 @@
   &__text {
     font-size: 4vw;
     line-height: 2.25;
-    animation: fromTop .75s ease-out forwards;
+    animation: fromBottom 1.25s ease-out forwards;
 
     @include for-tablet-portrait-up {
       font-size: 1.9vw;
-      animation: fromRight .75s ease-out forwards;
+      animation: fromRight 1.25s ease-out forwards;
     }
   }
 }
