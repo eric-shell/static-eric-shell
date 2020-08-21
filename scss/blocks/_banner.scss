@@ -5,28 +5,17 @@
 
   @include for-tablet-portrait-up {
     flex-direction: row;
+    align-items: stretch;
   }
 
   &__section {
     position: relative;
+  }
+
+  &__branding {
 
     @include for-tablet-portrait-up {
-      width: 50%;
-    }
-
-    &--tagline {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      line-height: 2;
-      font-size: 20px;
-      padding: 40px 20px;
-      background: $white;
-
-      @include for-tablet-portrait-up {
-        font-size: 1.7vw;
-        padding: 7.5vw;
-      }
+      width: 45%;
     }
   }
 
@@ -40,5 +29,55 @@
     width: 100%;
     height: 100%;
     padding: 0 7.5vw;
+    animation: fromTop .75s ease-out forwards;
+
+    @include for-tablet-portrait-up {
+      animation: fromLeft .75s ease-out forwards;
+    }
+  }
+
+  &__content {
+    background: $white;
+
+    @include for-tablet-portrait-up {
+      width: 55%;
+      transform: skew(-15deg);
+
+      &:after {
+        content: '';
+        background: $white;
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: skew(15deg);
+        z-index: -1;
+      }
+    }
+  }
+
+  &__slogan {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vw 8vw;
+
+    @include for-tablet-portrait-up {
+      padding: 0 5vw 0 10vw;
+      transform: skew(15deg);
+    }
+  }
+
+  &__text {
+    font-size: 4vw;
+    line-height: 2.25;
+    animation: fromTop .75s ease-out forwards;
+
+    @include for-tablet-portrait-up {
+      font-size: 1.9vw;
+      animation: fromRight .75s ease-out forwards;
+    }
   }
 }
