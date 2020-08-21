@@ -4,21 +4,33 @@
   color: $white;
   background: $black;
   width: 100%;
-  padding: 40px 20px;
+  font-size: 4vw;
+  line-height: 2.25;
+  padding: 10vw 8vw;
   font-weight: 600;
-  font-size: 1.25em;
 
   @include for-tablet-portrait-up {
-    padding: 7.5vw;
-  }
-
-  @include for-tablet-landscape-up {
     flex-direction: row;
+    font-size: 1.9vw;
+    padding: 7.5vw;
   }
 
   &__menu {
     display: flex;
     flex-grow: 1;
+    animation: fromTop .75s ease-out forwards;
+
+    @include for-tablet-portrait-up {
+      animation: fromLeft .75s ease-out forwards;
+    }
+  }
+
+  &__info {
+    animation: fromTop .75s ease-out forwards;
+
+    @include for-tablet-portrait-up {
+      animation: fromRight .75s ease-out forwards;
+    }
   }
 
   &__link {
