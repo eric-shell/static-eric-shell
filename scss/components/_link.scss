@@ -5,14 +5,14 @@
     text-shadow: -0.08em -0.04em 0 $background-color, 0.08em -0.04em 0 $background-color, 0.08em 0.04em 0 $background-color, -0.08em 0.04em 0 $background-color;
     box-shadow: inset 0 -.05em 0 0 $background-color, inset 0 -.175em 0 0 $underline-color--default;
     transition: box-shadow $trans-out;
-  
+
     &:hover,
     &:focus {
       box-shadow: inset 0 -.05em 0 0 $background-color, inset 0 -.175em 0 0 $underline-color--active;
       transition: box-shadow $trans-in;
     }
   }
-  
+
   .link {
     @include link;
   }
