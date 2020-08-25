@@ -17,18 +17,23 @@
 
   &__menu {
     display: flex;
-    flex-grow: 1;
+    flex-direction: column;
     animation: fromTop .75s ease-out forwards;
 
     @include for-tablet-portrait-up {
+      flex-grow: 1;;
+      flex-direction: row;
       animation: fromLeft .75s ease-out forwards;
     }
   }
 
   &__info {
+
+    padding: 10vw 0 0;
     animation: fromTop .75s ease-out forwards;
 
     @include for-tablet-portrait-up {
+      padding: 0;
       animation: fromRight .75s ease-out forwards;
     }
   }
