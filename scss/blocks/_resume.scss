@@ -3,6 +3,7 @@
   width: 100%;
   height: 100%;
   padding: 20vw 5vw;
+  color: $white;
 
   @include for-tablet-portrait-up {
     padding: 15vw 10vw;
@@ -23,16 +24,11 @@
   &--intro,
   &--outro {
     padding: 20vw 5vw;
-    font-size: 5vw;
+    font-size: 4vw;
 
     @include for-tablet-portrait-up {
       padding: 20vw 10vw;
-      font-size: 3.5vw;
-    }
-
-    @include for-tablet-landscape-up {
-      padding: 20vw;
-      font-size: 2.25vw;
+      font-size: 1.9vw;
     }
   }
 
@@ -52,6 +48,14 @@
         flex-direction: row;
       }
     }
+  }
+
+  &__button {
+    @include button($violet);
+  }
+
+  &__seperator {
+    padding: 2.5vw 0;
   }
 
   &__body,
