@@ -3,12 +3,12 @@
   flex-direction: column;
   background: $blue;
   overflow: hidden;
-  animation: fromBottom .75s ease-out forwards;
+  animation: fromBottom .75s ease-out both;
 
   @include for-tablet-portrait-up {
     flex-direction: row;
     align-items: stretch;
-    animation: fromLeft .75s ease-out forwards;
+    animation: fromLeft .75s ease-out both;
   }
 
   &__section {
@@ -19,7 +19,31 @@
 
     @include for-tablet-portrait-up {
       width: 45%;
-      animation: fromLeft .75s ease-out forwards;
+      animation: fromLeft .75s ease-out both;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 5vw;
+    left: 5vw;
+    width: 5vw;
+    height: 5vw;
+    animation: fromTop 1.25s ease-out both;
+    animation-delay: 1s;
+
+    @include for-tablet-portrait-up {
+      top: 2.5vw;
+      left: 2.5vw;
+      width: 2.5vw;
+      height: 2.5vw;
+    }
+
+    @include for-tablet-landscape-up {
+      top: 1.25vw;
+      left: 1.25vw;
+      width: 1.25vw;
+      height: 1.25vw;
     }
   }
 
@@ -33,11 +57,11 @@
     width: 100%;
     height: 100%;
     padding: 0 15vw;
-    animation: fromBottom 1.25s ease-out forwards;
+    animation: fromBottom 1.25s ease-out both;
 
     @include for-tablet-portrait-up {
       padding: 0 7.5vw;
-      animation: fromLeft 1.25s ease-out forwards;
+      animation: fromLeft 1.25s ease-out both;
     }
   }
 
@@ -77,12 +101,12 @@
 
   &__text {
     font-size: 4vw;
-    line-height: 2.25;
-    animation: fromBottom 1.25s ease-out forwards;
+    line-height: 2.15;
+    animation: fromBottom 1.25s ease-out both;
 
     @include for-tablet-portrait-up {
       font-size: 1.9vw;
-      animation: fromRight 1.25s ease-out forwards;
+      animation: fromRight 1.25s ease-out both;
     }
   }
 }
