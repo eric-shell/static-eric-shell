@@ -4,11 +4,12 @@
 @import "modules/reset";
 @import "modules/type";
 
-@import "components/button";
-@import "components/link";
 @import "components/block";
+@import "components/link";
+@import "components/button";
 
-@import "blocks/footer";
 @import "blocks/banner";
-@import "blocks/resume";
+@import "blocks/status";
 @import "blocks/work";
+@import "blocks/resume";
+@import "blocks/footer";

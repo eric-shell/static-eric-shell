@@ -1,0 +1,28 @@
+.status {
+  position: relative;
+  z-index: 20;
+
+  &__container {
+    margin: 0;
+    padding: 10vw 8vw;
+    background: $cyan;
+    text-align: center;
+
+    @include for-tablet-portrait-up {
+      padding: 5vw;
+      margin: -1.75vw 0;
+      transform: skewY(-2deg);
+    }
+  }
+
+  &__message {
+    color: $white;
+    font-size: 4vw;
+    line-height: 2.15;
+
+    @include for-tablet-portrait-up {
+      font-size: 1.9vw;
+      transform: skewY(2deg);
+    }
+  }
+}

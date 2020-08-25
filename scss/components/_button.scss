@@ -1,40 +1,43 @@
-// @mixin button($base-color: $white, $active-text-color: $blue) {
-//   position: relative;
-//   display: inline-block;
-//   cursor: pointer;
-//   margin: 0;
-//   padding: .5em .75em;
-//   color: $base-color;
-//   border-radius: 0;
-//   border: .15em solid $base-color;
-//   background: transparent;
-//   font-weight: 600;
-//   font-size: 1em;
-//   letter-spacing: .01em;
-//   line-height: 2;
-//   transition: color $out-transition, background $out-transition, border $out-transition;
-
-//   &:focus,
-//   &:hover {
-//     background: $base-color;
-//     color: $active-text-color;
-//     border: .15em solid $base-color;
-//     transition: color $trans-in, background $trans-in;
-//   }
-// }
-
-@mixin button($color--default: $blue, $color--active: $violet) {
-  padding: 1em .75em;
+@mixin button($color: $blue) {
+  font-weight: 600;
+  padding: 1em;
+  margin: 0 .5em;
   position: relative;
   text-decoration: none;
-  background: $color--default;
+  position: relative;
+  z-index: 20;
   transition: all $trans-out;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border: solid .15em $white;
+    transition: all $trans-out;
+
+    @include for-tablet-portrait-up {
+      transform: skewX(-7.5deg);
+    }
+  }
 
   &:focus,
   &:hover,
   &--active {
-    background: $color--active;
+    color: $color;
     transition: all $trans-in;
+
+    &:before {
+      background: $white;
+      transition: all $trans-in;
+
+      @include for-tablet-portrait-up {
+        transform: skewX(7.5deg);
+      }
+    }
   }
 }
 
