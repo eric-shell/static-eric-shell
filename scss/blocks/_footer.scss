@@ -1,7 +1,6 @@
 .footer {
   display: flex;
   flex-direction: column;
-  color: $white;
   background: $black;
   width: 100%;
   font-size: 4vw;
@@ -33,6 +32,7 @@
   }
 
   &__info {
+    color: $white;
     display: flex;
     padding: 10vw 0 0;
 
@@ -63,7 +63,7 @@
     margin: 0 .25em 0 0;
 
     @include for-tablet-portrait-up {
-      margin: 0 .25em
+      margin: 0 .25em 0 .35em;
     }
   }
 }
