@@ -7,11 +7,12 @@
   line-height: 2.15;
   padding: 10vw 8vw;
   font-weight: 600;
+  z-index: 20;
 
   @include for-tablet-portrait-up {
     flex-direction: row;
     font-size: 1.9vw;
-    padding: 7.5vw;
+    padding: 12.5vw 7.5vw 7.5vw;
   }
 
   &__menu {
@@ -53,8 +54,8 @@
       position: relative;
       top: auto;
       right: auto;
-      height: 1.4vw;
-      width: 1.4vw;
+      height: 1.3vw;
+      width: 1.3vw;
       margin: 1.4vw 0;
     }
   }
