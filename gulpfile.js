@@ -1,63 +1,61 @@
-var gulp = require('gulp'),
-  del = require('del'),
-  sass = require('gulp-sass'),
-  rename = require('gulp-rename'),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
-  clean = require('gulp-clean-css'),
-  plumber = require('gulp-plumber'),
-  imagemin = require('gulp-imagemin'),
-  htmlclean = require('gulp-htmlclean'),
-  runsequence = require('run-sequence'),
-  prefixer = require('gulp-autoprefixer'),
-  sourcemaps = require('gulp-sourcemaps'),
-  fileinclude = require('gulp-file-include'),
-  browserSync = require('browser-sync').create();
+const { src, dest, parallel, series, watch } = require('gulp')
+const del = require('del')
+const sass = require('gulp-sass')
+const rename = require('gulp-rename')
+const concat = require('gulp-concat')
+const uglify = require('gulp-uglify')
+const clean = require('gulp-clean-css')
+const plumber = require('gulp-plumber')
+const imagemin = require('gulp-imagemin')
+const htmlclean = require('gulp-htmlclean')
+const prefixer = require('gulp-autoprefixer')
+const sourcemaps = require('gulp-sourcemaps')
+const fileinclude = require('gulp-file-include')
+const browsersync = require('browser-sync').create()
 
-gulp.task('pre-build', function () {
-  return del(['docs/!(*CNAME)']);
-});
+function preBuild() {
+  return del(['docs/!(*CNAME)'])
+};
 
-gulp.task('min-scss', function () {
-  gulp.src('scss/main.scss')
+function minScss() {
+  return src('scss/main.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefixer())
     .pipe(clean())
     .pipe(rename('main.min.css'))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('docs/min/css'))
-    .pipe(browserSync.stream());
-});
+    .pipe(dest('docs/min/css', { sourcemaps: '.' }))
+    .pipe(browsersync.stream())
+};
 
-gulp.task('min-js', function () {
-  gulp.src(['js/vendor/*.js', 'js/components/*.js'])
-    .pipe(uglify().on('error', function(e){console.log(e);}))
+function minJs() {
+  return src(['js/vendor/*.js', 'js/components/*.js'])
+    .pipe(uglify())
     .pipe(concat('main.js'))
     .pipe(rename('main.min.js'))
-    .pipe(gulp.dest('docs/min/js'))
-    .pipe(browserSync.stream());
-});
+    .pipe(dest('docs/min/js'))
+    .pipe(browsersync.stream())
+};
 
-gulp.task('min-html', function() {
-  return gulp.src(['html/**/*.html', '!html/layout/*.html', '!html/components/*.html'])
+function minHtml() {
+  return src(['html/**/*.html', '!html/layout/*.html', '!html/components/*.html'])
     .pipe(plumber())
     .pipe(fileinclude({
       prefix: '@@',
       basepath: 'html'
     }))
     .pipe(htmlclean())
-    .pipe(gulp.dest('docs'))
-    .pipe(browserSync.stream());
-});
+    .pipe(dest('docs'))
+    .pipe(browsersync.stream())
+};
 
-gulp.task('move-files', function() {
-  return gulp.src('files/**/*')
-    .pipe(gulp.dest('docs/files'));
-});
+function moveFiles() {
+  return src('files/**/*')
+    .pipe(dest('docs/files'))
+};
 
-gulp.task('min-img', function(done) {
-  gulp.src('images/**/*.{gif,jpg,jpeg,png,svg}')
+function minImg() {
+  return src('images/**/*.{gif,jpg,jpeg,png,svg}')
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.mozjpeg({progressive: true}),
@@ -71,38 +69,26 @@ gulp.task('min-img', function(done) {
     ], {
       verbose: true
     }))
-    .pipe(gulp.dest('docs/images'))
-    .on('end', function () { done(); })
-    .pipe(browserSync.stream());
-});
+    .pipe(dest('docs/images'))
+    .pipe(browsersync.stream())
+};
 
-gulp.task('serve', function() {
-  browserSync.init({
+function serve(done){
+  browsersync.init({
     server: {
-      baseDir: './docs',
-      serveStaticOptions: {
-        extensions: ['html']
-      }
-    },
-    port: 1110,
-    ui: {
-      port: 1111
+      baseDir: './docs'
     }
   });
-});
-
-// Full build task
-gulp.task('build', function(done) {
-  runsequence('pre-build', ['min-scss', 'min-js', 'min-html', 'move-files'], 'min-img', 'serve', function() {
-    done();
-  });
-});
+  done()
+}
 
 // All Watch tasks
-gulp.task('default', ['build'], function() {
-  gulp.watch('js/**/*.js', ['min-js']);
-  gulp.watch('scss/**/*.scss', ['min-scss']);
-  gulp.watch('html/**/*.html', ['min-html']);
-  gulp.watch('images/**/*', ['min-img']);
-  gulp.watch('files/**/*', ['move-files']);
-});
+watch('js/**/*.js', minJs)
+watch('scss/**/*.scss', minScss)
+watch('html/**/*.html', minHtml)
+watch('images/**/*', minImg)
+watch('files/**/*', moveFiles)
+
+// Full build functionality
+var build = series(preBuild, parallel(minScss, minJs, minHtml, moveFiles), minImg, serve)
+exports.default = build
