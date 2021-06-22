@@ -8,11 +8,22 @@
   padding: 10vw 8vw;
   font-weight: 600;
   z-index: 20;
+  overflow: hidden;
 
   @include for-tablet-portrait-up {
     flex-direction: row;
     font-size: 1.9vw;
-    padding: 12.5vw 7.5vw 7.5vw;
+    padding: 12.5vw 7.5vw;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2vw;
+      width: 100%;
+      box-shadow: 0 0 0 2vw $cyan, 0 0 0 4vw $blue, 0 0 0 6vw $violet;
+      transform: skewY(-2deg);
+    }
   }
 
   &__menu {
