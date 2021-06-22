@@ -38,7 +38,7 @@ function minJs() {
 };
 
 function minHtml() {
-  return src(['html/**/*.html', '!html/layout/*.html', '!html/components/*.html'])
+  return src(['html/*.html'])
     .pipe(plumber())
     .pipe(fileinclude({
       prefix: '@@',
