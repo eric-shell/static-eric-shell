@@ -1,7 +1,36 @@
 .work {
+  position: relative;
+  z-index: 40;
+
+  &__container {
+    margin: 0;
+    padding: 10vw 8vw;
+    color: $white;
+    background: $violet;
+    text-align: center;
+
+    @include for-tablet-portrait-up {
+      padding: 5vw;
+      margin: -1.75vw 0;
+      transform: skewY(-2deg);
+    }
+  }
+
+  &__banner {
+    width: 100%;
+    text-align: center;
+
+    @include for-tablet-portrait-up {
+      transform: skewY(2deg);
+    }
+  }
 
   &__list {
     display: none;
+
+    @include for-tablet-portrait-up {
+      transform: skewY(2deg);
+    }
   }
 
   &__items {
@@ -19,9 +48,30 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    cursor: pointer;
 
     @include for-tablet-landscape-up {
       width: 25%;
+    }
+
+    &:hover,
+    &:focus {
+
+      .work__content {
+        animation: fromBottom .5s ease-out forwards;
+      }
+    }
+  }
+
+  &__content {
+    opacity: 0;
+
+    h3 {
+      font-size: .5em;
+    }
+
+    p {
+      font-size: .4em;
     }
   }
 }
