@@ -60,7 +60,7 @@ gulp.task('min-img', function(done) {
   gulp.src('images/**/*.{gif,jpg,jpeg,png,svg}')
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
-      imagemin.jpegtran({progressive: true}),
+      imagemin.mozjpeg({progressive: true}),
       imagemin.optipng({optimizationLevel: 5}),
       imagemin.svgo({
         plugins: [
