@@ -15,7 +15,12 @@ const browsersync = require('browser-sync').create()
 
 function preBuild() {
   return del(['docs/!(*CNAME)'])
-};
+}
+
+function moveFiles() {
+  return src('files/**/*')
+    .pipe(dest('docs/files'))
+}
 
 function minScss() {
   return src('scss/main.scss')
@@ -26,7 +31,7 @@ function minScss() {
     .pipe(rename('main.min.css'))
     .pipe(dest('docs/min/css', { sourcemaps: '.' }))
     .pipe(browsersync.stream())
-};
+}
 
 function minJs() {
   return src(['js/vendor/*.js', 'js/components/*.js'])
@@ -35,7 +40,7 @@ function minJs() {
     .pipe(rename('main.min.js'))
     .pipe(dest('docs/min/js'))
     .pipe(browsersync.stream())
-};
+}
 
 function minHtml() {
   return src(['html/*.html'])
@@ -47,12 +52,7 @@ function minHtml() {
     .pipe(htmlclean())
     .pipe(dest('docs'))
     .pipe(browsersync.stream())
-};
-
-function moveFiles() {
-  return src('files/**/*')
-    .pipe(dest('docs/files'))
-};
+}
 
 function minImg() {
   return src('images/**/*.{gif,jpg,jpeg,png,svg}')
@@ -71,14 +71,14 @@ function minImg() {
     }))
     .pipe(dest('docs/images'))
     .pipe(browsersync.stream())
-};
+}
 
 function serve(done){
   browsersync.init({
     server: {
       baseDir: './docs'
     }
-  });
+  })
   done()
 }
 
@@ -90,5 +90,4 @@ watch('images/**/*', minImg)
 watch('files/**/*', moveFiles)
 
 // Full build functionality
-var build = series(preBuild, parallel(minScss, minJs, minHtml, moveFiles), minImg, serve)
-exports.default = build
+exports.default = series(preBuild, parallel(minScss, minJs, minHtml, moveFiles), minImg, serve)
