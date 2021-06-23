@@ -27,10 +27,6 @@
 
   &__list {
     display: none;
-
-    @include for-tablet-portrait-up {
-      transform: skewY(2deg);
-    }
   }
 
   &__items {
@@ -39,7 +35,7 @@
   }
 
   &__item {
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 5vw 2.5vw;
     position: relative;
@@ -49,21 +45,40 @@
     align-items: center;
     text-align: center;
     cursor: pointer;
+    transition: background $trans-out;
+
+    @include for-tablet-portrait-up {
+      width: 50%;
+    }
 
     @include for-tablet-landscape-up {
+      width: 33.33333%;
+    }
+
+    @include for-desktop-up {
       width: 25%;
     }
 
     &:hover,
     &:focus {
+      background: $blue;
+      transition: background $trans-in;
 
-      .work__content {
+      .work__body {
         animation: fromBottom .5s ease-out forwards;
       }
     }
   }
 
   &__content {
+    text-decoration: none;
+
+    @include for-tablet-portrait-up {
+      transform: skewY(2deg);
+    }
+  }
+
+  &__body {
     opacity: 0;
 
     h3 {
