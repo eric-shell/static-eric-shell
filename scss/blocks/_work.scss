@@ -59,8 +59,7 @@
       width: 25%;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       background: $blue;
       transition: background $trans-in;
 
@@ -80,13 +79,22 @@
 
   &__body {
     opacity: 0;
+    padding: .25em 0 0;
 
     h3 {
-      font-size: .5em;
+      font-size: 3vw;
+
+      @include for-tablet-portrait-up {
+        font-size: 1.25vw;
+      }
     }
 
     p {
-      font-size: .4em;
+      font-size: 3vw;
+
+      @include for-tablet-portrait-up {
+        font-size: 1.15vw;
+      }
     }
   }
 }
