@@ -1,6 +1,6 @@
 const { src, dest, parallel, series, watch } = require('gulp')
 const del = require('del')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'));
 const rename = require('gulp-rename')
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
@@ -23,12 +23,12 @@ function moveFiles() {
 }
 
 function minScss() {
-  return src('scss/main.scss')
+  return src('scss/styles.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefixer())
     .pipe(clean())
-    .pipe(rename('main.min.css'))
+    .pipe(rename('styles.min.css'))
     .pipe(dest('docs/min/css', { sourcemaps: '.' }))
     .pipe(browsersync.stream())
 }
@@ -36,8 +36,8 @@ function minScss() {
 function minJs() {
   return src(['js/vendor/*.js', 'js/components/*.js'])
     .pipe(uglify())
-    .pipe(concat('main.js'))
-    .pipe(rename('main.min.js'))
+    .pipe(concat('scripts.js'))
+    .pipe(rename('scripts.min.js'))
     .pipe(dest('docs/min/js'))
     .pipe(browsersync.stream())
 }

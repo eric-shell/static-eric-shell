@@ -9,7 +9,7 @@
   position: relative;
   background: transparent;
   z-index: 20;
-  transition: all $trans-out;
+  transition: all $out;
 
   &:before {
     content: '';
@@ -20,7 +20,7 @@
     height: 100%;
     z-index: -1;
     border: solid .2em $white;
-    transition: all $trans-out;
+    transition: all $out;
 
     @include for-tablet-portrait-up {
       transform: skewX(-7.5deg);
@@ -30,11 +30,11 @@
   &:hover,
   &--active {
     color: $color;
-    transition: all $trans-in;
+    transition: all $in;
 
     &:before {
       background: $white;
-      transition: all $trans-in;
+      transition: all $in;
 
       @include for-tablet-portrait-up {
         transform: skewX(7.5deg);

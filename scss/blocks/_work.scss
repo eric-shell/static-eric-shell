@@ -45,7 +45,7 @@
     align-items: center;
     text-align: center;
     cursor: pointer;
-    transition: background $trans-out;
+    transition: background $out;
 
     @include for-tablet-portrait-up {
       width: 50%;
@@ -61,7 +61,7 @@
 
     &:hover {
       background: $blue;
-      transition: background $trans-in;
+      transition: background $in;
 
       .work__body {
         animation: fromBottom .5s ease-out forwards;

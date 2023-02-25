@@ -14,8 +14,8 @@
   "author": "Eric Shell",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.14",
-    "del": "^6.0.0",
+    "browser-sync": "^2.27.12",
+    "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -25,8 +25,11 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "sass": "^1.58.3"
   }
 }
