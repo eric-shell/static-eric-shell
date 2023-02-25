@@ -102,12 +102,14 @@
 
   &__text {
     color: $black;
+    font-size: 4vw;
+    line-height: 2;
     text-align: center;
     animation: fromBottom $in--slow ease-out;
 
     @include for-tablet-landscape-up {
-      text-align: left;
       font-size: 1.9vw;
+      text-align: left;
       animation: fromRight $in--slow ease-out;
     }
   }

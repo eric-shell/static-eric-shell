@@ -4,52 +4,57 @@
   background: $black;
   width: 100%;
   font-size: 4vw;
-  line-height: 2.15;
   padding: 10vw 8vw;
   z-index: 20;
   overflow: hidden;
 
-  @include for-tablet-portrait-up {
+  @include for-tablet-landscape-up {
     flex-direction: row;
-    font-size: 1.9vw;
+    font-size: 2vw;
     padding: 12.5vw 7.5vw;
 
     &:after {
       content: '';
       position: absolute;
       left: 0;
-      bottom: -2vw;
+      bottom: -3vw;
       width: 100%;
       box-shadow: 0 0 0 2vw $cyan, 0 0 0 4vw $blue, 0 0 0 6vw $violet;
-      transform: skewY(-2deg);
+      transform: skewY(-3deg);
     }
   }
 
   &__menu {
     display: flex;
     flex-direction: column;
-    animation: fromTop .75s ease-out forwards;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       width: 250px;
-      animation: fromLeft .75s ease-out forwards;
+      animation: fromLeft $in--slow ease-out forwards;
     }
   }
 
   &__link {
     @include link($white, $black, $black, $blue);
     margin: 0 1.5em 0 0;
+    font-size: 4vw;
+    line-height: 2;
+
+    @include for-tablet-landscape-up {
+      font-size: 1.9vw;
+    }
   }
 
   &__info {
     color: $white;
     display: flex;
-    padding: 10vw 0 0;
+    padding: 14vw 0 0;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       padding: 0;
       flex-grow: 1;
       justify-content: flex-end;
+      animation: fromRight $in--slow ease-out forwards;
     }
   }
 
@@ -61,20 +66,20 @@
     height: 5vw;
     width: 5vw;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       position: relative;
       top: auto;
       right: auto;
       height: 1.3vw;
       width: 1.3vw;
-      margin: 1.4vw 0;
+      margin: .4vw 0;
     }
   }
 
   &__year {
     margin: 0 .25em 0 0;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       margin: 0 .25em 0 .35em;
     }
   }

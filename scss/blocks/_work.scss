@@ -1,25 +1,16 @@
 .work {
   position: relative;
+  color: $white;
   z-index: 40;
 
-  &__container {
-    margin: 0;
-    padding: 10vw 8vw;
-    color: $white;
-    background: $violet;
-    text-align: center;
-
-    @include for-tablet-landscape-up {
-      padding: 5vw;
-      margin: -1.75vw 0;
-      transform: skewY(-2deg);
-    }
+  @include for-tablet-landscape-up {
+    margin: -2vw 0;
   }
 
   &__list {
 
     @include for-tablet-landscape-up {
-      transform: skewY(2deg);
+      transform: skewY(-1deg);
     }
   }
 
@@ -29,25 +20,64 @@
   }
 
   &__item {
-    width: 100%;
-    margin: 0;
-    padding: 5vw 2.5vw;
-    position: relative;
+    z-index: 25;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
-    transition: background $out--slow;
+    width: 100%;
+    padding: 4vw 8vw;
+    text-decoration: none;
+    transition: transform $out--fast ease-out;
 
     &:hover {
+      z-index: 30;
+      transform: scale(1.075);
+      transition: transform $in--fast ease-out;
+    }
+
+    &:nth-child(3n+1) {
+      background: $violet;
+    }
+
+    &:nth-child(3n+2) {
       background: $blue;
-      transition: background $in--slow;
+    }
+
+    &:nth-child(3n+3) {
+      background: $cyan;
+    }
+
+    @include for-tablet-landscape-up {
+      width: 50%;
+      padding: 2.75vw 7.5vw;
+
+      &:nth-child(6n+1),
+      &:nth-child(6n+2) {
+        background: $violet;
+      }
+
+      &:nth-child(6n+3),
+      &:nth-child(6n+4) {
+        background: $blue;
+      }
+
+      &:nth-child(6n+5),
+      &:nth-child(6n+6) {
+        background: $cyan;
+      }
     }
   }
 
   &__content {
-    text-decoration: none;
+
+    @include for-tablet-landscape-up {
+      transform: skewY(1deg);
+    }
+
+    p + p {
+      font-size: .8em;
+      opacity: .8;
+      line-height: 2;
+    }
   }
 }
