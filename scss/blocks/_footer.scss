@@ -36,9 +36,8 @@
 
   &__link {
     @include link($white, $black, $black, $blue);
-    margin: 0 1.5em 0 0;
+    margin-left: -20px;
     font-size: 4vw;
-    line-height: 2;
 
     @include for-tablet-landscape-up {
       font-size: 1.9vw;
