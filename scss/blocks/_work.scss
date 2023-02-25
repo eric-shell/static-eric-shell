@@ -25,14 +25,25 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding: 4vw 8vw;
+    padding: 2.5vw 8vw;
     text-decoration: none;
     transition: transform $out--fast ease-out;
 
     &:hover {
       z-index: 30;
-      transform: scale(1.075);
-      transition: transform $in--fast ease-out;
+
+      @include for-tablet-landscape-up {
+        transform: scale(1.2) skewY(-2deg);
+        transition: transform $in--fast ease-out;
+      }
+
+      .work__content {
+
+        @include for-tablet-landscape-up {
+          transform: skewY(1deg);
+          transition: transform $in--fast ease-out;
+        }
+      }
     }
 
     &:nth-child(3n+1) {
@@ -71,7 +82,8 @@
   &__content {
 
     @include for-tablet-landscape-up {
-      transform: skewY(1deg);
+      transform: skewY(.5deg);
+      transition: transform $out--fast ease-out;
     }
 
     p + p {
