@@ -4,7 +4,7 @@
   z-index: 40;
 
   @include for-tablet-landscape-up {
-    margin: -2vw 0;
+    margin: -4vw 0;
   }
 
   &__list {
@@ -17,6 +17,10 @@
   &__items {
     display: flex;
     flex-wrap: wrap;
+
+    @include for-tablet-landscape-up {
+      justify-content: space-around;
+    }
   }
 
   &__item {
@@ -33,7 +37,7 @@
       z-index: 30;
 
       @include for-tablet-landscape-up {
-        transform: scale(1.2) skewY(-2.25deg) translateX(3vw);
+        transform: scale(1.2) skewY(-2.25deg);
         transition: transform $in--fast ease-out;
       }
 
@@ -59,7 +63,7 @@
     }
 
     @include for-tablet-landscape-up {
-      width: 50%;
+      width: 40%;
       padding: 2.75vw 7.5vw;
 
       &:nth-child(6n+1),
