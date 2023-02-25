@@ -66,17 +66,21 @@ td {
   margin: 0;
   padding: 0;
   border: 0;
+  font: inherit;
   font-size: 100%;
   vertical-align: baseline;
 }
 
 * {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
   box-sizing: border-box;
 }
 
 *:before,
 *:after {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 a,
@@ -85,10 +89,8 @@ a:visited {
 }
 
 html {
-  font-family: 'Source Sans Pro', system-ui, sans-serif;
-  font-size: 100%;
-  font-weight: 400;
-  font-style: normal;
+  background: $black;
+  font: 100% 'Source Sans Pro', system-ui, Arial, sans-serif;
 }
 
 body {
