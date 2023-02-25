@@ -94,6 +94,7 @@ html {
 }
 
 body {
+  background: $black;
   line-height: 1;
 }
 
@@ -105,11 +106,6 @@ nav,
 section,
 main {
   display: block;
-}
-
-main {
-  color: $black;
-  background: $white;
 }
 
 table {

@@ -6,7 +6,7 @@
 // Released under MIT license.
 (function ($) {
 
-  $.expr[":"].onScreen = function(elem) {
+  $.expr[':'].onScreen = function(elem) {
     var $window = $(window)
     var viewport_top = $window.scrollTop()
     var viewport_height = $window.height()
@@ -23,7 +23,7 @@
 
   $(function() {
     setInterval(function() {
-      $('.on-screen').filter(":onScreen").addClass("visible")
+      $('.on-screen').filter(':onScreen').addClass('visible')
     }, 100)
   })
 

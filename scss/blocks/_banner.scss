@@ -3,12 +3,11 @@
   flex-direction: column;
   background: $blue;
   overflow: hidden;
-  animation: fromBottom .75s ease-out both;
+  animation: fromTop $in--slow ease-out;
 
-  @include for-tablet-portrait-up {
+  @include for-tablet-landscape-up {
     flex-direction: row;
     align-items: stretch;
-    animation: fromLeft .75s ease-out both;
   }
 
   &__section {
@@ -17,9 +16,9 @@
 
   &__branding {
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       width: 45%;
-      animation: fromLeft .75s ease-out both;
+      animation: fromLeft $in--slow ease-out;
     }
   }
 
@@ -29,15 +28,8 @@
     left: 5vw;
     width: 5vw;
     height: 5vw;
-    animation: fromTop 1.25s ease-out both;
+    animation: fromTop $in--slow ease-out both;
     animation-delay: 1s;
-
-    @include for-tablet-portrait-up {
-      top: 2.5vw;
-      left: 2.5vw;
-      width: 2.5vw;
-      height: 2.5vw;
-    }
 
     @include for-tablet-landscape-up {
       top: 1.4vw;
@@ -57,18 +49,18 @@
     width: 100%;
     height: 100%;
     padding: 0 15vw;
-    animation: fromBottom 1.25s ease-out both;
+    animation: fromBottom $in--slow ease-out;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       padding: 0 7.5vw;
-      animation: fromLeft 1.25s ease-out both;
+      animation: fromLeft $in--slow ease-out;
     }
   }
 
   &__content {
     background: $white;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       width: 55%;
       transform: skewX(-15deg);
 
@@ -93,18 +85,30 @@
     align-items: center;
     padding: 10vw 8vw;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       padding: 0 5vw 0 10vw;
       transform: skewX(15deg);
     }
   }
 
+  &__title {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal;
+  }
+
   &__text {
     color: $black;
-    animation: fromBottom 1.25s ease-out both;
+    text-align: center;
+    animation: fromBottom $in--slow ease-out;
 
-    @include for-tablet-portrait-up {
-      animation: fromRight 1.25s ease-out both;
+    @include for-tablet-landscape-up {
+      text-align: left;
+      font-size: 1.9vw;
+      animation: fromRight $in--slow ease-out;
     }
   }
 }

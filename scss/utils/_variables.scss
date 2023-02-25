@@ -1,6 +1,8 @@
 // Transitions
-$in: .075s ease-out;
-$out: .125s ease-out;
+$in--fast: .075s;
+$in--slow: .75s;
+$out--fast: .125s;
+$out--slow: 1.25s;
 
 // Colors
 $white: #ffffff;

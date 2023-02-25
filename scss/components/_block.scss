@@ -5,7 +5,7 @@
 
   &.visible {
     opacity: 1;
-    animation: fromBottom .5s ease-out forwards;
+    animation: fromBottom $in--slow ease-out;
   }
 }
 

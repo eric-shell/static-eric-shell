@@ -1,6 +1,5 @@
 @mixin button($color: $blue) {
   color: $white;
-  font-weight: 600;
   line-height: 2.15;
   padding: 1em;
   margin: 0 .5em;
@@ -9,7 +8,7 @@
   position: relative;
   background: transparent;
   z-index: 20;
-  transition: all $out;
+  transition: all $out--fast ease-out;
 
   &:before {
     content: '';
@@ -20,7 +19,7 @@
     height: 100%;
     z-index: -1;
     border: solid .2em $white;
-    transition: all $out;
+    transition: all $out--fast ease-out;
 
     @include for-tablet-portrait-up {
       transform: skewX(-7.5deg);
@@ -30,11 +29,11 @@
   &:hover,
   &--active {
     color: $color;
-    transition: all $in;
+    transition: all $in--fast ease-out;
 
     &:before {
       background: $white;
-      transition: all $in;
+      transition: all $in--fast ease-out;
 
       @include for-tablet-portrait-up {
         transform: skewX(7.5deg);

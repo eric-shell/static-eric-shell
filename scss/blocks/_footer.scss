@@ -6,7 +6,6 @@
   font-size: 4vw;
   line-height: 2.15;
   padding: 10vw 8vw;
-  font-weight: 600;
   z-index: 20;
   overflow: hidden;
 
@@ -32,8 +31,7 @@
     animation: fromTop .75s ease-out forwards;
 
     @include for-tablet-portrait-up {
-      flex-grow: 1;;
-      flex-direction: row;
+      width: 250px;
       animation: fromLeft .75s ease-out forwards;
     }
   }
@@ -50,6 +48,8 @@
 
     @include for-tablet-portrait-up {
       padding: 0;
+      flex-grow: 1;
+      justify-content: flex-end;
     }
   }
 

@@ -9,24 +9,18 @@
     background: $violet;
     text-align: center;
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       padding: 5vw;
       margin: -1.75vw 0;
       transform: skewY(-2deg);
     }
   }
 
-  &__banner {
-    width: 100%;
-    text-align: center;
+  &__list {
 
-    @include for-tablet-portrait-up {
+    @include for-tablet-landscape-up {
       transform: skewY(2deg);
     }
-  }
-
-  &__list {
-    display: none;
   }
 
   &__items {
@@ -45,56 +39,15 @@
     align-items: center;
     text-align: center;
     cursor: pointer;
-    transition: background $out;
-
-    @include for-tablet-portrait-up {
-      width: 50%;
-    }
-
-    @include for-tablet-landscape-up {
-      width: 33.33333%;
-    }
-
-    @include for-desktop-up {
-      width: 25%;
-    }
+    transition: background $out--slow;
 
     &:hover {
       background: $blue;
-      transition: background $in;
-
-      .work__body {
-        animation: fromBottom .5s ease-out forwards;
-      }
+      transition: background $in--slow;
     }
   }
 
   &__content {
     text-decoration: none;
-
-    @include for-tablet-portrait-up {
-      transform: skewY(2deg);
-    }
-  }
-
-  &__body {
-    opacity: 0;
-    padding: .25em 0 0;
-
-    h3 {
-      font-size: 3vw;
-
-      @include for-tablet-portrait-up {
-        font-size: 1.25vw;
-      }
-    }
-
-    p {
-      font-size: 3vw;
-
-      @include for-tablet-portrait-up {
-        font-size: 1.15vw;
-      }
-    }
   }
 }
