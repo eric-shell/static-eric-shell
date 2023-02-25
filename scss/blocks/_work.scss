@@ -33,14 +33,14 @@
       z-index: 30;
 
       @include for-tablet-landscape-up {
-        transform: scale(1.2) skewY(-2deg);
+        transform: scale(1.2) skewY(-2.25deg) translateX(3vw);
         transition: transform $in--fast ease-out;
       }
 
       .work__content {
 
         @include for-tablet-landscape-up {
-          transform: skewY(1deg);
+          transform: skewY(1.5deg);
           transition: transform $in--fast ease-out;
         }
       }
