@@ -84,6 +84,8 @@
   }
 
   &__content {
+    display: flex;
+    align-items: center;
 
     @include for-tablet-landscape-up {
       transform: skewY(.5deg);
@@ -95,5 +97,10 @@
       opacity: .8;
       line-height: 2.2;
     }
+  }
+
+  &__icon {
+    margin-right: 28px;
+    width: 80px;
   }
 }
