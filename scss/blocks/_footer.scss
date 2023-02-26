@@ -12,7 +12,7 @@
   @include for-tablet-landscape-up {
     flex-direction: row;
     font-size: 2vw;
-    padding: 12.5vw 5vw;
+    padding: 12.5vw 10vw 12.5vw 5vw;
 
     &:after {
       content: '';
@@ -30,7 +30,7 @@
     flex-direction: column;
 
     @include for-tablet-landscape-up {
-      width: 20vw;
+      width: 22.5vw;
       animation: fromLeft $in--slow ease-out forwards;
     }
   }
@@ -69,38 +69,21 @@
   }
 
   &__link {
-    z-index: 25;
-    display: inline-flex;
-    text-decoration: none;
-    font-family: Display, sans-serif;
-    text-transform: uppercase;
-    line-height: 1;
-    font-size: 22px;
-    padding: 1.25vw 5vw;
-
-    @include for-tablet-landscape-up {
-      font-size: 28px;
-      transition: transform $out--fast ease-out;
-    }
-
-    &:hover {
-      z-index: 30;
-
-      @include for-tablet-landscape-up {
-        transform: scale(1.2) skewY(-2.25deg);
-        transition: transform $in--fast ease-out;
-      }
-    }
+    @include link(1.5vw);
   }
 
   &__info {
     display: flex;
-    padding: 14vw 0 0;
+    font-size: 24px;
+    padding: 14vw 0 0 5vw;
+    font-family: $font--display;
+    text-transform: uppercase;
 
     @include for-tablet-landscape-up {
-      padding: 0;
       flex-grow: 1;
       justify-content: flex-end;
+      font-size: 28px;
+      padding: 1.5vw 0;
       animation: fromRight $in--slow ease-out forwards;
     }
   }
@@ -110,24 +93,14 @@
     position: absolute;
     top: 12vw;
     right: 5vw;
-    height: 5vw;
-    width: 5vw;
+    height: 32px;
+    width: 32px;
 
     @include for-tablet-landscape-up {
       position: relative;
       top: auto;
       right: auto;
-      height: 1.3vw;
-      width: 1.3vw;
-      margin: .4vw 0;
-    }
-  }
-
-  &__year {
-    padding: 0 .25em 0 5vw;
-
-    @include for-tablet-landscape-up {
-      padding: 0 .25em 0 .35em;
+      margin: -5px 10px 0 0;
     }
   }
 }

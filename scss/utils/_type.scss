@@ -11,7 +11,7 @@ p, li {
 h2 {
   font-size: 22px;
   line-height: 1.25;
-  font-family: Display, sans-serif;
+  font-family: $font--display;
   text-transform: uppercase;
 
   @include for-tablet-landscape-up {

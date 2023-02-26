@@ -11,6 +11,10 @@ $blue: #3c81fd; //saturate(lighten(adjust-hue($cyan, 19.5deg), 2%), 5%);
 $violet: #6209f8; //saturate(darken(adjust-hue($cyan, 66deg), 8%), 2%);
 $black: #111521; //darken(desaturate(adjust-hue($cyan, 25deg), 70%), 50%);
 
+// Fonts
+$font--display: Display, system-ui, Arial, sans-serif;
+$font--body: 'Source Sans Pro', system-ui, Helvetica, sans-serif;
+
 // // Map color values to class names
 // $colors: (
 //   white: $white,

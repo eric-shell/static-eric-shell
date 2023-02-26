@@ -1,0 +1,40 @@
+@mixin link($padding: 2.5vw) {
+  z-index: 25;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  font-family: $font--display;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 22px;
+  padding: $padding 5vw;
+  text-decoration: none;
+  transition: transform $out--fast ease-out;
+
+  @include for-tablet-landscape-up {
+    font-size: 28px;
+  }
+
+  &:hover {
+    z-index: 30;
+
+    @include for-tablet-landscape-up {
+      transform: scale(1.2) skewY(-2.25deg);
+      transition: transform $in--fast ease-out;
+    }
+
+    > div,
+    > span {
+
+      @include for-tablet-landscape-up {
+        transform: skewY(1.5deg);
+        transition: transform $in--fast ease-out;
+      }
+    }
+  }
+}
+
+.link {
+  @include block;
+}
