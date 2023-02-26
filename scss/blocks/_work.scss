@@ -29,7 +29,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding: 2.5vw 8vw;
+    padding: 2.5vw 5vw;
     text-decoration: none;
     transition: transform $out--fast ease-out;
 
@@ -64,7 +64,7 @@
 
     @include for-tablet-landscape-up {
       width: 40%;
-      padding: 2.75vw 7.5vw;
+      padding: 2.5vw 5vw;
 
       &:nth-child(6n+1),
       &:nth-child(6n+2) {
@@ -95,7 +95,7 @@
     p + p {
       font-size: .8em;
       opacity: .8;
-      line-height: 2.2;
+      line-height: 2;
     }
   }
 
