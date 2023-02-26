@@ -1,17 +1,18 @@
 .footer {
   display: flex;
   flex-direction: column;
+  color: $white;
   background: $black;
   width: 100%;
   font-size: 4vw;
-  padding: 10vw 8vw;
+  padding: 10vw 0;
   z-index: 20;
   overflow: hidden;
 
   @include for-tablet-landscape-up {
     flex-direction: row;
     font-size: 2vw;
-    padding: 12.5vw 7.5vw;
+    padding: 12.5vw 5vw;
 
     &:after {
       content: '';
@@ -29,23 +30,70 @@
     flex-direction: column;
 
     @include for-tablet-landscape-up {
-      width: 250px;
+      width: 20vw;
       animation: fromLeft $in--slow ease-out forwards;
     }
   }
 
+  &__item {
+
+    &:nth-child(3n+1) {
+
+      .footer__link:hover {
+
+        @include for-tablet-landscape-up {
+          background: $violet;
+        }
+      }
+    }
+
+    &:nth-child(3n+2) {
+
+      .footer__link:hover {
+
+        @include for-tablet-landscape-up {
+          background: $blue;
+        }
+      }
+    }
+
+    &:nth-child(3n+3) {
+
+      .footer__link:hover {
+
+        @include for-tablet-landscape-up {
+          background: $cyan;
+        }
+      }
+    }
+  }
+
   &__link {
-    @include link($white, $black, $black, $blue);
-    margin-left: -20px;
-    font-size: 4vw;
+    z-index: 25;
+    display: inline-flex;
+    text-decoration: none;
+    font-family: Display, sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 22px;
+    padding: 1.25vw 5vw;
 
     @include for-tablet-landscape-up {
-      font-size: 1.9vw;
+      font-size: 28px;
+      transition: transform $out--fast ease-out;
+    }
+
+    &:hover {
+      z-index: 30;
+
+      @include for-tablet-landscape-up {
+        transform: scale(1.2) skewY(-2.25deg);
+        transition: transform $in--fast ease-out;
+      }
     }
   }
 
   &__info {
-    color: $white;
     display: flex;
     padding: 14vw 0 0;
 
@@ -61,7 +109,7 @@
     display: block;
     position: absolute;
     top: 12vw;
-    right: 8vw;
+    right: 5vw;
     height: 5vw;
     width: 5vw;
 
@@ -76,10 +124,10 @@
   }
 
   &__year {
-    margin: 0 .25em 0 0;
+    padding: 0 .25em 0 5vw;
 
     @include for-tablet-landscape-up {
-      margin: 0 .25em 0 .35em;
+      padding: 0 .25em 0 .35em;
     }
   }
 }

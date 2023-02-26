@@ -64,7 +64,6 @@
 
     @include for-tablet-landscape-up {
       width: 40%;
-      padding: 2.5vw 5vw;
 
       &:nth-child(6n+1),
       &:nth-child(6n+2) {
