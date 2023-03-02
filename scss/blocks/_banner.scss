@@ -39,7 +39,7 @@
     }
   }
 
-  &__logo {
+  &__profile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,6 +54,17 @@
     @include for-tablet-landscape-up {
       padding: 0 7.5vw;
       animation: fromLeft $in--slow ease-out;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    transition: transform $out--fast ease-out;
+
+    &:hover,
+    &:focus-within {
+      transform: scale(1.05) skewY(1deg);
+      transition: transform $in--fast ease-out;
     }
   }
 

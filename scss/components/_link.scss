@@ -16,7 +16,8 @@
     font-size: 28px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     z-index: 30;
 
     @include for-tablet-landscape-up {

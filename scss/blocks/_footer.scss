@@ -39,7 +39,8 @@
 
     &:nth-child(3n+1) {
 
-      .footer__link:hover {
+      a:hover,
+      a:focus-visible {
 
         @include for-tablet-landscape-up {
           background: $violet;
@@ -49,7 +50,8 @@
 
     &:nth-child(3n+2) {
 
-      .footer__link:hover {
+      a:hover,
+      a:focus-visible {
 
         @include for-tablet-landscape-up {
           background: $blue;
@@ -59,7 +61,8 @@
 
     &:nth-child(3n+3) {
 
-      .footer__link:hover {
+      a:hover,
+      a:focus-visible {
 
         @include for-tablet-landscape-up {
           background: $cyan;
