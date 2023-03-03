@@ -57,6 +57,13 @@
     }
   }
 
+  &__image {
+
+    img {
+      width: 100%;
+    }
+  }
+
   &__logo {
     width: 100%;
     transition: transform $out--fast ease-out;
