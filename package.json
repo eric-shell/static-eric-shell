@@ -14,7 +14,7 @@
   "author": "Eric Shell",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.29.1",
+    "browser-sync": "^2.29.3",
     "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -30,6 +30,6 @@
     "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
-    "sass": "^1.62.0"
+    "sass": "^1.69.5"
   }
 }
