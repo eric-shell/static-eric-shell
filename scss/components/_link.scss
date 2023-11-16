@@ -8,12 +8,12 @@
   text-transform: uppercase;
   line-height: 1;
   font-size: 22px;
-  padding: $padding 5vw;
+  padding: $padding;
   text-decoration: none;
   transition: transform $out--fast ease-out;
 
   @include for-tablet-landscape-up {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   &:hover,
@@ -34,8 +34,4 @@
       }
     }
   }
-}
-
-.link {
-  @include block;
 }

@@ -3,6 +3,7 @@
     opacity: 0;
     transform: scale(0);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -12,11 +13,12 @@
 @keyframes fromTop {
   0% {
     opacity: 0;
-    transform: translate(0, -25%);
+    transform: translate(0, -200px) scale(.75);
   }
+
   100% {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1);
   }
 }
 
@@ -25,6 +27,7 @@
     opacity: 0;
     transform: translate(25%, 0);
   }
+
   100% {
     opacity: 1;
     transform: translate(0, 0);
@@ -34,19 +37,22 @@
 @keyframes fromBottom {
   0% {
     opacity: 0;
-    transform: translate(0, 25%);
+    transform: translate(0, 200px) scale(.75);
   }
+
   100% {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1);
   }
 }
+
 
 @keyframes fromLeft {
   0% {
     opacity: 0;
     transform: translate(-25%, 0);
   }
+
   100% {
     opacity: 1;
     transform: translate(0, 0);

@@ -1,18 +1,23 @@
 .footer {
   display: flex;
   flex-direction: column;
+  position: relative;
   color: $white;
   background: $black;
   width: 100%;
   font-size: 4vw;
-  padding: 10vw 0;
+  padding: 10vw 5vw;
   z-index: 20;
   overflow: hidden;
 
   @include for-tablet-landscape-up {
+    padding: 10vw 15vw;
+  }
+
+  @include for-desktop-up {
     flex-direction: row;
     font-size: 2vw;
-    padding: 12.5vw 10vw 12.5vw 5vw;
+    padding: 12.5vw 10vw 12.5vw 7.5vw;
 
     &:after {
       content: '';
@@ -29,8 +34,9 @@
     display: flex;
     flex-direction: column;
 
-    @include for-tablet-landscape-up {
+    @include for-desktop-up {
       width: 22.5vw;
+      min-width: 250px;
       animation: fromLeft $in--slow ease-out forwards;
     }
   }
@@ -42,7 +48,7 @@
       a:hover,
       a:focus-visible {
 
-        @include for-tablet-landscape-up {
+        @include for-desktop-up {
           background: $violet;
         }
       }
@@ -53,7 +59,7 @@
       a:hover,
       a:focus-visible {
 
-        @include for-tablet-landscape-up {
+        @include for-desktop-up {
           background: $blue;
         }
       }
@@ -64,7 +70,7 @@
       a:hover,
       a:focus-visible {
 
-        @include for-tablet-landscape-up {
+        @include for-desktop-up {
           background: $cyan;
         }
       }
@@ -78,14 +84,17 @@
   &__info {
     display: flex;
     font-size: 24px;
-    padding: 14vw 0 0 5vw;
+    padding: 14vw 0 0 2.5vw;
     font-family: $font--display;
     text-transform: uppercase;
 
     @include for-tablet-landscape-up {
+      font-size: 32px;
+    }
+
+    @include for-desktop-up {
       flex-grow: 1;
       justify-content: flex-end;
-      font-size: 28px;
       padding: 1.5vw 0;
       animation: fromRight $in--slow ease-out forwards;
     }
@@ -94,8 +103,8 @@
   &__icon {
     display: block;
     position: absolute;
-    top: 12vw;
-    right: 5vw;
+    top: 10vw;
+    right: 7.5vw;
     height: 32px;
     width: 32px;
 
@@ -103,7 +112,7 @@
       position: relative;
       top: auto;
       right: auto;
-      margin: -5px 10px 0 0;
+      margin: -3px 15px 0 0;
     }
   }
 }

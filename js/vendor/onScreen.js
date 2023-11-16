@@ -12,7 +12,7 @@
     var viewport_height = $window.height()
     var viewport_bottom = viewport_top + viewport_height
     var $elem = $(elem)
-    var top = $elem.offset().top + 50
+    var top = $elem.offset().top - 50
     var height = $elem.height()
     var bottom = top + height
 

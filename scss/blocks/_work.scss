@@ -2,6 +2,12 @@
   position: relative;
   color: $white;
   z-index: 40;
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+    animation: fromBottom $in--slow ease-out;
+  }
 
   @include for-tablet-landscape-up {
     margin: -4vw 0;
@@ -24,8 +30,14 @@
   }
 
   &__item {
-    @include link();
+    @include link(5vw);
     width: 100%;
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+      animation: fromBottom $in--slow ease-out;
+    }
 
     &:nth-child(3n+1) {
       background: $violet;
@@ -40,6 +52,11 @@
     }
 
     @include for-tablet-landscape-up {
+      width: 80%
+    }
+
+    @include for-desktop-up {
+      @include link(2.5vw);
       width: 40%;
 
       &:nth-child(6n+1),
@@ -73,7 +90,7 @@
       text-transform: none;
 
       & + p {
-        font-size: 13px;
+        font-size: 14px;
         opacity: .8;
         line-height: 2;
       }
