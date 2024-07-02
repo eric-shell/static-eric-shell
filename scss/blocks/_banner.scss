@@ -99,6 +99,7 @@
   &__slogan {
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10vw 8vw;
@@ -130,5 +131,47 @@
       text-align: left;
       animation: fromRight $in--slow ease-out;
     }
+  }
+
+  &__cta {
+    @include link(1.5vw);
+    margin-top: 2.5vw;
+    background: $blue;
+    color: $white;
+    animation: fromBottom $in--slow ease-out;
+
+    &:visited {
+      color: $white;
+    }
+
+    @include for-tablet-landscape-up {
+      margin-top: 1vw;
+      align-self: flex-start;
+      animation: fromRight $in--slow ease-out;
+    }
+  }
+}
+
+#banner__countdown {
+  position: absolute;
+  z-index: 250;
+  top: 2.5vh;
+  left: calc(50% - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  background: $white;
+  color: $black;
+  border-radius: 50%;
+  font-size: 25px;
+  font-family: $font--display;
+
+  @include for-tablet-landscape-up {
+    top: 5vh;
+    height: 100px;
+    width: 100px;
+    font-size: 35px;
   }
 }
