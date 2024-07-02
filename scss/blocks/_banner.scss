@@ -167,6 +167,7 @@
   border-radius: 50%;
   font-size: 25px;
   font-family: $font--display;
+  animation: countdown 3s ease-out 3 forwards;
 
   @include for-tablet-landscape-up {
     top: 5vh;

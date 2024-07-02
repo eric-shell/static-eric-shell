@@ -10,6 +10,20 @@
   }
 }
 
+@keyframes countdown {
+  0% {
+    transform: scale(.75) rotate(1080deg);
+  }
+
+  10% {
+    transform: scale(.85) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.25);
+  }
+}
+
 @keyframes fromTop {
   0% {
     opacity: 0;

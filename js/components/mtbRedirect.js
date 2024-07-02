@@ -10,11 +10,12 @@ if (location.pathname.includes("mtb")) {
         countdownElement.textContent = count;
         count--;
 
-        if (count <= 0) {
+        if (count < 0) {
             // Redirect when countdown completes
-            window.location.href = "https://www.youtube.com/playlist?list=PLBW-m5aC1WXYLfdPiV_auW6SUZ1D7hBUg";
+            // window.location.href = "https://www.youtube.com/playlist?list=PLBW-m5aC1WXYLfdPiV_auW6SUZ1D7hBUg";
+            document.getElementById('banner__countdown').remove();
         } else {
-            // Continue countdown after 1 second
+            // Continue countdown after 3 second
             setTimeout(updateCountdown, 3000); // 3000 milliseconds = 1 second
         }
     }
