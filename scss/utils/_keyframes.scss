@@ -24,6 +24,16 @@
   }
 }
 
+@keyframes grow-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes fromTop {
   0% {
     opacity: 0;
