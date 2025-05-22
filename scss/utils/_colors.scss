@@ -1,0 +1,27 @@
+$white: #ffffff;
+$offWhite: #e7f2f6;
+$cyan: #27c2ff;
+$blue: #3c81fd; //saturate(lighten(adjust-hue($cyan, 19.5deg), 2%), 5%);
+$violet: #6209f8; //saturate(darken(adjust-hue($cyan, 66deg), 8%), 2%);
+$offBlack: #111521; //darken(desaturate(adjust-hue($cyan, 25deg), 70%), 50%);
+$black: #030407;
+
+// // Map color values to class names
+// $colors: (
+//   white: $white,
+//   black: $black,
+//   ...
+// );
+
+// // Configure color class function
+// @mixin generate-color-properties($prefix, $property) {
+//   @each $color-name, $color in $colors {
+//     .#{$prefix}--#{$color-name} {
+//       #{$property}: $color
+//     }
+//   }
+// }
+
+// // Generate colors for use in markup
+// @include generate-color-properties('txt', 'color');
+// @include generate-color-properties('bg', 'background');

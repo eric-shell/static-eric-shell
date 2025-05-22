@@ -1,0 +1,12 @@
+.ribbon {
+  position: relative;
+  z-index: 500;
+
+  @include for-tablet-landscape-up {
+    left: -5%;
+    bottom: -2.5vw;
+    width: 110%;
+    box-shadow: 0 0 0 2vw $cyan, 0 0 0 4vw $blue, 0 0 0 6vw $violet;
+    transform: skewY(-3deg);
+  }
+}

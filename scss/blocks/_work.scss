@@ -1,21 +1,20 @@
 .work {
   position: relative;
-  color: $white;
-  z-index: 40;
-  opacity: 0;
-
-  &.visible {
-    opacity: 1;
-    animation: fromBottom $in--slow ease-out;
-  }
+  z-index: 200;
+  background: $offBlack;
 
   @include for-tablet-landscape-up {
-    margin: -4vw 0;
+    background: $black;
   }
 
   &__list {
+    color: $white;
 
     @include for-tablet-landscape-up {
+      position: relative;
+      top: -10vw;
+      margin-bottom: -10vw;
+      padding: 0 2.5vw;
       transform: skewY(-1deg);
     }
   }
@@ -27,10 +26,18 @@
     @include for-tablet-landscape-up {
       justify-content: space-around;
     }
+
+    &--preview {
+
+      // Hide items after the 6th item on page load
+      .work__item:nth-child(n + 7) {
+        display: none;
+      }
+    }
   }
 
   &__item {
-    @include link(5vw);
+    @include panel(5vw);
     width: 100%;
     opacity: 0;
 
@@ -56,8 +63,8 @@
     }
 
     @include for-desktop-up {
-      @include link(2.5vw);
-      width: 40%;
+      @include panel(2.5vw);
+      width: 45%;
 
       &:nth-child(6n+1),
       &:nth-child(6n+2) {
@@ -88,17 +95,49 @@
     p {
       font-family: $font--body;
       text-transform: none;
-
-      & + p {
-        font-size: 14px;
-        opacity: .8;
-        line-height: 2;
-      }
     }
   }
 
-  &__icon {
-    margin-right: 28px;
-    width: 80px;
+  &__footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      width: 110%;
+      height: 17.5vw;
+      background: linear-gradient(0deg, $offBlack 35%, transparent);
+      position: absolute;
+      top: -12.5vw;
+      left: -5%;
+      z-index: 250;
+      pointer-events: none;
+
+      @include for-tablet-landscape-up {
+        background: linear-gradient(0deg, $black 35%, transparent);
+      }
+    }
+
+    &:after {
+      content: '';
+      width: 110%;
+      height: 100vh;
+      background: $offBlack;
+      position: absolute;
+      bottom: -100vh;
+      left: -5%;
+      z-index: 251;
+      pointer-events: none;
+
+      @include for-tablet-landscape-up {
+        background: $black;
+      }
+    }
+
+    .button {
+      position: relative;
+      z-index: 300;
+    }
   }
 }

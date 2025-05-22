@@ -1,43 +1,65 @@
 .footer {
-  display: flex;
-  flex-direction: column;
   position: relative;
-  color: $white;
-  background: $black;
-  width: 100%;
-  font-size: 4vw;
-  padding: 10vw 5vw;
-  z-index: 20;
-  overflow: hidden;
+  text-align: center;
+  z-index: 400;
 
   @include for-tablet-landscape-up {
-    padding: 10vw 15vw;
+    margin-bottom: 0;
+    text-align: left;
   }
 
-  @include for-desktop-up {
-    flex-direction: row;
-    font-size: 2vw;
-    padding: 12.5vw 10vw 12.5vw 7.5vw;
+  &__container {
+    display: flex;
+    flex-direction: column;
 
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -3vw;
-      width: 100%;
-      box-shadow: 0 0 0 2vw $cyan, 0 0 0 4vw $blue, 0 0 0 6vw $violet;
-      transform: skewY(-3deg);
+    @include for-desktop-up {
+      flex-direction: row;
+    }
+
+    &.container {
+      padding-top: 1.5vw;
+      padding-bottom: 7.5vw;
+    }
+  }
+
+  &__menus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include for-tablet-landscape-up {
+      flex-direction: row;
+      margin-left: -1.5vw;
+    }
+
+    &.container {
+
+      @include for-tablet-landscape-up {
+        padding-bottom: 7.5vw;
+      }
     }
   }
 
   &__menu {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    width: 100%;
+
+    @include for-tablet-landscape-up {
+      width: 50%;
+    }
 
     @include for-desktop-up {
-      width: 22.5vw;
-      min-width: 250px;
-      animation: fromLeft $in--slow ease-out forwards;
+      width: auto;
+      text-align: left;
+    }
+
+    & + .footer__menu {
+
+      @include for-desktop-up {
+        margin-left: 2.5vw;
+      }
     }
   }
 
@@ -48,7 +70,7 @@
       a:hover,
       a:focus-visible {
 
-        @include for-desktop-up {
+        @include for-tablet-landscape-up {
           background: $violet;
         }
       }
@@ -59,7 +81,7 @@
       a:hover,
       a:focus-visible {
 
-        @include for-desktop-up {
+        @include for-tablet-landscape-up {
           background: $blue;
         }
       }
@@ -70,7 +92,7 @@
       a:hover,
       a:focus-visible {
 
-        @include for-desktop-up {
+        @include for-tablet-landscape-up {
           background: $cyan;
         }
       }
@@ -78,40 +100,33 @@
   }
 
   &__link {
-    @include link(1.5vw);
+    @include button(transparent, 1.5vw);
   }
 
   &__info {
+    @include h2(1);
     display: flex;
-    font-size: 24px;
-    padding: 14vw 0 0 2.5vw;
+    justify-content: center;
+    padding: 7.5vw 0 0;
     font-family: $font--display;
     text-transform: uppercase;
-
-    @include for-tablet-landscape-up {
-      font-size: 32px;
-    }
+    line-height: 1;
 
     @include for-desktop-up {
       flex-grow: 1;
       justify-content: flex-end;
-      padding: 1.5vw 0;
-      animation: fromRight $in--slow ease-out forwards;
+      padding: 1.25vw 0 0;
     }
   }
 
   &__icon {
-    display: block;
-    position: absolute;
-    top: 10vw;
-    right: 7.5vw;
-    height: 32px;
-    width: 32px;
+    height: 24px;
+    width: 24px;
+    margin: -3px 12px 0 0;
 
     @include for-tablet-landscape-up {
-      position: relative;
-      top: auto;
-      right: auto;
+      height: 32px;
+      width: 32px;
       margin: -3px 15px 0 0;
     }
   }

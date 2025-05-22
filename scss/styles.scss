@@ -1,12 +1,16 @@
 @import "utils/variables";
 @import "utils/breakpoints";
 @import "utils/keyframes";
+@import "utils/colors";
 @import "utils/reset";
-@import "utils/type";
+@import "utils/typography";
 
-@import "components/link";
-
-@import "blocks/banner";
-@import "blocks/footer";
+@import "components/block";
+@import "components/button";
+@import "components/panel";
+@import "components/ribbon";
 @import "blocks/progress";
+@import "blocks/banner";
 @import "blocks/work";
+@import "blocks/testimonials";
+@import "blocks/footer";

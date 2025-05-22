@@ -1,0 +1,78 @@
+.testimonials {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 350;
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25vw 0 2.5vw;
+  }
+
+  &__item {
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 0.75s ease-out;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    @include for-tablet-landscape-up {
+      transform: skewY(.5deg);
+      transition: transform $out--fast ease-out;
+    }
+  }
+
+  &__review {
+    // font-size: 1.75rem;
+  }
+
+  &__author {
+    padding-top: 1rem;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include for-tablet-landscape-up {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 0 2.5vw;
+
+    @include for-tablet-landscape-up {
+      padding: 0;
+    }
+
+    button {
+      @include button($violet, 1.15vw);
+
+      svg {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: currentColor;
+        stroke: currentColor;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

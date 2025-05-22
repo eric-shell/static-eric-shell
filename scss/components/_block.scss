@@ -1,0 +1,28 @@
+.block {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: $white;
+  opacity: 0;
+
+  @include for-tablet-landscape-up {
+    margin: 5vw 0;
+  }
+
+  &.visible {
+    opacity: 1;
+    animation: fromBottom $in--slow ease-out;
+  }
+
+  .container {
+    background: $offBlack;
+    padding: 5vw;
+    width: 100%;
+
+    @include for-tablet-landscape-up {
+      width: 90%;
+      padding: 2.5vw;
+      transform: skewY(-1deg);
+    }
+  }
+}

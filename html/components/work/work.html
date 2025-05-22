@@ -1,6 +1,12 @@
-<div class="work on-screen">
+<div class="work block on-screen">
   <div class="work__list">
-    <div class="work__items">
+    <div class="work__items work__items--preview">
+      @@include('components/work/item/item.html', {
+        "url": "#",
+        "title": "Isaiah",
+        "solution": "[Currently In Development]",
+        "technology": "AI, React Native"
+      })
       @@include('components/work/item/item.html', {
         "url": "https://www.fws.gov/",
         "title": "U.S. Fish & Wildlife Service",
@@ -14,20 +20,14 @@
         "technology": "Drupal"
       })
       @@include('components/work/item/item.html', {
-        "url": "https://www.bcbsks.com/",
-        "title": "Blue Cross Blue Shield",
-        "solution": "Front End Architecture",
+        "url": "https://www.noodles.com/",
+        "title": "Noodles & Company",
+        "solution": "Order Ahead Marketing Application",
         "technology": "Drupal"
       })
       @@include('components/work/item/item.html', {
         "url": "https://www.redrobin.com/",
         "title": "Red Robin",
-        "solution": "Order Ahead Marketing Application",
-        "technology": "Drupal"
-      })
-      @@include('components/work/item/item.html', {
-        "url": "https://www.thecheesecakefactory.com/",
-        "title": "Cheesecake Factory",
         "solution": "Order Ahead Marketing Application",
         "technology": "Drupal"
       })
@@ -38,8 +38,14 @@
         "technology": "Drupal"
       })
       @@include('components/work/item/item.html', {
-        "url": "https://www.noodles.com/",
-        "title": "Noodles & Company",
+        "url": "https://www.bcbsks.com/",
+        "title": "Blue Cross Blue Shield",
+        "solution": "Front End Architecture",
+        "technology": "Drupal"
+      })
+      @@include('components/work/item/item.html', {
+        "url": "https://www.thecheesecakefactory.com/",
+        "title": "Cheesecake Factory",
         "solution": "Order Ahead Marketing Application",
         "technology": "Drupal"
       })
@@ -83,7 +89,7 @@
         "url": "https://www.transunion.com/",
         "title": "TransUnion",
         "solution": "Credit Bureau Data Services",
-        "technology": "React and TeamSite"
+        "technology": "React, TeamSite"
       })
       @@include('components/work/item/item.html', {
         "url": "https://www.trueidentity.com/",
@@ -148,14 +154,14 @@
       @@include('components/work/item/item.html', {
         "url": "https://www.dairyqueen.com/en-us/app/",
         "title": "Dairy Queen",
-        "solution": "Mobile App Microsite and Email Campaigns",
+        "solution": "Microsite and Email Campaigns",
         "technology": "Custom Framework"
       })
       @@include('components/work/item/item.html', {
         "url": "https://www.foryourparty.com/",
         "title": "ForYourParty",
-        "solution": "End-User Product Designer and Commerce Applications",
-        "technology": "React and Drupal Commerce"
+        "solution": "Product Designer and Commerce Applications",
+        "technology": "React, Drupal Commerce"
       })
       @@include('components/work/item/item.html', {
         "url": "https://www.amway.com/",
@@ -166,8 +172,8 @@
       @@include('components/work/item/item.html', {
         "url": "https://coffeebean.com/",
         "title": "Coffee Bean and Tea Leaf",
-        "solution": "Order Ahead Application, Mobile App Microsite and Email Campaigns",
-        "technology": "Drupal and Custom Framework"
+        "solution": "Order Ahead Application, Microsite and Email Campaigns",
+        "technology": "Drupal, Custom Framework"
       })
       @@include('components/work/item/item.html', {
         "url": "https://www.redbull.com/us-en/",
@@ -205,12 +211,12 @@
         "solution": "Marketing and Documentation Application",
         "technology": "Drupal"
       })
-      <!-- @@include('components/work/item/item.html', {
+      @@include('components/work/item/item.html', {
         "url": "https://www.lumentum.com/",
         "title": "Lumentum",
         "solution": "Marketing and Documentation Application",
         "technology": "Drupal"
-      }) -->
+      })
       @@include('components/work/item/item.html', {
         "url": "https://www.transamerica.com/",
         "title": "TransAmerica",
@@ -223,6 +229,9 @@
         "solution": "Marketing and Commerce Application",
         "technology": "Drupal Commerce"
       })
+    </div>
+    <div class="work__footer">
+      <button class="button" href="#" target="_blank" nofollow>View All Projects</button>
     </div>
   </div>
 </div>

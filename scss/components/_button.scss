@@ -1,28 +1,27 @@
-@mixin link($padding: 2.5vw) {
+@mixin button($background: transparent, $padding: 2.5vw) {
+  @include h2(1);
   z-index: 25;
   display: inline-flex;
+  background: $background;
+  color: $white;
   flex-direction: column;
   justify-content: center;
   text-decoration: none;
   font-family: $font--display;
   text-transform: uppercase;
-  line-height: 1;
-  font-size: 22px;
   padding: $padding;
   text-decoration: none;
+  text-align: center;
   transition: transform $out--fast ease-out;
-
-  @include for-tablet-landscape-up {
-    font-size: 32px;
-  }
 
   &:hover,
   &:focus-visible {
     z-index: 30;
 
     @include for-tablet-landscape-up {
-      transform: scale(1.2) skewY(-2.25deg);
+      transform: scale(1.25) skewY(-2.25deg);
       transition: transform $in--fast ease-out;
+      box-shadow: 0 0 2.5vw rgba($offBlack, .25);
     }
 
     > div,
@@ -34,4 +33,8 @@
       }
     }
   }
+}
+
+.button {
+  @include button($violet, 1vw);
 }

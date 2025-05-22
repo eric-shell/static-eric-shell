@@ -1,0 +1,43 @@
+@mixin panel($background: transparent, $padding: 2.5vw) {
+  @include h2(1);
+  z-index: 25;
+  display: inline-flex;
+  background: $background;
+  color: $white;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  font-family: $font--display;
+  text-transform: uppercase;
+  padding: $padding;
+  text-decoration: none;
+  transition: transform $out--fast ease-out;
+
+  &:hover,
+  &:focus-visible {
+    z-index: 30;
+
+    @include for-tablet-landscape-up {
+      transform: scale(1.2) skewY(-2.25deg);
+      transition: transform $in--fast ease-out;
+      box-shadow: 0 0 2.5vw rgba($offBlack, .25);
+    }
+
+    @include for-desktop-up {
+      transform: scale(1.15) skewY(-2.25deg);
+    }
+
+    > div,
+    > span {
+
+      @include for-tablet-landscape-up {
+        transform: skewY(1.5deg);
+        transition: transform $in--fast ease-out;
+      }
+    }
+  }
+}
+
+.panel {
+  @include panel($violet, 1vw);
+}
