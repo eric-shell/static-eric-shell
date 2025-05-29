@@ -1,0 +1,24 @@
+.about {
+
+  &__content {
+    transform: skewY(.5deg);
+
+    p {
+      padding: 1.25vw 0 0;
+    }
+
+    ul {
+      padding: 1.25vw 0 0;
+
+      li {
+        list-style: disc;
+        margin: 0 0 0 1.25rem;
+        padding: 0 0 0 .5rem;
+
+        &::marker {
+          color: $violet;
+        }
+      }
+    }
+  }
+}

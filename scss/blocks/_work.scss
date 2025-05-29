@@ -30,7 +30,7 @@
     &--preview {
 
       // Hide items after the 6th item on page load
-      .work__item:nth-child(n + 7) {
+      .work__item:nth-child(n + 13) {
         display: none;
       }
     }
